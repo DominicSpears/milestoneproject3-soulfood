@@ -121,6 +121,8 @@ def add_recipe():
             "vegan": vegan,
             "spicy": spicy,
             "allergens": request.form.getlist("allergens"),
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)

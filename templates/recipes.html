@@ -1,21 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for recipe in recipes %}
-        {{ recipe.recipe_name }}<br>
-        {{ recipe.cuisine_name }}<br>
-        {{ recipe.recipe_description }}<br>
-        {{ recipe.prep_time }}<br>
-        {{ recipe.cook_time }}<br>
-        {{ recipe.serves }}<br>
-        {{ recipe.calories }}<br>
-        {{ recipe.vegetarian }}<br>
-        {{ recipe.vegan }}<br>
-        {{ recipe.spicy }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.method }}<br>
-        {{ recipe.allergens }}<br>
+{% for recipe in recipes %}
+{{ recipe.recipe_name }}<br>
+{{ recipe.cuisine_name }}<br>
+{{ recipe.recipe_description }}<br>
+{{ recipe.prep_time }}<br>
+{{ recipe.cook_time }}<br>
+{{ recipe.serves }}<br>
+{{ recipe.calories }}<br>
+{{ recipe.vegetarian }}<br>
+{{ recipe.vegan }}<br>
+{{ recipe.spicy }}<br>
+{{ recipe.ingredients }}<br>
+{{ recipe.method }}<br>
+{{ recipe.allergens }}<br>
 
-    {% endfor %}
+{% endfor %}
+
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card">
+            {% for recipe in recipes %}
+            <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+                <h3><strong>{{ recipe.recipe_name }}</strong></h3>
+                <h5>{{ recipe.cuisine_name }}</h5>
+                <p>{{ recipe.recipe_description }}</p>
+            </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

@@ -6,23 +6,29 @@
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="">
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 m6">
                 <i class="fas fa-pizza-slice prefix light-blue-text text-darken-4"></i>
                 <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
                     required>
                 <label for="recipe_name">Recipe Name</label>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 m6">
                 <i class="fas fa-globe-americas prefix light-blue-text text-darken-4"></i>
                 <select id="cuisine_name" name="cuisine_name" class="validate" required>
                     <option value="" disabled selected>Select cuisine</option>
                     {% for cuisine in cuisines %}
-                        <option value="{{ cuisine.cuisine_name }}">{{ cuisine.cuisine_name }}</option>
+                    <option value="{{ cuisine.cuisine_name }}">{{ cuisine.cuisine_name }}</option>
                     {% endfor %}
                 </select>
                 <label for="cuisine_name">Cuisine</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
+                <input id="recipe_image" name="recipe_image" type="url" class="validate"
+                    required>
+                <label for="recipe_image">Enter the image url</label>
             </div>
         </div>
         <div class="row">
@@ -34,15 +40,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 m6">
                 <i class="fas fa-user-clock prefix light-blue-text text-darken-4"></i>
                 <input id="prep_time" name="prep_time" minlength="5" maxlength="50" type="text" class="validate"
                     required>
                 <label for="prep_time">Prep time (minutes)</label>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 m6">
                 <i class="fas fa-user-clock prefix light-blue-text text-darken-4"></i>
                 <input id="cook_time" name="cook_time" minlength="5" maxlength="50" type="text" class="validate"
                     required>
@@ -50,23 +54,19 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 m6">
                 <i class="fas fa-users prefix light-blue-text text-darken-4"></i>
-                <input id="serves" name="serves" minlength="5" maxlength="50" type="text" class="validate"
-                    required>
+                <input id="serves" name="serves" minlength="5" maxlength="50" type="text" class="validate" required>
                 <label for="serves">Serving suggestion</label>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-users prefix light-blue-text text-darken-4"></i>
-                <input id="calories" name="calories" minlength="5" maxlength="50" type="text" class="validate"
-                    required>
+            <div class="input-field col s12 m6">
+                <i class="fas fa-calculator prefix light-blue-text text-darken-4"></i>
+                <input id="calories" name="calories" minlength="5" maxlength="50" type="text" class="validate" required>
                 <label for="calories">Calories per serving</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 m6 l4">
                 <div class="switch">
                     <i class="fas fa-carrot prefix light-blue-text text-darken-4"></i>
                     <label for="vegetarian">
@@ -76,9 +76,8 @@
                     </label>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
+        
+            <div class="input-field col s12 m6 l4">
                 <div class="switch">
                     <i class="fas fa-leaf prefix light-blue-text text-darken-4"></i>
                     <label for="vegan">
@@ -88,9 +87,8 @@
                     </label>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
+        
+            <div class="input-field col s12 m6 l4">
                 <div class="switch">
                     <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4"></i>
                     <label for="spicy">

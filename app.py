@@ -105,7 +105,8 @@ def logout():
 @app.route("/add_recipe")
 def add_recipe():
     cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
-    return render_template("add_recipe.html", cuisines=cuisines)
+    allergens = mongo.db.allergens.find().sort("allergen", 1)
+    return render_template("add_recipe.html", cuisines=cuisines, allergens=allergens)
 
 
 # debug should = false when finalising project

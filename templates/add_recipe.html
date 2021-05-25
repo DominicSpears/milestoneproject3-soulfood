@@ -26,8 +26,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
-                <input id="recipe_image" name="recipe_image" type="url" class="validate"
-                    required>
+                <input id="recipe_image" name="recipe_image" type="url" class="validate" required>
                 <label for="recipe_image">Enter the image url</label>
             </div>
         </div>
@@ -76,7 +75,6 @@
                     </label>
                 </div>
             </div>
-        
             <div class="input-field col s12 m6 l4">
                 <div class="switch">
                     <i class="fas fa-leaf prefix light-blue-text text-darken-4"></i>
@@ -87,7 +85,6 @@
                     </label>
                 </div>
             </div>
-        
             <div class="input-field col s12 m6 l4">
                 <div class="switch">
                     <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4"></i>
@@ -97,6 +94,18 @@
                         Spicy
                     </label>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-notes-medical prefix light-blue-text text-darken-4"></i>
+                <select id="allergen" name="allergen" class="validate" multiple>
+                    <option value="" disabled selected>Select any allergens</option>
+                    {% for allergen in allergens %}
+                    <option value="{{ allergen.allergen }}">{{ allergen.allergen }}</option>
+                    {% endfor %}
+                </select>
+                <label for="allergen">Allergens</label>
             </div>
         </div>
     </form>

@@ -102,8 +102,31 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if request.method == "POST":
+        vegetarian = "on" if request.form.get("vegetarian") else "off"
+        vegan = "on" if request.form.get("vegan") else "off"
+        spicy = "on" if request.form.get("spicy") else "off"
+        recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "cuisine_name": request.form.get("cuisine_name"),
+            "recipe_image": request.form.get("recipe_image"),
+            "recipe_description": request.form.get("recipe_description"),
+            "prep_time": request.form.get("prep-time"),
+            "cook_time": request.form.get("cook_time"),
+            "serves": request.form.get("serves"),
+            "calories": request.form.get("calories"),
+            "vegetarian": vegetarian,
+            "vegan": vegan,
+            "spicy": spicy,
+            "allergens": request.form.getlist("allergens"),
+            "created_by": session["user"]
+        }
+        mongo.db.tasks.insert_one(recipe)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("get_recipes"))
+
     cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
     allergens = mongo.db.allergens.find().sort("allergen", 1)
     return render_template("add_recipe.html", cuisines=cuisines, allergens=allergens)

@@ -6,8 +6,13 @@
     line-height: 2;
 }
 
-/*
-.card {
+.marker {
+    background-color: red;
+    width: 33.33%;
     float: left;
+    display: block;
 }
-*/
+
+.card-content em {
+    text-transform: capitalize;
+}

@@ -9,8 +9,8 @@
         <div class="row">
             <div class="input-field col s12 m6">
                 <i class="fas fa-pizza-slice prefix light-blue-text text-darken-4"></i>
-                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
-                    required>
+                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
+                    value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                 <label for="recipe_name">Recipe Name</label>
             </div>
             <div class="input-field col s12 m6">
@@ -18,7 +18,11 @@
                 <select id="cuisine_name" name="cuisine_name" class="validate" required>
                     <option value="" disabled selected>Select cuisine</option>
                     {% for cuisine in cuisines %}
-                    <option value="{{ cuisine.cuisine_name }}">{{ cuisine.cuisine_name }}</option>
+                        {% if cuisine.cuisine_name == recipe.cuisine_name %}
+                            <option value="{{ cuisine.cuisine_name }}" selected>{{ cuisine.cuisine_name }}</option>
+                        {% else %}
+                            <option value="{{ cuisine.cuisine_name }}">{{ cuisine.cuisine_name }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label for="cuisine_name">Cuisine</label>
@@ -28,7 +32,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
-                <input id="recipe_image" name="recipe_image" type="url" class="validate" required>
+                <input id="recipe_image" name="recipe_image" type="url" value="{{ recipe.recipe_image }}" class="validate" required>
                 <label for="recipe_image">Enter the image url</label>
             </div>
         </div>
@@ -37,7 +41,9 @@
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
                 <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="200"
-                    class="materialize-textarea validate" required></textarea>
+                    class="materialize-textarea validate" required>
+                {{- recipe.recipe_description -}}
+                </textarea>
                 <label for="recipe_description">Recipe Description</label>
             </div>
         </div>
@@ -45,13 +51,13 @@
         <div class="row">
             <div class="input-field col s12 m6">
                 <i class="fas fa-user-clock prefix light-blue-text text-darken-4"></i>
-                <input id="prep_time" name="prep_time" type="text" class="validate"
+                <input id="prep_time" name="prep_time" type="text" value="{{ recipe.prep_time }}" class="validate"
                     required>
                 <label for="prep_time">Prep time (minutes)</label>
             </div>
             <div class="input-field col s12 m6">
                 <i class="fas fa-user-clock prefix light-blue-text text-darken-4"></i>
-                <input id="cook_time" name="cook_time" type="text" class="validate"
+                <input id="cook_time" name="cook_time" type="text" value="{{ recipe.cook_time }}" class="validate"
                     required>
                 <label for="cook_time">Cook time (minutes)</label>
             </div>
@@ -60,12 +66,12 @@
         <div class="row">
             <div class="input-field col s12 m6">
                 <i class="fas fa-users prefix light-blue-text text-darken-4"></i>
-                <input id="serves" name="serves" type="text" class="validate" required>
+                <input id="serves" name="serves" type="text" value="{{ recipe.serves }}" class="validate" required>
                 <label for="serves">Serving suggestion</label>
             </div>
             <div class="input-field col s12 m6">
                 <i class="fas fa-calculator prefix light-blue-text text-darken-4"></i>
-                <input id="calories" name="calories" type="text" class="validate" required>
+                <input id="calories" name="calories" type="text" value="{{ recipe.calories }}" class="validate" required>
                 <label for="calories">Calories per serving</label>
             </div>
         </div>
@@ -75,7 +81,11 @@
                 <div class="switch">
                     <i class="fas fa-carrot prefix light-blue-text text-darken-4"></i>
                     <label for="vegetarian">
+                    {% if recipe.vegetarian == "on" %}
+                        <input type="checkbox" id="vegetarian" name="vegetarian" checked>
+                    {% else %}    
                         <input type="checkbox" id="vegetarian" name="vegetarian">
+                    {% endif %}         
                         <span class="lever"></span>
                         Vegetarian
                     </label>
@@ -85,7 +95,11 @@
                 <div class="switch">
                     <i class="fas fa-leaf prefix light-blue-text text-darken-4"></i>
                     <label for="vegan">
+                    {% if recipe.vegan == "on" %}
+                        <input type="checkbox" id="vegan" name="vegan" checked>
+                    {% else %}
                         <input type="checkbox" id="vegan" name="vegan">
+                    {% endif %}
                         <span class="lever"></span>
                         Vegan
                     </label>
@@ -95,7 +109,11 @@
                 <div class="switch">
                     <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4"></i>
                     <label for="spicy">
+                    {% if recipe.vegan == "on" %}
+                        <input type="checkbox" id="spicy" name="spicy" checked>
+                    {% else %}   
                         <input type="checkbox" id="spicy" name="spicy">
+                    {% endif %}    
                         <span class="lever"></span>
                         Spicy
                     </label>
@@ -139,6 +157,11 @@
         <!-----------------------------Submit button-->
         <div class="row">
             <div class="col s12 center-align">
+                <!-----------------------------Cancel button-->
+                <a href="{{ url_for('get_recipes') }}" class="btn-large red text-shaddow">
+                    Cancel <i class="fas fa-times-circle right"></i>
+                </a>
+                    
                 <button type="submit" class="btn-large light-blue darken-1 text-shaddow">
                     Edit Recipe <i class="fas fa-edit right"></i>
                 </button>

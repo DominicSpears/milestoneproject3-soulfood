@@ -16,3 +16,7 @@
 .card-content em {
     text-transform: capitalize;
 }
+
+.small-button {
+    width: 49%;
+}

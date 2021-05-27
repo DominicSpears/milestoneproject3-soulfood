@@ -19,7 +19,6 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
@@ -160,7 +159,7 @@ def edit_recipe(recipe_id):
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
 
-    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
     allergens = mongo.db.allergens.find().sort("allergen", 1)
     return render_template("edit_recipe.html", recipe=recipe, cuisines=cuisines, allergens=allergens)
@@ -168,9 +167,10 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipe.remove({"_id": ObjectId(recipe_id)})
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("get_recipes"))
+
 
 # debug should = false when finalising project
 if __name__ == "__main__":

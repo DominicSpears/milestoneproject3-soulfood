@@ -136,6 +136,30 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    if request.method == "POST":
+        vegetarian = "on" if request.form.get("vegetarian") else "off"
+        vegan = "on" if request.form.get("vegan") else "off"
+        spicy = "on" if request.form.get("spicy") else "off"
+        submit = {
+            "recipe_name": request.form.get("recipe_name"),
+            "cuisine_name": request.form.get("cuisine_name"),
+            "recipe_image": request.form.get("recipe_image"),
+            "recipe_description": request.form.get("recipe_description"),
+            "prep_time": request.form.get("prep-time"),
+            "cook_time": request.form.get("cook_time"),
+            "serves": request.form.get("serves"),
+            "calories": request.form.get("calories"),
+            "vegetarian": vegetarian,
+            "vegan": vegan,
+            "spicy": spicy,
+            "allergens": request.form.getlist("allergens"),
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+        flash("Recipe Successfully Updated")
+
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
     allergens = mongo.db.allergens.find().sort("allergen", 1)

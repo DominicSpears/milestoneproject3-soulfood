@@ -17,6 +17,14 @@
     text-transform: capitalize;
 }
 
+/* .recipe-container {
+    display: flex;
+} */
+
+.recipe-card {
+    width: 25%;
+}
+
 .small-button {
     width: 49%;
 }

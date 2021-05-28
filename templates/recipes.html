@@ -3,9 +3,10 @@
 
 <h3 class="light-blue-text text-darken-4 center-align">Latest Recipes</h3>
 
-<div class="row marker">
-    <div class="col s12">
-        <div class="card">
+<!-- <div class="row marker">
+    <div class="col s12"> -->
+    <div class="recipe-container">
+        <div class="card recipe-card">
             {% for recipe in recipes %}
             <div class="card-image">
                 <img src="{{ recipe.recipe_image }}">
@@ -29,6 +30,7 @@
             {% endfor %}
         </div>
     </div>
-</div>
+    <!-- </div>
+</div> -->
 
 {% endblock %}

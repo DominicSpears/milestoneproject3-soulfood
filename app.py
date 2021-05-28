@@ -178,6 +178,19 @@ def get_cuisines():
     return render_template("cuisines.html", cuisines=cuisines)
 
 
+@app.route("/add_cuisine", methods=["GET", "POST"])
+def add_cuisine():
+    if request.method == "POST":
+        cuisine = {
+            "cuisine_name": request.form.get("cuisine_name")
+        }
+        mongo.db.cuisines.insert_one(cuisine)
+        flash("New Cuisine Added")
+        return redirect(url_for("get_cuisines"))
+
+    return render_template("add_cuisine.html")
+
+
 # debug should = false when finalising project
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -13,17 +13,22 @@
     display: block;
 }
 
+/* .card-image {
+    width: 100%;
+    
+    object-fit: cover;
+} */
+
+.inner-image {
+    width: 100%;
+    min-height: 200px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
 .card-content em {
     text-transform: capitalize;
 }
-
-/* .recipe-container {
-    display: flex;
-} */
-
-/* .recipe-card {
-    width: 25%;
-} */
 
 .small-button {
     width: 49%;

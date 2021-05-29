@@ -7,7 +7,6 @@
 }
 
 /*------------------------------------------header*/
-
 .brand-logo {
     margin-left: 10px;
 }
@@ -15,6 +14,14 @@
 .brand-logo:hover {
     text-decoration: underline;    
 }
+
+/*------------------------------------------hero image*/
+.hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
 
 .inner-image {
     width: 100%;

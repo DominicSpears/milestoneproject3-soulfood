@@ -230,13 +230,33 @@ def get_cookware():
 def add_cookware():
     if request.method == "POST":
         cookware = {
-            "cookware_name": request.form.get("cookware_name")
+            "cookware_name": request.form.get("cookware_name"),
+            "cookware_image": request.form.get("cookware_image"),
+            "cookware_link": request.form.get("cookware_link"),
+            "cookware_price": request.form.get("cookware_price")
         }
         mongo.db.cookware.insert_one(cookware)
         flash("New Cookware Item Added")
         return redirect(url_for("get_cookware"))
 
     return render_template("add_cookware.html")
+
+
+@app.route("/edit_cookware/<cookware_id>", methods=["GET", "POST"])
+def edit_cookware(cookware_id):
+    if request.method == "POST":
+        enter = {
+            "cookware_name": request.form.get("cookware_name"),
+            "cookware_image": request.form.get("cookware_image"),
+            "cookware_link": request.form.get("cookware_link"),
+            "cookware_price": request.form.get("cookware_price")
+        }
+        mongo.db.cookware.update({"_id": ObjectId(cookware_id)}, enter)
+        flash("Cookware Item Successfully Updated")
+        return redirect(url_for("get_cookware"))
+
+    cookware = mongo.db.cookware.find_one({"_id": ObjectId(cookware_id)})
+    return render_template("edit_cookware.html", cookware=cookware)
 
 
 # debug should = false when finalising project

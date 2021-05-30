@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="light-blue-text text-darken-4 center-align">Add Cookware</h3>
+
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('add_cookware') }}">
+        <!-----------------------------cookware name input-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pizza-slice prefix light-blue-text text-darken-4"></i>
+                <input id="cookware_name" name="cookware_name" minlength="5" maxlength="50" type="text" class="validate"
+                    required>
+                <label for="cookware_name">Cookware Item</label>
+            </div>
+        </div>
+        <!-----------------------------Cookware image url input-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
+                <input id="cookware_image" name="cookware_image" type="url" class="validate" required>
+                <label for="cookware_image">Enter the image url</label>
+            </div>
+        </div>
+        <!-----------------------------Cookware link url input-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-link prefix light-blue-text text-darken-4"></i>
+                <input id="cookware_link" name="cookware_link" type="url" class="validate" required>
+                <label for="cookware_link">Enter the website link</label>
+            </div>
+        </div>
+        <!-----------------------------Submit button-->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large light-blue darken-1 text-shaddow">
+                    Add Cookware Item <i class="fas fa-plus-square right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

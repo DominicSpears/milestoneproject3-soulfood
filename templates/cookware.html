@@ -26,14 +26,15 @@
         </div>
 
     <hr>
-
+    {% if session.user|lower == "admin"|lower %}
     <div class="row">
         <div class="col s12 center-align">
-            <a href="{{ url_for('add_cuisine') }}" class="btn-large light-blue darken-2 text-shadow">
-                Add Cuisine <i class="fas fa-plus-square right"></i>
+            <a href="{{ url_for('add_cookware') }}" class="btn-large light-blue darken-2 text-shadow">
+                Add Cookware Item <i class="fas fa-plus-square right"></i>
             </a>
         </div>
     </div>
+    {% endif %}
 
     <div class="row">
         {% for item in cookware %}

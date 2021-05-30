@@ -226,6 +226,19 @@ def get_cookware():
     return render_template("cookware.html", cookware=cookware)
 
 
+@app.route("/add_cookware", methods=["GET", "POST"])
+def add_cookware():
+    if request.method == "POST":
+        cookware = {
+            "cookware_name": request.form.get("cookware_name")
+        }
+        mongo.db.cookware.insert_one(cookware)
+        flash("New Cookware Item Added")
+        return redirect(url_for("get_cookware"))
+
+    return render_template("add_cookware.html")
+
+
 # debug should = false when finalising project
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

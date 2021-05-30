@@ -26,15 +26,6 @@
         </div>
 
     <hr>
-    {% if session.user|lower == "admin"|lower %}
-    <div class="row">
-        <div class="col s12 center-align">
-            <a href="{{ url_for('add_cookware') }}" class="btn-large light-blue darken-2 text-shadow">
-                Add Cookware Item <i class="fas fa-plus-square right"></i>
-            </a>
-        </div>
-    </div>
-    {% endif %}
 
     <div class="row">
         {% for item in cookware %}
@@ -46,10 +37,28 @@
                     <div class="card-content white-text">
                         <span class="card-title">{{ item.cookware_name }}</span>
                     </div>
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ item.cookware_price }}</span>
+                    </div>
+                    <div class="card-content white-text">
+                        <a href="{{ item.cookware_link }}" class="btn-large light-blue darken-2 text-shadow">
+                            Website <i class="fas fa-link right"></i>
+            </a>
+                    </div>
                     
                 </div>
             </div>
         {% endfor %}
     </div>
+
+    {% if session.user|lower == "admin"|lower %}
+    <div class="row">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('add_cookware') }}" class="btn-large light-blue darken-2 text-shadow">
+                Add Cookware Item <i class="fas fa-plus-square right"></i>
+            </a>
+        </div>
+    </div>
+    {% endif %}
 
 {% endblock %}

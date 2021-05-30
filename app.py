@@ -259,6 +259,13 @@ def edit_cookware(cookware_id):
     return render_template("edit_cookware.html", cookware=cookware)
 
 
+@app.route("/delete_cookware/<cookware_id>")
+def delete_cookware(cookware_id):
+    mongo.db.cookware.remove({"_id": ObjectId(cookware_id)})
+    flash("Cookware Item Successfully Deleted")
+    return redirect(url_for("get_cookware"))
+
+
 # debug should = false when finalising project
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

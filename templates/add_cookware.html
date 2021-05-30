@@ -18,7 +18,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pound-sign prefix light-blue-text text-darken-4"></i>
-                <input id="cookware_price" name="cookware_price" minlength="5" maxlength="50" type="text" class="validate"
+                <input id="cookware_price" name="cookware_price" minlength="3" maxlength="50" type="text" class="validate"
                     required>
                 <label for="cookware_price">Cookware Price</label>
             </div>
@@ -50,7 +50,4 @@
     </form>
 </div>
 
-{% endblock %}
-
-<a href="{{ url_for('delete_cookware', cookware_id=cookware._id) }}" class="btn light-blue lighten-1">Delete</a>
-                    
+{% endblock %}               

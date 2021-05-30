@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
@@ -106,7 +111,20 @@
     height: 33px;
     font-size: 15px;
 }
+/*------------------------------------------cookware.html*/
+.cookware-benefits {
+    width: 100%;
+}
 
+.benefit {
+    width: calc(33.3% - 3px);  
+    display: inline-block;
+    vertical-align: top;
+    text-align:center;
+}
+
+
+/*------------------------------------------other*/
 .card-content em {
     text-transform: capitalize;
 }

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="light-blue-text text-darken-4 center-align">Mayflower Cookware</h3>
+
+    <p>Discover our beautiful Mayflower collection. Perfect to 
+        add some colour and cosiness to your kitchen! </p>
+
+        <div class="cookware-benefits">
+            <div class="benefit">
+                <h4>Healthy non-stick coating</h4>
+                <p>The Thermolon ceramic non-stick coating is fully 
+                PFAS-free and doesn’t contain harmful chemical substances.</p>
+            </div>
+            <div class="benefit">
+                <h4>Unique design</h4>
+                <p>The special colour and wooden stay-cool handles give 
+                the collection a Scandinavian look & feel.</p>
+            </div>
+            <div class="benefit">
+                <h4>High quality materials</h4>
+                <p>Make the most of your cooking skills thanks to the 
+                high-quality aluminium and thick forged base which heat 
+                up quickly and evenly for perfect results.</p>
+            </div>
+        </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('add_cuisine') }}" class="btn-large light-blue darken-2 text-shadow">
+                Add Cuisine <i class="fas fa-plus-square right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for cuisine in cuisines %}
+            <div class="col s12 m3">
+                <div class="card light-blue darken-4 text-shadow center-align">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ cuisine.cuisine_name }}</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ url_for('edit_cuisine', cuisine_id=cuisine._id) }}" class="btn green accent-4">Edit</a>
+                        <a href="{{ url_for('delete_cuisine', cuisine_id=cuisine._id) }}" class="btn light-blue lighten-1">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -220,6 +220,11 @@ def delete_cuisine(cuisine_id):
     return redirect(url_for("get_cuisines"))
 
 
+@app.route("/get_cookware")
+def get_cookware():
+    cookware = list(mongo.db.cookware.find().sort("cookware_name", 1))
+    return render_template("cookware.html", cookware=cookware)
+
 
 # debug should = false when finalising project
 if __name__ == "__main__":

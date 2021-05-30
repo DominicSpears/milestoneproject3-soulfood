@@ -75,9 +75,12 @@
     position: relative;
 }
 
-.recipe-link {
-    position: absolute;
-    bottom: 2px;
+.inner-image {
+    width: 100%;
+    min-height: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-bottom : 5px solid #71B104;
 }
 
 .recipe-btns {
@@ -95,11 +98,13 @@
     background-color: #71B104;
 }
 
-.inner-image {
+.recipe-message {
+    color: white;
+    background-color: #71B104;
+    border-radius: 2px;
     width: 100%;
-    min-height: 200px;
-    max-height: 200px;
-    object-fit: cover;
+    height: 33px;
+    font-size: 15px;
 }
 
 .card-content em {

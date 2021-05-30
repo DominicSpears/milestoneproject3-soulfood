@@ -7,6 +7,11 @@
 }
 
 /*------------------------------------------header*/
+.nav-extended {
+    background-color: #71B104;
+    border-bottom: 2px solid #24580C;
+}
+
 .brand-logo {
     margin-left: 10px;
 }
@@ -20,8 +25,75 @@
     width: 100%;
     max-height: 400px;
     object-fit: cover;
+    background-color: white;
+}
+/*------------------------------------------recipies.html*/
+.recipe-title {
+    color: #71B104;
 }
 
+.recipe-search {
+    background-color: #71B104;
+    color: white;
+}
+
+/* label color */
+   .input-field label {
+     color: white;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: white;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: white;
+   }
+
+.search-btn {
+    background-color: #24580C;
+}
+
+.recipe-card {
+    /* border: 2px solid #71B104; */
+    height: 500px;
+    position: relative;
+}
+
+.recipe-link {
+    position: absolute;
+    bottom: 2px;
+}
+
+.recipe-btns {
+    /* background-color: red; */
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+}
+
+.btn-small {
+    background-color: #24580C;
+}
+
+.btn-small:hover {
+    background-color: #71B104;
+}
 
 .inner-image {
     width: 100%;

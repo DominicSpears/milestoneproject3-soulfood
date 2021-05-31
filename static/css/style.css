@@ -17,6 +17,10 @@
     border-radius: 20px;
 }
 
+.prefix {
+    color: #24580C;
+}
+
 /*------------------------------------------navbar*/
 .nav-extended {
     background-color: #71B104;
@@ -96,7 +100,6 @@
 }
 
 .recipe-btns {
-    /* background-color: red; */
     position: absolute;
     bottom: 2px;
     width: 100%;
@@ -121,10 +124,6 @@
 
 /*------------------------------------------edit recipe.html/ add recipe.html*/
 .edit-recipe-title {
-    color: #24580C;
-}
-
-.prefix {
     color: #24580C;
 }
 
@@ -224,6 +223,21 @@
     padding-bottom: 20px;
 }
 
+/*------------------------------------------edit cookware.html/ add cookware.html*/
+.add-cookware-title, 
+.edit-cookware-title {
+    color: #24580C;
+}
+
+.add-cookware-btn,
+.edit-cookware-btn {
+    background-color: #71B104;
+}
+
+.add-cookware-btn:hover,
+.edit-cookware-btn:hover {
+    background-color: #24580C;
+}
 
 /*------------------------------------------other*/
 .card-content em {

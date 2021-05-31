@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="light-blue-text text-darken-4 center-align">Edit Cookware</h3>
+<h3 class="edit-cookware-title center-align">Edit Cookware</h3>
 
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('edit_cookware', cookware_id=cookware._id) }}">
         <!-----------------------------cookware name input-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-pizza-slice prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pizza-slice prefix"></i>
                 <input id="cookware_name" name="cookware_name" minlength="5" maxlength="50" 
                 type="text" value ="{{ cookware.cookware_name }}" class="validate"
                     required>
@@ -18,7 +18,7 @@
          <!-----------------------------cookware price-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-pound-sign prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pound-sign prefix"></i>
                 <input id="cookware_price" name="cookware_price" minlength="3" maxlength="50" 
                 type="text" value ="{{ cookware.cookware_price }}" class="validate" required>
                 <label for="cookware_price">Cookware Price</label>
@@ -27,7 +27,7 @@
         <!-----------------------------Cookware image url input-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-image prefix"></i>
                 <input id="cookware_image" name="cookware_image" type="url" 
                     value ="{{ cookware.cookware_image }}" class="validate" required>
                 <label for="cookware_image">Enter the image url</label>
@@ -36,7 +36,7 @@
         <!-----------------------------Cookware link url input-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-link prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-link prefix"></i>
                 <input id="cookware_link" name="cookware_link" type="url" 
                     value ="{{ cookware.cookware_link }}" class="validate" required>
                 <label for="cookware_link">Enter the website link</label>
@@ -45,10 +45,10 @@
         <!-----------------------------Submit button-->
         <div class="row">
             <div class="col s12 center-align">
-                <a href="{{ url_for('get_cookware') }}" class="btn-large red text-shaddow">
+                <a href="{{ url_for('get_cookware') }}" class="edit-cookware-btn btn-large text-shaddow">
                     Cancel <i class="fas fa-times-circle right"></i>
                 </a>
-                <button type="submit" class="btn-large light-blue darken-1 text-shaddow">
+                <button type="submit" class="edit-cookware-btn btn-large text-shaddow">
                     Edit Cookware Item <i class="fas fa-edit right"></i>
                 </button>
             </div>

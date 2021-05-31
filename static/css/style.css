@@ -237,6 +237,13 @@
     background-color: #24580C;
 }
 
+/*------------------------------------------My profile.html*/
+.username {
+    text-transform: capitalize;
+    color: #24580C;
+}
+
+
 /*------------------------------------------other*/
 .card-content em {
     text-transform: capitalize;

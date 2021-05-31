@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="light-blue-text text-darken-4 center-align">Add Recipe</h3>
+<h3 class="add-recipe-title center-align">Add Recipe</h3>
 
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
         <!-----------------------------Recipe name input/ cuisine dropdown menu-->
         <div class="row">
             <div class="input-field col s12 m6">
-                <i class="fas fa-pizza-slice prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-pizza-slice prefix"></i>
                 <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
                     required>
                 <label for="recipe_name">Recipe Name</label>
             </div>
             <div class="input-field col s12 m6">
-                <i class="fas fa-globe-americas prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-globe-americas prefix"></i>
                 <select id="cuisine_name" name="cuisine_name" class="validate" required>
                     <option value="" disabled selected>Select cuisine</option>
                     {% for cuisine in cuisines %}
@@ -27,7 +27,7 @@
         <!-----------------------------Recipe image url input-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-image prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-image prefix"></i>
                 <input id="recipe_image" name="recipe_image" type="url" class="validate" required>
                 <label for="recipe_image">Enter the image url</label>
             </div>
@@ -35,7 +35,7 @@
         <!-----------------------------Description text area-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-align-left prefix"></i>
                 <textarea id="recipe_description" name="recipe_description" minlength="5" maxlength="200"
                     class="materialize-textarea validate" required></textarea>
                 <label for="recipe_description">Recipe Description</label>
@@ -44,13 +44,13 @@
         <!-----------------------------Prep time/ cook time input-->
         <div class="row">
             <div class="input-field col s12 m6">
-                <i class="fas fa-user-clock prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-user-clock prefix"></i>
                 <input id="prep_time" name="prep_time" type="text" class="validate"
                     required>
                 <label for="prep_time">Prep time (minutes)</label>
             </div>
             <div class="input-field col s12 m6">
-                <i class="fas fa-user-clock prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-user-clock prefix"></i>
                 <input id="cook_time" name="cook_time" type="text" class="validate"
                     required>
                 <label for="cook_time">Cook time (minutes)</label>
@@ -59,12 +59,12 @@
         <!-----------------------------Serving/ calorie input-->
         <div class="row">
             <div class="input-field col s12 m6">
-                <i class="fas fa-users prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-users prefix"></i>
                 <input id="serves" name="serves" type="text" class="validate" required>
                 <label for="serves">Serving suggestion</label>
             </div>
             <div class="input-field col s12 m6">
-                <i class="fas fa-calculator prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-calculator prefix"></i>
                 <input id="calories" name="calories" type="text" class="validate" required>
                 <label for="calories">Calories per serving</label>
             </div>
@@ -73,7 +73,7 @@
         <div class="row">
             <div class="input-field col s12 m6 l4">
                 <div class="switch">
-                    <i class="fas fa-carrot prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-carrot prefix"></i>
                     <label for="vegetarian">
                         <input type="checkbox" id="vegetarian" name="vegetarian">
                         <span class="lever"></span>
@@ -83,7 +83,7 @@
             </div>
             <div class="input-field col s12 m6 l4">
                 <div class="switch">
-                    <i class="fas fa-leaf prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-leaf prefix"></i>
                     <label for="vegan">
                         <input type="checkbox" id="vegan" name="vegan">
                         <span class="lever"></span>
@@ -93,7 +93,7 @@
             </div>
             <div class="input-field col s12 m6 l4">
                 <div class="switch">
-                    <i class="fas fa-pepper-hot prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-pepper-hot prefix"></i>
                     <label for="spicy">
                         <input type="checkbox" id="spicy" name="spicy">
                         <span class="lever"></span>
@@ -105,7 +105,7 @@
         <!-----------------------------Allergen dropdown multiselect-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-notes-medical prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-notes-medical prefix"></i>
                 <select id="allergen" name="allergen" class="validate" multiple>
                     <option value="" disabled selected>Select any allergens</option>
                     {% for allergen in allergens %}
@@ -134,13 +134,16 @@
 
         <div class="row">
             <h6>Ingredients list</h6>
+            <div class="ingredientsContainer">
+                <ol id="ingredientList"></ol>
+            </div>
             <div class="input-field col s12 m6">
-                <i class="fas fa-list-ul prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-list-ul prefix"></i>
                 <input id="ingredient" name="ingredient" type="text" class="validate" required>
                 <label for="ingredient">Ingredient required</label>
             </div>
             <div class="input-field col s12 m6">
-                <i class="fas fa-calculator prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-calculator prefix"></i>
                 <input id="amount" name="amount" type="text" class="validate" required>
                 <label for="amount">Amount required</label>
             </div>
@@ -153,7 +156,7 @@
                 <ol id="methodList"></ol>
             </div>
             <div class="methodAdd input-field col s12">
-                <i class="fas fa-list-ol prefix light-blue-text text-darken-4"></i>
+                <i class="fas fa-list-ol prefix"></i>
                 <input id="step" name="step" type="text" class="validate" required>
                 <label for="step">Steps required</label>
             </div>
@@ -168,7 +171,7 @@
         <!-----------------------------Submit button-->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-large light-blue darken-1 text-shaddow">
+                <button type="submit" class="add-recipe-btn btn-large text-shaddow">
                     Add Recipe <i class="fas fa-plus-square right"></i>
                 </button>
             </div>

@@ -3,18 +3,25 @@
     margin: 0;
 }
 
+/*------------------------------------------whole site*/
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
 
 .flashes {
-    line-height: 2;
+    width: 50%;
+    line-height: 1;
+    background-color: #71B104;
+    color: white;
+    border-radius: 20px;
 }
 
-/*------------------------------------------header*/
+/*------------------------------------------navbar*/
 .nav-extended {
     background-color: #71B104;
     border-bottom: 2px solid #24580C;
+    box-shadow: none;
 }
 
 .brand-logo {
@@ -96,31 +103,125 @@
 }
 
 .btn-small {
-    background-color: #24580C;
+    background-color: #71B104;
 }
 
 .btn-small:hover {
-    background-color: #71B104;
+    background-color: #24580C;
 }
 
 .recipe-message {
     color: white;
-    background-color: #71B104;
+    background-color: #24580C;
     border-radius: 2px;
     width: 100%;
     height: 33px;
     font-size: 15px;
 }
+
+/*------------------------------------------edit recipe.html/ add recipe.html*/
+.edit-recipe-title {
+    color: #24580C;
+}
+
+.prefix {
+    color: #24580C;
+}
+
+.edit-recipe-btn {
+    background-color: #71B104;
+}
+
+.add-recipe-title {
+    color: #24580C;
+}
+
+.add-recipe-btn {
+    background-color: #71B104;
+}
+
+.ingredientsContainer {
+    width: 100%;
+    min-height: 100px;
+    background-color: white;
+    border: 2px solid #71B104;
+}
+
+.methodContainer {
+    width: 100%;
+    min-height: 100px;
+    background-color: white;
+    border: 2px solid #71B104;
+}
+
 /*------------------------------------------cookware.html*/
+.cookware-title {
+    color: #24580C;
+}
+
+.cookware-message {
+    padding: 25px 25px 25px 50px;
+    font-size: 25px;
+    color: #24580C;
+    border-bottom: 2px solid #71B104;
+}
+
+.add-cookware-btn {
+    margin: 50px 50px 0px 50px;
+    background-color: #24580C;
+}
+
+.add-cookware-btn:hover {
+    background-color: #71B104;
+}
+
+.cookware-card {
+    margin: 50px 0px 50px 0px;
+    height: 500px;
+    position: relative;
+    color: #24580C;
+}
+
+.inner-cookware-image {
+    width: 100%;
+    
+    min-height: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-bottom : 5px solid #71B104;
+}
+
+.cookware-btn {
+    background-color: #24580C;
+}
+
+.cookware-btn:hover {
+    background-color: #71B104;
+}
+
+
 .cookware-benefits {
     width: 100%;
+    border-bottom: 2px solid #71B104;
+    padding-bottom: 20px;
+    /* background-color: #71B104; */
 }
 
 .benefit {
-    width: calc(33.3% - 3px);  
+    background-color: #71B104;
+    width: calc(33.3% - 3px);
+    /* min-height: 300px; */
+    margin-top: 20px;  
     display: inline-block;
     vertical-align: top;
+    color: white;
     text-align:center;
+    padding: 20px;
+}
+
+.benefit-title {
+    border-bottom: 2px solid #24580C;
+    padding-bottom: 20px;
 }
 
 

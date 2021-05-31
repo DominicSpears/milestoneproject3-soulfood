@@ -116,24 +116,53 @@
             </div>
         </div>
         <!-----------------------------Ingredients list-->
-        <div class="row">
+        <!-- <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-list-ul prefix light-blue-text text-darken-4"></i>
                 <textarea id="ingredients" name="ingredients" minlength="5" maxlength="200"
                     class="materialize-textarea validate" required></textarea>
                 <label for="ingredients">Ingredients List</label>
             </div>
-        </div>
+        </div> -->
+        <!-- <div class="ingredients">
+            <h6>Ingredients list</h6>
+            <input id="ingrInput">
+            <input id="amountInput">
+            <button type="button" onclick="ingrList()"></button>
+            <ul id="ingrList"></ul>
+        </div> -->
 
+        <div class="row">
+            <h6>Ingredients list</h6>
+            <div class="input-field col s12 m6">
+                <i class="fas fa-list-ul prefix light-blue-text text-darken-4"></i>
+                <input id="ingredient" name="ingredient" type="text" class="validate" required>
+                <label for="ingredient">Ingredient required</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <i class="fas fa-calculator prefix light-blue-text text-darken-4"></i>
+                <input id="amount" name="amount" type="text" class="validate" required>
+                <label for="amount">Amount required</label>
+            </div>
+        </div>
 
         <!-----------------------------Method-->
         <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-list-ol prefix light-blue-text text-darken-4"></i>
-                <textarea id="method" name="method" minlength="5" maxlength="200"
-                    class="materialize-textarea validate" required></textarea>
-                <label for="method">Method</label>
+            <h6>Method</h6>
+            <div class="methodContainer">
+                <ol id="methodList"></ol>
             </div>
+            <div class="methodAdd input-field col s12">
+                <i class="fas fa-list-ol prefix light-blue-text text-darken-4"></i>
+                <input id="step" name="step" type="text" class="validate" required>
+                <label for="step">Steps required</label>
+            </div>
+                <!-- <button type="button" class="btn-large text-shaddow" onclick="methodList()">
+                    Add Step <i class="fas fa-plus-square right"></i>
+                </button> -->
+                <!-- <div class="btn-large text-shaddow" onclick="methodList()">
+                    Add step <i class="fas fa-plus-square right"></i>
+                </div> -->
         </div>
 
         <!-----------------------------Submit button-->

@@ -10,6 +10,32 @@ $(document).ready(function(){
     $('.tooltipped').tooltip();
   });
 
+// ingredients list function
+// function ingrList() {
+//     let item = document.getElementById("ingrInput").nodeValue
+//     let text = document.createTextNode(item)
+//     let newItem = document.createElement("li")
+//     newItem.appendChild(text)
+//     document.getElementById("ingrList").appendChild(newItem)
+// }
+
+// metho function
+function methodList() {
+    let item = document.getElementById("method").value
+    let text = document.createTextNode(item)
+    let newItem = document.createElement("li")
+    newItem.appendChild(text)
+    document.getElementById("methodList").appendChild(newItem)
+}
+
+
+
+
+
+
+
+
+
 // validateMaterializeSelect();
 //     function validateMaterializeSelect() {
 //         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };

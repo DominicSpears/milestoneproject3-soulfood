@@ -145,12 +145,22 @@
     text-transform: capitalize;
 }
 
+.recipe-link {
+    width: 100%;
+}
+
 .view-recipe-link {
-    font-size: 15px;
-    padding: 2px;
-    color: #24580C;
+    width: 90%;
     border: 2px solid #71B104;
     border-radius: 5px;
+    background-color: white;
+    font-size: 15px;
+    color: #24580C;    
+}
+
+.view-recipe-link:hover {
+    color: white;
+    background-color: #71B104;
 }
 
 .recipe-btns {

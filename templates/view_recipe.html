@@ -2,8 +2,50 @@
 {% block content %}
 
     <div>
-        <h4>Linked!!!!!!!</h4>
+        <img src="{{ recipe.recipe_image }}">
     </div>
+    <div>
+        <h5>{{ recipe.cuisine_name }}</h5>                
+    </div>
+    <div>
+        <h5 class="recipe-name text-shadow"><strong>{{ recipe.recipe_name }}</strong></h5>
+    </div>
+    <div>
+        <p>{{ recipe.recipe_description }}</p>
+    </div>
+    
+    <hr>
+    <div>
+        <p><em>by: {{ recipe.created_by }}</em></p>
+    </div>
+    <div>
+        <p>Prep time: {{ recipe.prep_time }}</p>
+        <p>Cook time: {{ recipe.cook_time }}</p>
+        <p>Serving suggestion: {{ recipe.serves }}</p>
+        <p>Calories per serving: {{ recipe.calories }}</p>
+    </div>
+    <div>
+        {% if recipe.vegetarian == "on" %}
+            Vegetarian<i class="green-prefix fas fa-carrot prefix"></i>
+        {% else %}    
+            Not Vegetarian<i class="grey-prefix fas fa-carrot prefix"></i>
+        {% endif %}   
+    </div>
+    <div>
+        {% if recipe.vegan == "on" %}
+            Vegan<i class="green-prefix fas fa-leaf prefix"></i>
+        {% else %}    
+            Not Vegan<i class="grey-prefix fas fa-leaf prefix"></i>
+        {% endif %}   
+    </div>
+    <div>
+        {% if recipe.spicy == "on" %}
+            Spicy<i class="red-prefix fas fa-pepper-hot prefix"></i>
+        {% else %}    
+            Not Spicy<i class="grey-prefix fas fa-pepper-hot prefix"></i>
+        {% endif %}   
+    </div>
+    
 
 
 {% endblock %}

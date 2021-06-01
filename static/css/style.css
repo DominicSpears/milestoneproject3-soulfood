@@ -145,6 +145,14 @@
     text-transform: capitalize;
 }
 
+.view-recipe-link {
+    font-size: 15px;
+    padding: 2px;
+    color: #24580C;
+    border: 2px solid #71B104;
+    border-radius: 5px;
+}
+
 .recipe-btns {
     position: absolute;
     bottom: 2px;
@@ -204,6 +212,21 @@
     background-color: white;
     border: 2px solid #71B104;
 }
+
+/*------------------------------------------view recipe.html*/
+.green-prefix {
+    color: #71B104;
+}
+
+.red-prefix {
+    color: red;
+}
+
+.grey-prefix {
+    color: grey;
+}
+
+
 
 /*------------------------------------------cookware.html*/
 .cookware-title {

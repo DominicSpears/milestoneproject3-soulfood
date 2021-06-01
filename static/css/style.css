@@ -9,6 +9,10 @@
     text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
 
+.prefix {
+    color: #24580C;
+}
+
 .flashes {
     width: 50%;
     padding: 5px;
@@ -20,7 +24,31 @@
     text-transform: capitalize;
 }
 
-.prefix {
+/* label color */
+.input-field label {
+    color: #24580C;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #24580C;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #24580C;
+    box-shadow: 0 1px 0 0 #24580C;
+}
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #71B104;
+    box-shadow: 0 1px 0 0 #71B104;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
     color: #24580C;
 }
 
@@ -85,36 +113,13 @@
     color: white;
 }
 
-/* label color
-   .input-field label {
-     color: white;
-   }*/
-   /* label focus color
-   .input-field input[type=text]:focus + label {
-     color: white;
-   } */
-   /* label underline focus color
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid white;
-     box-shadow: 0 1px 0 0 white;
-   } */
-   /* valid color
-   .input-field input[type=text].valid {
-     border-bottom: 1px solid white;
-     box-shadow: 0 1px 0 0 white;
-   } */
-   /* invalid color
-   .input-field input[type=text].invalid {
-     border-bottom: 1px solid white;
-     box-shadow: 0 1px 0 0 white;
-   } */
-   /* icon prefix focus color
-   .input-field .prefix.active {
-     color: white;
-   } */
-
 .search-btn {
     background-color: #24580C;
+}
+
+.search-btn:hover {
+    color: #24580C;
+    background-color: white;
 }
 
 .recipe-card {

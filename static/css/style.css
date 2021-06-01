@@ -105,7 +105,7 @@
 
 /*------------------------------------------recipies.html*/
 .recipe-title {
-    color: #71B104;
+    color: #24580C;
 }
 
 .recipe-search {
@@ -235,7 +235,6 @@
 
 .inner-cookware-image {
     width: 100%;
-    
     min-height: 200px;
     max-height: 200px;
     object-fit: cover;

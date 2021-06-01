@@ -38,7 +38,7 @@
                             <p><em>by: {{ recipe.created_by }}</em></p>
                         </div>
                         <div class="card-action recipe-link">
-                            <a href="#">This is a link</a>
+                            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View the full recipe</a>
                         </div>
                         <div class="recipe-btns">
                             {% if session.user|lower == recipe.created_by|lower %}

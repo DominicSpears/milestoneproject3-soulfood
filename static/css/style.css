@@ -227,24 +227,14 @@
 .view-recipe-header {
     width: 100%;
     /* background-color: red; */
-    text-align: right;
+    text-align: left;
     font-size: 20px;
-}
-
-.view-recipe-image-container {
-    width: 30%;
-    float: left;
-    /* background-color: orange; */
-}
-
-.view-recipe-image {
-    width: 100%;
-    max-height: 300px;
-    min-height: 300px;
+    margin: 10px 0px;
 }
 
 .view-recipe-info {
-    width: 100%;
+    width: 70%;
+    float: left;
     min-height: 300px;
     /* background-color: yellow; */
     padding: 10px;
@@ -252,11 +242,32 @@
 
 .recipe-creator {
     width: 100%;
-    border-bottom: 2px solid #24580C;
+    /* border-bottom: 2px solid #24580C; */
 }
 
-.full-recipe {
+.hr {
+    margin: 10px 0px;
+}
+
+.view-recipe-image-container {
+    width: 30%;
+    float: right;
+    /* background-color: orange; */
+}
+
+.view-recipe-image {
     width: 100%;
+    max-height: 300px;
+    min-height: 300px;
+    padding: 5px;
+    background-color: #71B104;
+}
+
+.cooking-info {
+    background-color: #71B104;
+}
+
+.dietary-requirements {
     background-color: #71B104;
 }
 

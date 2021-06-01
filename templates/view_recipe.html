@@ -1,54 +1,62 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="view-recipe-header">
-        <div class="view-recipe-image-container">
-            <img src="{{ recipe.recipe_image }}" class="view-recipe-image">
-        </div>
-        <div class="view-recipe-info">
-            <div>
-                <h2 class="recipe-name text-shadow"><strong>{{ recipe.recipe_name }}</strong></h2>
+    <div class="row">
+        <div class="col s12 center-align view-recipe-header">
+            <div class="view-recipe-info">
+                <div>
+                    <h2 class="recipe-name text-shadow"><strong>{{ recipe.recipe_name }}</strong></h2>
+                </div>
+                <div>
+                    <p>{{ recipe.cuisine_name }}</p>                
+                </div>
+                <div>
+                    <p class="recipe-creator"><em>by: {{ recipe.created_by }}</em></p>
+                </div>
+                <hr class="hr">
+                <div>
+                    <p>{{ recipe.recipe_description }}</p>
+                </div>            
             </div>
-            <div>
-                <p>{{ recipe.cuisine_name }}</p>                
+            <div class="view-recipe-image-container">
+                <img src="{{ recipe.recipe_image }}" class="view-recipe-image">
             </div>
-            <div>
-                <p class="recipe-creator"><em>by: {{ recipe.created_by }}</em></p>
-            </div>
-            <hr class="hr">
-            <div>
-                <p>{{ recipe.recipe_description }}</p>
-            </div>            
         </div>
     </div>
-    <div class="full-recipe">
-        <div>
-            <p>Prep time: {{ recipe.prep_time }}</p>
-            <p>Cook time: {{ recipe.cook_time }}</p>
-            <p>Serving suggestion: {{ recipe.serves }}</p>
-            <p>Calories per serving: {{ recipe.calories }}</p>
+
+    <div class="row">
+        <div class="col s12 cooking-info">
+            <div class="cooking-info-left">Prep time: {{ recipe.prep_time }}</div>
+            <div class="cooking-info-right">Cook time: {{ recipe.cook_time }}</div>
+            <div class="cooking-info-left">Serving suggestion: {{ recipe.serves }}</div>
+            <div class="cooking-info-right">Calories per serving: {{ recipe.calories }}</div>
         </div>
-        <div>
-            {% if recipe.vegetarian == "on" %}
-                Vegetarian<i class="green-prefix fas fa-carrot prefix"></i>
-            {% else %}    
-                Not Vegetarian<i class="grey-prefix fas fa-carrot prefix"></i>
-            {% endif %}   
-        </div>
-        <div>
-            {% if recipe.vegan == "on" %}
-                Vegan<i class="green-prefix fas fa-leaf prefix"></i>
-            {% else %}    
-                Not Vegan<i class="grey-prefix fas fa-leaf prefix"></i>
-            {% endif %}   
-        </div>
-        <div>
-            {% if recipe.spicy == "on" %}
-                Spicy<i class="red-prefix fas fa-pepper-hot prefix"></i>
-            {% else %}    
-                Not Spicy<i class="grey-prefix fas fa-pepper-hot prefix"></i>
-            {% endif %}   
-        </div>
-    </div>    
+    </div>
     
+    <div class="row">
+        <div class="col s12 dietary-requirements">
+            <div class="requirement">
+                {% if recipe.vegetarian == "on" %}
+                    Vegetarian<i class="green-prefix fas fa-carrot prefix"></i>
+                {% else %}    
+                    Not Vegetarian<i class="grey-prefix fas fa-carrot prefix"></i>
+                {% endif %}   
+            </div>
+            <div class="requirement">
+                {% if recipe.vegan == "on" %}
+                    Vegan<i class="green-prefix fas fa-leaf prefix"></i>
+                {% else %}    
+                    Not Vegan<i class="grey-prefix fas fa-leaf prefix"></i>
+                {% endif %}   
+            </div>
+            <div class="requirement">
+                {% if recipe.spicy == "on" %}
+                    Spicy<i class="red-prefix fas fa-pepper-hot prefix"></i>
+                {% else %}    
+                    Not Spicy<i class="grey-prefix fas fa-pepper-hot prefix"></i>
+                {% endif %}   
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

@@ -11,10 +11,13 @@
 
 .flashes {
     width: 50%;
+    padding: 5px;
+    margin-top: 5px;
     line-height: 1;
     background-color: #71B104;
     color: white;
-    border-radius: 20px;
+    border-radius: 25px;
+    text-transform: capitalize;
 }
 
 .prefix {
@@ -43,6 +46,35 @@
     object-fit: cover;
     background-color: white;
 }
+/*------------------------------------------register.html*/
+.register-title {
+    color: #24580C;
+}
+
+.register-btn {
+    background-color: #71B104;
+    border-radius: 10px;
+}
+
+.register-btn:hover {
+    background-color: #24580C;
+}
+
+
+/*------------------------------------------login.html*/
+.login-title {
+    color: #24580C;
+}
+
+.login-btn {
+    background-color: #71B104;
+    border-radius: 10px;
+}
+
+.login-btn:hover {
+    background-color: #24580C;
+}
+
 /*------------------------------------------recipies.html*/
 .recipe-title {
     color: #71B104;
@@ -127,16 +159,18 @@
     color: #24580C;
 }
 
-.edit-recipe-btn {
+.edit-recipe-btn,
+.add-recipe-btn {
     background-color: #71B104;
+}
+
+.edit-recipe-btn:hover,
+.add-recipe-btn:hover {
+    background-color: #24580C;
 }
 
 .add-recipe-title {
     color: #24580C;
-}
-
-.add-recipe-btn {
-    background-color: #71B104;
 }
 
 .ingredientsContainer {
@@ -243,6 +277,45 @@
     color: #24580C;
 }
 
+.your-recipes {
+    color: white;
+    background-color: #71B104;
+    padding: 20px;
+}
+
+/*------------------------------------------cuisines.html*/
+.cuisine-card-content {
+    background-color: #71B104;
+}
+
+.cuisine-card-title {
+    color: white;
+}
+
+.cuisine-btn {
+    background-color: #24580C;
+    margin: 2px;
+}
+
+.cuisine-btn:hover {
+    background-color: #71B104;
+}
+
+/*------------------------------------------edit cuisine.html/ add cuisine.html*/
+.add-cuisine-title, 
+.edit-cuisine-title {
+    color: #24580C;
+}
+
+.add-cuisine-btn,
+.edit-cuisine-btn {
+    background-color: #71B104;
+}
+
+.add-cuisine-btn:hover,
+.edit-cuisine-btn:hover {
+    background-color: #24580C;
+}
 
 /*------------------------------------------other*/
 .card-content em {
@@ -251,4 +324,13 @@
 
 .small-button {
     width: 49%;
+}
+
+
+/*------------------------------------------media queries*/
+@media only screen and (max-width: 768px) {
+    /*------------------------------------------navbar*/
+    .logo-image {
+        display: none;
+    }
 }

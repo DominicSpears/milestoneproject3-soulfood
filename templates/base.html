@@ -17,7 +17,7 @@
         <!-----------------------------Top navbar-->
         <nav class="nav-extended text-shadow">
             <div class="nav-wrapper">
-            <a href="{{ url_for('get_recipes') }}" class="brand-logo">Soul Food <i class="fas fa-utensils"></i></a>
+            <a href="{{ url_for('get_recipes') }}" class="brand-logo">Soul Food <i class="logo-image fas fa-utensils"></i></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
@@ -63,7 +63,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h3 class="center-align">{{ message }}</h3>
+                        <h6 class="center-align">{{ message }}</h6>
                     </div>
                 {% endfor %}
             {% endif %}

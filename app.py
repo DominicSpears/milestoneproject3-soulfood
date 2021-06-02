@@ -22,8 +22,8 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
-    allergens = mongo.db.allergens.find()
-    return render_template("recipes.html", recipes=recipes)
+    users = list(mongo.db.users.find())
+    return render_template("recipes.html", recipes=recipes, users=users)
 
 
 @app.route("/search", methods=["GET", "POST"])

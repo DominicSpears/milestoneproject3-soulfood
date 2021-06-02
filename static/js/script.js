@@ -9,6 +9,7 @@ $(document).ready(function () {
     methodFieldSetup();
 });
 
+//-----------------------------------Add_recipe.html
 function ingredientFieldSetup() {
     var ingredientField = $(".ingredient").length;
     $("#add_ingredient").on("click", function () {
@@ -45,25 +46,7 @@ function methodFieldSetup() {
     });
 }
 
-
- // ingredients list function
- // function ingrList() {
- //     let item = document.getElementById("ingrInput").nodeValue
- //     let text = document.createTextNode(item)
- //     let newItem = document.createElement("li")
- //     newItem.appendChild(text)
- //     document.getElementById("ingrList").appendChild(newItem)
- // }
-
- // metho function
- function methodList() {
-     let item = document.getElementById("method").value
-     let text = document.createTextNode(item)
-     let newItem = document.createElement("li")
-     newItem.appendChild(text)
-     document.getElementById("methodList").appendChild(newItem)
- }
-
+//-----------------------------------Add_recipe.html
 
 
 

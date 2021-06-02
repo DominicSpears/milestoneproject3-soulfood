@@ -32,11 +32,11 @@ def search():
     return render_template("recipes.html", recipes=recipes)
 
 
-#-------------------- register function
+# -------------------- register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        #-------------------- check if username exists
+        # -------------------- check if username exists
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -50,7 +50,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        #-------------------- new user into 'session' cookie
+        # -------------------- new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Congratulations - you are registered!")
         return redirect(url_for("profile", username=session["user"]))
@@ -58,40 +58,39 @@ def register():
     return render_template("register.html")
 
 
-#-------------------- login function
+# -------------------- login function
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        #-------------------- check if username exists in db
+        # -------------------- check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            #-------------------- ensure hashed password matches user input
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+            # -------------------- ensure hashed password matches user input
+            if check_password_hash(existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
-                #-------------------- invalid password match
+                # -------------------- invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            #-------------------- username doesn't exist
+            # -------------------- username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("login.html")
 
 
-#-------------------- profile function
+# -------------------- profile function
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    #-------------------- grab the session user's username from db
+    # -------------------- grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     recipes = list(mongo.db.recipes.find())
@@ -128,9 +127,9 @@ def add_recipe():
             "vegetarian": vegetarian,
             "vegan": vegan,
             "spicy": spicy,
-            "allergens": request.form.getlist("allergens"),
+            "allergens": request.form.getlist("allergens[]"),
             "ingredients": request.form.getlist("ingredients[]"),
-            "method": request.form.getlist("method"),
+            "method": request.form.getlist("method[]"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -276,5 +275,5 @@ def delete_cookware(cookware_id):
 # debug should = false when finalising project
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-        port=int(os.environ.get("PORT")),
-        debug=True)
+            port=int(os.environ.get("PORT")),
+            debug=True)

@@ -6,6 +6,7 @@ $(document).ready(function () {
     $('select').formSelect();
     $('.tooltipped').tooltip();
     ingredientFieldSetup();
+    methodFieldSetup();
 });
 
 function ingredientFieldSetup() {
@@ -22,6 +23,24 @@ function ingredientFieldSetup() {
             $(this).siblings(".new-ingredient:last").remove();
             /* ensure original ingredient line never gets deleted */
             ingredientField-= 1;
+        }
+    });
+}
+
+function methodFieldSetup() {
+    var methodField = $(".method").length;
+    $("#add_method").on("click", function () {
+        $("select").formSelect("destroy");
+        $(".new-method:first").clone().insertBefore("#add_method").find("input[type='text'], select, textarea").val("");
+        $("select").formSelect();
+        methodField += 1;
+    });
+    $("#remove_method").on("click", function () {
+        if (methodField > 1) {
+            /* only remove the :last item */
+            $(this).siblings(".new-method:last").remove();
+            /* ensure original method line never gets deleted */
+            methodField-= 1;
         }
     });
 }

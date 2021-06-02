@@ -210,18 +210,19 @@
     color: #24580C;
 }
 
-.ingredientsContainer {
-    width: 100%;
-    min-height: 100px;
-    background-color: white;
-    border: 2px solid #71B104;
+.add-title, 
+.edit-title {
+    color: #24580C;
 }
 
-.methodContainer {
-    width: 100%;
-    min-height: 100px;
-    background-color: white;
-    border: 2px solid #71B104;
+.add-btn, 
+.edit-btn {
+    background-color: #71B104;
+}
+
+.add-btn:hover,
+.edit-btn:hover {
+    background-color: #24580C;
 }
 
 /*------------------------------------------view recipe.html*/

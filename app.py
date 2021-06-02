@@ -22,6 +22,7 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
+    allergens = mongo.db.allergens.find()
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -137,7 +138,7 @@ def add_recipe():
         return redirect(url_for("get_recipes"))
 
     cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
-    allergens = mongo.db.allergens.find().sort("allergen", 1)
+    allergens = mongo.db.allergens.find().sort("allergens", 1)
     return render_template("add_recipe.html", cuisines=cuisines, allergens=allergens)
 
 
@@ -169,7 +170,7 @@ def edit_recipe(recipe_id):
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
-    allergens = mongo.db.allergens.find().sort("allergen", 1)
+    allergens = mongo.db.allergens.find().sort("allergens", 1)
     return render_template("edit_recipe.html", recipe=recipe, cuisines=cuisines, allergens=allergens)
 
 

@@ -121,7 +121,7 @@
             </div>
         </div>
         <!-----------------------------Allergen dropdown multiselect-->
-        <div class="row">
+        <!-- <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-notes-medical prefix"></i>
                 <select id="allergen" name="allergen" class="validate" multiple>
@@ -132,28 +132,26 @@
                 </select>
                 <label for="allergen">Allergens</label>
             </div>
-        </div>
+        </div> -->
         <!-----------------------------Ingredients list-->
         <div class="row">
-                <div class="col s10 offset-s1">
+                <div class="col s12">
                     <div class="card background">
                         <div class="card-content">
-                            <span class="card-title center">Ingredients</span>
+                            <span class="edit-title card-title center"><strong>Ingredients</strong></span>
 
                             <div class="addIngredient new-ingredient ingredient">
                                 <div class="input-field whites-4">
                                     {% for ingredient in recipe.ingredients %}
-                                    <textarea id="ingredients" placeholder="200g Butter" name="ingredients[]" class="materialize-textarea ingredients validate" minlength="3" maxlength="200" required>{{ ingredient }}</textarea>
-                                    <!--   <input id="ingredients" type="text" placeholder="200g Butter" name="ingredients[]" class="ingredients validate" minlength="1" maxlength="100" required>{{ recipe.ingredients }}
-                               -->
+                                    <textarea id="ingredients" placeholder="500g chicken, diced" name="ingredients[]" class="materialize-textarea ingredients validate" minlength="3" maxlength="200" required>{{ ingredient }}</textarea>
                                     {% endfor %}
                                 </div>
                             </div>
 
                             <!-- add button -->
-                            <a id="add_ingredient" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
+                            <a id="add_ingredient" class="edit-btn btn waves-effect waves-light"><i class="fas fa-plus"></i></a>
                             <!-- Remove button -->
-                            <a id="remove_ingredient" class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
+                            <a id="remove_ingredient" class="edit-btn btn waves-effect waves-light"><i class="fas fa-minus"></i></a>
                         </div>
                     </div>
                 </div>
@@ -161,10 +159,10 @@
 
         <!-----------------------------Method-->
         <div class="row">
-                <div class="col s10 offset-s1">
+                <div class="col s12">
                     <div class="card background">
                         <div class="card-content">
-                            <span class="card-title center">Method</span>
+                            <span class="edit-title card-title center"><strong>Method</strong></span>
                             <div class="addmethod method new-step">
                                 <div class="input-field whites-4">
                                     {% for step in recipe.method %}
@@ -174,9 +172,9 @@
                                 </div>
                             </div>
                             <!-- add button -->
-                            <a id="add_step" class="btn waves-effect waves-light light-green"><i class="material-icons">add</i></a>
+                            <a id="add_step" class="edit-btn btn waves-effect waves-light"><i class="fas fa-plus"></i></a>
                             <!-- removebutton -->
-                            <a id="remove_step" class="btn waves-effect waves-light red lighten-2"><i class="fas fa-minus"></i></a>
+                            <a id="remove_step" class="edit-btn btn waves-effect waves-light"><i class="fas fa-minus"></i></a>
                         </div>
                     </div>
                 </div>

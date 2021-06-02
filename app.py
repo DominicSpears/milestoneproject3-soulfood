@@ -159,9 +159,9 @@ def edit_recipe(recipe_id):
             "vegetarian": vegetarian,
             "vegan": vegan,
             "spicy": spicy,
-            "allergens": request.form.getlist("allergens"),
-            "ingredients": request.form.getlist("ingredients"),
-            "method": request.form.getlist("method"),
+            "allergens": request.form.getlist("allergens[]"),
+            "ingredients": request.form.getlist("ingredients[]"),
+            "method": request.form.getlist("method[]"),
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)

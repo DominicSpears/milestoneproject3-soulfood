@@ -30,7 +30,8 @@
                     <div class="home-card-image">
                         <img src="static/images/recipe-home.jpg" class="inner-home-image">
                     </div>
-                    <div class="home-card-content">A collection of recipes from all of our users. Located together in one convenient place.</div>
+                    <div class="home-card-content">We have recipes brought to us from users all over the world. 
+                        Search though our vast collection located together in one convenient place.</div>
                     <div>
                         <a href="{{ url_for('get_recipes') }}" class="home-btn btn-large text-shadow">
                             Explore our recipes
@@ -46,7 +47,11 @@
                     <div class="home-card-image">
                         <img src="static/images/user-home.webp" class="inner-home-image">
                     </div>
-                    <div class="home-card-content">Once you have registered, you will have access to your own profile page.</div>
+                    {% if session.user %}
+                        <div class="home-card-content">Access your own unique profile page. From here you can easily view, edit or delete your own recipes. </div>   
+                    {% else %}
+                        <div class="home-card-content">Oh no, you're not logged in! Login here to access your unique profile page and some exclusive features.</div>
+                    {% endif %}
                     <div>
                         {% if session.user %}
                         <a href="{{ url_for('profile', username=session['user']) }}" class="home-btn btn-large text-shadow">

@@ -78,12 +78,37 @@
 /*------------------------------------------home.html*/
 .home-card {
     background-color: #71B104;
+    color: white;
+    min-height: 450px;
+}
+
+.home-card-title {
+    padding: 10px;
 }
 
 .inner-home-image {
     width: 100%;
+    height: 200px;
 }
 
+.home-card-content {
+    padding: 10px;
+}
+
+.home-btn-container {
+    padding: 10px;
+}
+
+.home-btn {
+    background-color: white;
+    color: #24580C;
+    width: 90%;
+}
+
+.home-btn:hover {
+    background-color: #24580C;
+    color: white;
+}
 
 /*------------------------------------------register.html*/
 .register-title {
@@ -136,7 +161,6 @@
 
 .recipe-card {
     /* border: 2px solid #71B104; */
-    height: 500px;
     position: relative;
 }
 
@@ -158,6 +182,7 @@
 
 .recipe-link {
     width: 100%;
+    padding: 20px;
 }
 
 .view-recipe-link {

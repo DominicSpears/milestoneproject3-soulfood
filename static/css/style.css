@@ -74,6 +74,17 @@
     object-fit: cover;
     background-color: white;
 }
+
+/*------------------------------------------home.html*/
+.home-card {
+    background-color: #71B104;
+}
+
+.inner-home-image {
+    width: 100%;
+}
+
+
 /*------------------------------------------register.html*/
 .register-title {
     color: #24580C;

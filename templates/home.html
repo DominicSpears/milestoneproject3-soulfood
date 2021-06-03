@@ -16,14 +16,12 @@
                     </div>
                     <div class="home-card-content">We've partnered with Greenpan to bring you their latest range, the mayflower collection.</div>
                     <div>
-                        <a href="#" class="home-btn btn-large text-shadow">
-                            See the collection <i class="fas fa-link right"></i>
+                        <a href="{{ url_for('get_cookware') }}" class="home-btn btn-large text-shadow">
+                            See the collection
                         </a>
                     </div>
                 </div>
             </div>
-    </div>
-    <div class="row">
             <div class="col s12 m6 l4">
                 <div class="home-card card center-align">
                     <div class="home-card-image">
@@ -34,27 +32,31 @@
                     </div>
                     <div class="home-card-content">A collection of recipes from all of our users. Located together in one convenient place.</div>
                     <div>
-                        <a href="#" class="home-btn btn-large text-shadow">
-                            See the collection <i class="fas fa-link right"></i>
+                        <a href="{{ url_for('get_recipes') }}" class="home-btn btn-large text-shadow">
+                            Explore our recipes
                         </a>
                     </div>
                 </div>
             </div>
-    </div>
-    <div class="row">
             <div class="col s12 m6 l4">
                 <div class="home-card card center-align">
                     <div class="home-card-image">
                             <img src="static/images/user-home.webp" class="inner-home-image">
                         </div>
                     <div>
-                        <span class="home-card-title">Your profile</span>
+                        <span class="home-card-title">Your own profile page</span>
                     </div>
                     <div class="home-card-content">Once you have registered, you will have access to your own profile page.</div>
                     <div>
-                        <a href="#" class="home-btn btn-large text-shadow">
-                            See the collection <i class="fas fa-link right"></i>
+                        {% if session.user %}
+                        <a href="{{ url_for('profile', username=session['user']) }}" class="home-btn btn-large text-shadow">
+                            Visit your profile page
                         </a>
+                        {% else %}
+                        <a href="{{ url_for('login') }}" class="home-btn btn-large text-shadow">
+                            Login
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

@@ -52,7 +52,7 @@
     color: #24580C;
 }
 
-/*------------------------------------------navbar*/
+/*------------------------------------------header*/
 .nav-extended {
     background-color: #71B104;
     border-bottom: 2px solid #24580C;
@@ -67,7 +67,21 @@
     text-decoration: underline;    
 }
 
-/*------------------------------------------hero image*/
+/*------------------------------------------footer.html*/
+.page-footer {
+    background-color: #71B104;
+}
+
+.social-btn {
+    font-size: large;
+    padding: 0px 20px;
+    color: white;
+}
+
+.social-btn:hover {
+    color: #24580C;
+}
+/*------------------------------------------home.html*/
 .hero-image {
     width: 100%;
     max-height: 400px;
@@ -75,7 +89,6 @@
     background-color: white;
 }
 
-/*------------------------------------------home.html*/
 .home-card {
     background-color: #71B104;
     color: white;

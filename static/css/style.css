@@ -117,6 +117,7 @@
     background-color: white;
     color: #24580C;
     width: 90%;
+    font-size: 12px;
 }
 
 .home-btn:hover {
@@ -495,5 +496,9 @@
     /*------------------------------------------navbar*/
     .logo-image {
         display: none;
+    }
+
+    .social-btn {
+        padding: 0px 10px;
     }
 }

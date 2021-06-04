@@ -218,23 +218,7 @@
     background-color: #24580C;
 }
 
-.recipe-btns {
-    position: absolute;
-    bottom: 2px;
-    width: 100%;
-}
 
-.btn-small {
-    background-color: #71B104;
-}
-
-.btn-small:hover {
-    background-color: #24580C;
-}
-
-.small-button {
-    width: 49%;
-}
 
 .recipe-message {
     color: white;
@@ -445,6 +429,27 @@
     color: white;
     background-color: #71B104;
     padding: 20px;
+}
+
+.recipe-btns {
+    width: 100%;
+    background-color: #71B104;
+    padding: 0px 5px 15px 5px;
+}
+
+.btn-small {
+    background-color: white;
+    color: #24580C;
+    border: 2px solid #24580C;
+}
+
+.btn-small:hover {
+    background-color: #24580C;
+    color: white;
+}
+
+.small-button {
+    width: 45%;
 }
 
 /*------------------------------------------cuisines.html*/

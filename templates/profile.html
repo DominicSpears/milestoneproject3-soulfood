@@ -16,7 +16,7 @@
     </div>
 
     {% if recipes|length > 0 %}
-    <div class="row recipe-card">
+    <div class="row profile-recipe-card">
         {% for recipe in recipes %}
         {% if session.user|lower == recipe.created_by|lower %}
             <div class="col s12 m6 l4">

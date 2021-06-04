@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="recipe-title center-align">Latest Recipes</h3>
+<h3 class="recipe-title center-align">Recipes</h3>
 
 <div class="row recipe-search">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
@@ -22,7 +22,7 @@
 </div>
 
 {% if recipes|length > 0 %}
-    <div class="row recipe-card">
+    <div class="row recipe-card-container">
         {% for recipe in recipes %}
             <div class="col s12 m6 l4">
                 <div class="card center-align recipe-card">

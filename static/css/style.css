@@ -173,8 +173,8 @@
 }
 
 .recipe-card {
-    /* border: 2px solid #71B104; */
-    position: relative;
+    min-height: 510px;
+    background-color: #71B104;
 }
 
 .inner-image {
@@ -429,6 +429,10 @@
     color: white;
     background-color: #71B104;
     padding: 20px;
+}
+
+.profile-recipe-card {
+    color: white;
 }
 
 .recipe-btns {

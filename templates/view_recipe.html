@@ -2,8 +2,8 @@
 {% block content %}
 
     <div class="row">
-        <div class="col s12 center-align view-recipe-header">
-            <div class="view-recipe-info">
+        <div class="col s12">
+            <div class="col s12 m6 l8 view-recipe-info">
                 <div>
                     <h2 class="recipe-name text-shadow"><strong>{{ recipe.recipe_name }}</strong></h2>
                 </div>
@@ -13,43 +13,43 @@
                 <div>
                     <p class="recipe-creator"><em>by: {{ recipe.created_by }}</em></p>
                 </div>
-                <hr class="hr">
+                <hr>
                 <div>
                     <p>{{ recipe.recipe_description }}</p>
                 </div>            
             </div>
-            <div class="view-recipe-image-container">
+            <div class="col s12 m6 l4 view-recipe-image-container">
                 <img src="{{ recipe.recipe_image }}" class="view-recipe-image">
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row cooking-info-container">
         <div class="col s12 cooking-info">
-            <div class="cooking-info-left">Prep time: {{ recipe.prep_time }}</div>
-            <div class="cooking-info-right">Cook time: {{ recipe.cook_time }}</div>
-            <div class="cooking-info-left">Serving suggestion: {{ recipe.serves }}</div>
-            <div class="cooking-info-right">Calories per serving: {{ recipe.calories }}</div>
+            <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-user-clock prefix"></i> Prep time: {{ recipe.prep_time }} mins</div>
+            <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-users prefix"></i> Serving suggestion: {{ recipe.serves }} people</div>
+            <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-user-clock prefix"></i> Cook time: {{ recipe.cook_time }} mins</div>
+            <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-calculator prefix"></i> Calories per serving: {{ recipe.calories }} kcal</div>
         </div>
     </div>
     
-    <div class="row">
+    <div class="row dietary-requirements-container">
         <div class="col s12 dietary-requirements">
-            <div class="requirement">
+            <div class="col s12 l4 requirement center-align">
                 {% if recipe.vegetarian == "on" %}
                     Vegetarian<i class="green-prefix fas fa-carrot prefix"></i>
                 {% else %}    
                     Not Vegetarian<i class="grey-prefix fas fa-carrot prefix"></i>
                 {% endif %}   
             </div>
-            <div class="requirement">
+            <div class="col s12 l4 requirement center-align">
                 {% if recipe.vegan == "on" %}
                     Vegan<i class="green-prefix fas fa-leaf prefix"></i>
                 {% else %}    
                     Not Vegan<i class="grey-prefix fas fa-leaf prefix"></i>
                 {% endif %}   
             </div>
-            <div class="requirement">
+            <div class="col s12 l4 requirement center-align">
                 {% if recipe.spicy == "on" %}
                     Spicy<i class="red-prefix fas fa-pepper-hot prefix"></i>
                 {% else %}    
@@ -59,8 +59,9 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col s12">
+    <div class="row instructions-container">
+        <div class="col s12 instructions">
+        <div class="col s12 m4">
             <h5>Ingredients List</h5>
             <ul>
                 {% for ingredient in recipe.ingredients %}
@@ -69,12 +70,8 @@
                     </li>
                 {% endfor %}
             </ul>
-            <!-- <div>{{ recipe.ingredients }}</div> -->
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12">
+        <div class="col s12 m8 instructions">
             <h5>Method</h5>
             <ol id="preparation-list">
                 {% for step in recipe.method %}
@@ -83,7 +80,7 @@
                     </li>
                 {% endfor %}
             </ol>
-            <!-- <div>{{ recipe.method }}</div> -->
+        </div>
         </div>
     </div>
 

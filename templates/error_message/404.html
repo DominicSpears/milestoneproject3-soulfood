@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <div class="row center-align">
+        <div class="col s12">
+            <h5 class="error-message">Error 404</h5>
+            <div class="error-message-content">The page you were looking for was not found. It might have been removed or renamed.</div>
+            <div class="error-link">Return to the homepage<a href="{{ url_for('get_home') }}">Home</a></h5>div>
+        </div>
+    </div>
+</div>
+{% endblock %}

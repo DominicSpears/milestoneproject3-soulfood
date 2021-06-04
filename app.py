@@ -277,6 +277,12 @@ def delete_cookware(cookware_id):
     return redirect(url_for("get_cookware"))
 
 
+# ---------------------------------------Error message
+@app.errorhandler(404)
+def page_not_found(error):
+
+    return render_template("error_messages/404.html")
+
 # debug should = false when finalising project
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

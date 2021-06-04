@@ -10,6 +10,24 @@
         colour to your kitchen and help you bring some amazing recepes to life! 
     </p>
 
+    <div class="cookware-benefits">
+            <div class="benefit">
+                <h4 class="benefit-title">Healthy non-stick coating</h4>
+                <p>The Thermolon ceramic non-stick coating is fully 
+                PFAS-free and doesn’t contain harmful chemical substances.</p>
+            </div>
+            <div class="benefit">
+                <h4 class="benefit-title">Unique modern design</h4>
+                <p>The special colour and wooden stay-cool handles give 
+                the collection a Scandinavian look & feel.</p>
+            </div>
+            <div class="benefit">
+                <h4 class="benefit-title">High quality materials</h4>
+                <p>Make the most of your cooking skills thanks to the 
+                high-quality aluminium which heats up quickly and evenly.</p>
+            </div>
+    </div>
+
     {% if session.user|lower == "admin"|lower %}
         <div class="row">
             <div class="col s12 center-align">
@@ -48,23 +66,5 @@
             </div>
         {% endfor %}
     </div>
-
-    <div class="cookware-benefits">
-            <div class="benefit">
-                <h4 class="benefit-title">Healthy non-stick coating</h4>
-                <p>The Thermolon ceramic non-stick coating is fully 
-                PFAS-free and doesn’t contain harmful chemical substances.</p>
-            </div>
-            <div class="benefit">
-                <h4 class="benefit-title">Unique modern design</h4>
-                <p>The special colour and wooden stay-cool handles give 
-                the collection a Scandinavian look & feel.</p>
-            </div>
-            <div class="benefit">
-                <h4 class="benefit-title">High quality materials</h4>
-                <p>Make the most of your cooking skills thanks to the 
-                high-quality aluminium which heats up quickly and evenly.</p>
-            </div>
-        </div>
 
 {% endblock %}

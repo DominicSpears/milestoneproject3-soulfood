@@ -70,6 +70,7 @@
 /*------------------------------------------footer.html*/
 .page-footer {
     background-color: #71B104;
+    margin-top: 100px;
 }
 
 .social-btn {
@@ -87,6 +88,7 @@
     max-height: 400px;
     object-fit: cover;
     background-color: white;
+    margin-bottom: 70px;
 }
 
 .home-card {
@@ -168,8 +170,7 @@
 }
 
 .search-btn:hover {
-    color: #24580C;
-    background-color: white;
+    background-color: #71B104;
 }
 
 .recipe-card {
@@ -189,6 +190,11 @@
     text-transform: capitalize;
 }
 
+.card-content {
+    background-color: #71B104;
+    color: white;
+}
+
 .card-content em {
     text-transform: capitalize;
 }
@@ -196,11 +202,12 @@
 .recipe-link {
     width: 100%;
     padding: 20px;
+    background-color: #71B104;
 }
 
 .view-recipe-link {
     width: 90%;
-    border: 2px solid #71B104;
+    border: 2px solid #24580C;
     border-radius: 5px;
     background-color: white;
     font-size: 15px;
@@ -209,7 +216,7 @@
 
 .view-recipe-link:hover {
     color: white;
-    background-color: #71B104;
+    background-color: #24580C;
 }
 
 .recipe-btns {
@@ -343,13 +350,13 @@
 
 .cookware-message {
     padding: 25px 25px 25px 50px;
-    font-size: 20px;
+    font-size: 15px;
     color: #24580C;
     border-bottom: 2px solid #71B104;
 }
 
 .add-cookware-btn {
-    margin: 50px 50px 0px 50px;
+    margin: 50px 0px 0px 0px;
     background-color: #24580C;
 }
 
@@ -373,11 +380,11 @@
 }
 
 .cookware-btn {
-    background-color: #24580C;
+    background-color: #71B104;
 }
 
 .cookware-btn:hover {
-    background-color: #71B104;
+    background-color: #24580C;
 }
 
 

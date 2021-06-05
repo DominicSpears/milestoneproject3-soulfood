@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">Manage Users</h3>
+
+    <div class="row">
+        <div class="col s12 center-align">
+            <a href="#" class="user-btn btn-large text-shadow">
+                Add User <i class="fas fa-plus-square right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for  in  %}
+            <div class="col s12 m4 l3">
+                <div class="user-card card center-align">
+                    <div class="user-card-content card-content white-text">
+                        <h5 class="user-card-title card-title"><strong>#</strong></h5>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" class="user-btn btn">Edit</a>
+                        <a href="#" class="user-btn btn">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

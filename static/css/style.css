@@ -513,6 +513,12 @@
 }
 
 @media only screen and (max-width: 600px) {
+    /*------------------------------------------home.html*/
+    .hero-image {
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
     /*------------------------------------------recipes.html*/
     .search-item {
         display: block;

@@ -51,6 +51,7 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
+            "status": "user",
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
@@ -295,4 +296,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-

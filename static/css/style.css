@@ -467,21 +467,25 @@
     width: 45%;
 }
 
-/*------------------------------------------cuisines.html*/
-.cuisine-card-content {
+/*------------------------------------------cuisines.html/user.html*/
+.cuisine-card-content,
+.user-card-content {
     background-color: #71B104;
 }
 
-.cuisine-card-title {
+.cuisine-card-title,
+.user-card-title {
     color: white;
 }
 
-.cuisine-btn {
+.cuisine-btn,
+.user-btn {
     background-color: #24580C;
     margin: 2px;
 }
 
-.cuisine-btn:hover {
+.cuisine-btn:hover,
+.user-btn:hover {
     background-color: #71B104;
 }
 

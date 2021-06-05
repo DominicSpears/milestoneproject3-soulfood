@@ -12,11 +12,12 @@
     </div>
 
     <div class="row">
-        {% for  in  %}
+        {% for user in users %}
             <div class="col s12 m4 l3">
                 <div class="user-card card center-align">
                     <div class="user-card-content card-content white-text">
-                        <h5 class="user-card-title card-title"><strong>#</strong></h5>
+                        <h5 class="user-card-title card-title"><strong>{{ user.username }}</strong></h5>
+                        <h6>{{ user.status }}</h6>
                     </div>
                     <div class="card-action">
                         <a href="#" class="user-btn btn">Edit</a>

@@ -13,8 +13,12 @@
     <title>Recipe Book</title>
 </head>
 <body>
-
     <header>
+        <ul id="dropdown1" class="dropdown-content">
+            <li class="dropdown-item"><a class="white-text" href="{{ url_for('get_cuisines') }}">Cuisines</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-item"><a class="white-text" href="#!">Users</a></li>
+        </ul>
         <!-----------------------------Top navbar-->
         <nav class="nav-extended text-shadow">
             <div class="nav-wrapper">
@@ -28,7 +32,7 @@
                     <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                     <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
                     {% if session.user|lower == "admin"|lower %}
-                        <li><a href="{{ url_for('get_cuisines') }}">Manage</a></li>
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Manage</a></li>
                     {% endif %}
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}

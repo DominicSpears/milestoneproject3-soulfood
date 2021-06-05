@@ -2,15 +2,14 @@ $(document).ready(function () {
     $(".sidenav").sidenav({
         edge: "right"
     });
-    $(document).ready(function(){
     $('.modal').modal();
-    });
-
+    $(".dropdown-trigger").dropdown();
     $('select').formSelect();
     $('.tooltipped').tooltip();
     ingredientFieldSetup();
     methodFieldSetup();
 });
+
 
 //-----------------------------------Add_recipe.html
 function ingredientFieldSetup() {

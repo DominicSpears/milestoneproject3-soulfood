@@ -58,6 +58,15 @@
     box-shadow: none;
 }
 
+.dropdown-content {
+    background-color: #71B104;
+}
+
+/* .dropdown-item a {
+    color: white;
+    background-color: red;
+} */
+
 .brand-logo {
     margin-left: 10px;
 }

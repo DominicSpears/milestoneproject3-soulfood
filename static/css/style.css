@@ -351,11 +351,11 @@
 
 .add-cookware-btn {
     margin: 50px 0px 0px 0px;
-    background-color: #24580C;
+    background-color: #71B104;
 }
 
 .add-cookware-btn:hover {
-    background-color: #71B104;
+    background-color: #24580C;
 }
 
 .cookware-card {
@@ -384,10 +384,11 @@
 
 .cookware-benefits {
     width: 100%;
-    padding-bottom: 20px;
+    padding: 5px;
 }
 
 .benefit {
+    border: 5px solid white;
     background-color: #71B104;
     width: calc(33.3% - 3px);
     /* min-height: 300px; */
@@ -493,12 +494,31 @@
 
 /*------------------------------------------media queries*/
 @media only screen and (max-width: 768px) {
-    /*------------------------------------------navbar*/
+    /*------------------------------------------base.html*/
     .logo-image {
         display: none;
     }
 
     .social-btn {
         padding: 0px 10px;
+    }
+
+    /*------------------------------------------cookware.html*/
+    .cookware-message {
+        font-size: 12px;
+    }
+
+    /*------------------------------------------recipes.html*/
+    
+}
+
+@media only screen and (max-width: 600px) {
+    /*------------------------------------------recipes.html*/
+    .search-item {
+        display: block;
+    }
+    
+    .recipe-search {
+        padding: 10px;
     }
 }

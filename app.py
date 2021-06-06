@@ -238,6 +238,23 @@ def get_users():
     return render_template("users.html", users=users)
 
 
+@app.route("/edit_user/<user_id>", methods=["GET", "POST"])
+def edit_user(user_id):
+    if request.method == "POST":
+        is_admin = "on" if request.form.get("is_admin") else "off"
+        add = {
+            "username": request.form.get("username"),
+            "is_admin": is_admin,
+            "password": request.form.get("password"),
+        }
+        mongo.db.users.update({"_id": ObjectId(user_id)}, add)
+        flash("User Successfully Updated")
+        return redirect(url_for("get_users"))
+
+    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    return render_template("edit_user.html", user=user)
+
+
 @app.route("/get_cookware")
 def get_cookware():
     cookware = list(mongo.db.cookware.find().sort("cookware_name", 1))

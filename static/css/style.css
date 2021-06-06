@@ -489,19 +489,22 @@
     background-color: #71B104;
 }
 
-/*------------------------------------------edit cuisine.html/ add cuisine.html*/
+/*------------------------------------------edit user.html/ edit cuisine.html/ add cuisine.html*/
 .add-cuisine-title, 
-.edit-cuisine-title {
+.edit-cuisine-title,
+.edit-user-title {
     color: #24580C;
 }
 
 .add-cuisine-btn,
-.edit-cuisine-btn {
+.edit-cuisine-btn, 
+.edit-user-btn {
     background-color: #71B104;
 }
 
 .add-cuisine-btn:hover,
-.edit-cuisine-btn:hover {
+.edit-cuisine-btn:hover,
+.edit-user-btn:hover {
     background-color: #24580C;
 }
 

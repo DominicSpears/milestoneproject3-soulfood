@@ -255,6 +255,13 @@ def edit_user(user_id):
     return render_template("edit_user.html", user=user)
 
 
+@app.route("/delete_user/<user_id>")
+def delete_user(user_id):
+    mongo.db.users.remove({"_id": ObjectId(user_id)})
+    flash("User Successfully Deleted")
+    return redirect(url_for("get_users"))
+
+
 @app.route("/get_cookware")
 def get_cookware():
     cookware = list(mongo.db.cookware.find().sort("cookware_name", 1))

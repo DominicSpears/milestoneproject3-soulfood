@@ -25,7 +25,7 @@ def get_home():
 
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = list(mongo.db.recipes.find())
+    recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
     users = list(mongo.db.users.find())
     return render_template("recipes.html", recipes=recipes, users=users)
 

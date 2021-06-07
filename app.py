@@ -245,6 +245,7 @@ def edit_user(user_id):
         add = {
             "username": request.form.get("username"),
             "is_admin": is_admin,
+# password not working, when editing a user the password will not deleted or come back as null
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.update({"_id": ObjectId(user_id)}, add)

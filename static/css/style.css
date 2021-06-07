@@ -28,6 +28,14 @@
     text-transform: capitalize;
 }
 
+.modal-close {
+    background-color: #f44336;
+}
+
+.modal-close:hover {
+    background-color: darkred;
+}
+
 /* label color */
 .input-field label {
     color: #24580C;

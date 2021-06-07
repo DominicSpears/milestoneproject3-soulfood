@@ -228,8 +228,6 @@
     background-color: #24580C;
 }
 
-
-
 .recipe-message {
     color: white;
     background-color: #24580C;
@@ -238,6 +236,10 @@
     height: 33px;
     font-size: 15px;
     padding-top: 3px;
+}
+
+.modal-text {
+    color: black;
 }
 
 /*------------------------------------------edit recipe.html/ add recipe.html*/

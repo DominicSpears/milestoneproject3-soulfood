@@ -17,10 +17,10 @@
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                     <a class="modal-trigger add-cuisine-btn btn-large waves-effect waves-light" href="#modal1">Add cuisine</a>
-                    <!-- <button type="submit" class="add-cuisine-btn btn-large text-shadow">
-                        Add Cuisine <i class="fas fa-plus-square right"></i>
-                    </button> -->
+                    <a href="{{ url_for('get_cuisines') }}" class="edit-cookware-btn btn-large text-shaddow">
+                    Cancel <i class="fas fa-times-circle right"></i>
+                </a>
+                    <a class="modal-trigger add-cuisine-btn btn-large waves-effect waves-light" href="#modal1">Add cuisine</a>
                 </div>
             </div>
             <!-----------------------------Modal body-->

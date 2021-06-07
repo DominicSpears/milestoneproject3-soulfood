@@ -245,7 +245,7 @@ def edit_user(user_id):
         add = {
             "username": request.form.get("username"),
             "is_admin": is_admin,
-            "password": request.form.get("password"),
+            "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.update({"_id": ObjectId(user_id)}, add)
         flash("User Successfully Updated")

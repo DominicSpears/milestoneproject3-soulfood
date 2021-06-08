@@ -19,20 +19,17 @@
   * Result: pass
 
 ### Validator Tests
-
-#### index.html
-  * W3C HTML Validator - 
-  * Chrome Lighthouse - 100, 100, 100, 89.
-  * ![Lighthouse assessment](assets/images/indexhtml.png)
+#### All html Pages
+  * W3C HTML Validator - Other than errors due to jinja syntax, no issues.
 
 #### style.css
-  * W3C CSS Validator - 
+  * W3C CSS Validator - Congratulations, no error found!
 
-#### index2.js
-  * JSHint Code Tester - 
+#### script.js
+  * JSHint Code Tester - There are 7 functions in this file. no warnings or undefined variables.
 
 #### app.py
-  * PEP8 Python Validator - 
+  * PEP8 Python Validator - All right.
 
 ### User Story Tests
 

@@ -23,6 +23,7 @@ mongo = PyMongo(app)
 def get_home():
     return render_template("home.html")
 
+
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
@@ -74,7 +75,8 @@ def login():
 
         if existing_user:
             # -------------------- ensure hashed password matches user input
-            if check_password_hash(existing_user["password"], request.form.get("password")):
+            if check_password_hash(existing_user["password"],
+                                   request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
                     request.form.get("username")))
@@ -102,7 +104,8 @@ def profile(username):
     recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
 
     if session["user"]:
-        return render_template("profile.html", username=username, recipes=recipes)
+        return render_template("profile.html",
+                               username=username, recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -144,7 +147,8 @@ def add_recipe():
 
     cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
     allergens = mongo.db.allergens.find().sort("allergens", 1)
-    return render_template("add_recipe.html", cuisines=cuisines, allergens=allergens)
+    return render_template("add_recipe.html", cuisines=cuisines,
+                           allergens=allergens)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -176,7 +180,8 @@ def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
     allergens = mongo.db.allergens.find().sort("allergens", 1)
-    return render_template("edit_recipe.html", recipe=recipe, cuisines=cuisines, allergens=allergens)
+    return render_template("edit_recipe.html", recipe=recipe,
+                           cuisines=cuisines, allergens=allergens)
 
 
 @app.route("/view_recipe/<recipe_id>")
@@ -245,7 +250,6 @@ def edit_user(user_id):
         add = {
             "username": request.form.get("username"),
             "is_admin": is_admin,
-# password not working, when editing a user the password will not deleted or come back as null
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.update({"_id": ObjectId(user_id)}, add)

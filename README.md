@@ -10,8 +10,8 @@ Follow the link to [Soul Food](link needed)
 ### Contents
 
 1. [Introduction](#intro) 
-2. [Technologies](#tech) 
-3. [UX](#ux)
+2. [UX](#ux)
+3. [Technologies](#tech) 
 4. [Features](#feat)
 5. [Testing](#test)
 6. [Deployment](#deploy)
@@ -27,6 +27,73 @@ a list of recipes as well as create, edit and delete their own. Each recipe has 
 to clearly display the information provided, including an ingredients list, method and various
 dietary requirements. Also each user has access to their own profile page, a convenient place 
 to find all of the recipes that they have created.
+___
+
+<a name="ux"></a>
+### UX
+
+### Strategy Plane
+#### Potential Users
+
+Users
+* Experienced with cooking 
+* New to cooking
+* Not cooking, looking for cookware range
+
+### Scope Plane
+#### Features specific for users
+
+Experienced with cooking
+* a wide range of recipes and cuisines
+* an easy way to search recipies
+* indicators if a meal is vegetarian, vegan, spicy
+* calorie count per serving
+
+New to cooking
+* ingredients list with clear pairs amounts 
+* easy to follow steps
+* a picture of each dish
+* a clear indication of prep time, cook time and servings
+
+Not cooking, looking for cookware range
+* dedicated page for cookware
+* clear product images
+* links to store/purchase option
+* benefits list of specific cookware range
+
+### Structure Plane
+#### User stories
+
+Experienced with cooking:
+1.	As someone with cooking experience, I am looking for a wide range of recipes from a number of varying cuisines. 
+2.	As someone with cooking experience, I want a search bar or filter to narrow down the available results and make it easier to find specific recipes.
+3.	As someone with cooking experience, I want to know if a meal is suitable for vegetarians, vegans or has any other notable traits.
+4.	As someone with cooking experience, I am very conscious about what I eat and want to know how many calories are contained in each serving. 
+
+New to cooking
+1.	As someone new to cooking, I want an ingredients list that clearly states each ingredient paired with the amount required.
+2.	As someone new to cooking, I want a method that is easy to read and concise, with each step being easy to follow along with. 
+3.	As someone new to cooking, I want a picture of each dish to be included with its recipe, so that I can see the completed dish before cooking.
+4.	As someone new to cooking, I want to know vital information about each recipe such as prep time, cook time and serving suggestions.
+
+
+Not cooking, looking for cookware range
+1.	As someone researching cookware specifically, I want a page dedicated to only cookware, without any recipes present.
+2.	As someone researching cookware specifically, I want clear images of each piece of cookware.
+3.	As someone researching cookware specifically, I want there to be links to a store at which I can purchase the desired cookware.
+4.	As someone researching cookware specifically, want to know the benefits to the cookware range as a whole e.g. health benefits, materials used.
+
+### Skeleton Plane
+#### Wireframes
+
+[Main Page Wireframe](assets/wireframes/MP2-mainpage-med.png)
+
+### Surface Plane
+
+* Background - White/off white e.g. #FFF/#F7F6FA
+* Colours/font colours – White/off white e.g. #FFF/#F7F6FA – plain colour to complement the brighter, 
+focus colours without overwhelming, #447B8C blue – colour of pans in cookware set, #71B104/ #24580C green
+ – colour of some foods, herbs, vegetables
 ___
 
 <a name="tech"></a>
@@ -79,78 +146,6 @@ Technologies used to create the site:
 #### Hosting 
 * [Heroku](https://www.heroku.com/home)
   * the project uses **heroku** as to deploy, manage, and scale the site.
-___
-
-<a name="ux"></a>
-### UX
-
-### Strategy Plane
-
-#### Potential Users
-
-Users
-* Experienced with cooking 
-* New to cooking
-* Not cooking, looking for cookware range
-
-### Scope Plane
-
-#### Features specific for users
-
-Experienced with cooking
-* a wide range of recipes and cuisines
-* an easy way to search recipies
-* indicators if a meal is vegetarian, vegan, spicy
-* calorie count per serving
-
-New to cooking
-* ingredients list with clear pairs amounts 
-* easy to follow steps
-* a picture of each dish
-* a clear indication of prep time, cook time and servings
-
-Not cooking, looking for cookware range
-* dedicated page for cookware
-* clear product images
-* links to store/purchase option
-* benefits list of specific cookware range
-
-### Structure Plane
-
-#### User stories
-
-Experienced with cooking:
-1.	As someone with cooking experience, I am looking for a wide range of recipes from a number of varying cuisines. 
-2.	As someone with cooking experience, I want a search bar or filter to narrow down the available results and make it easier to find specific recipes.
-3.	As someone with cooking experience, I want to know if a meal is suitable for vegetarians, vegans or has any other notable traits.
-4.	As someone with cooking experience, I am very conscious about what I eat and want to know how many calories are contained in each serving. 
-
-New to cooking
-1.	As someone new to cooking, I want an ingredients list that clearly states each ingredient paired with the amount required.
-2.	As someone new to cooking, I want a method that is easy to read and concise, with each step being easy to follow along with. 
-3.	As someone new to cooking, I want a picture of each dish to be included with its recipe, so that I can see the completed dish before cooking.
-4.	As someone new to cooking, I want to know vital information about each recipe such as prep time, cook time and serving suggestions.
-
-
-Not cooking, looking for cookware range
-1.	As someone researching cookware specifically, I want a page dedicated to only cookware, without any recipes present.
-2.	As someone researching cookware specifically, I want clear images of each piece of cookware.
-3.	As someone researching cookware specifically, I want there to be links to a store at which I can purchase the desired cookware.
-4.	As someone researching cookware specifically, want to know the benefits to the cookware range as a whole e.g. health benefits, materials used.
-
-### Skeleton Plane
-
-#### Wireframes
-
-[Main Page Wireframe](assets/wireframes/MP2-mainpage-med.png)
-
-### Surface Plane
-
-* Background - White/off white e.g. #FFF/#F7F6FA
-* Colours/font colours – White/off white e.g. #FFF/#F7F6FA – plain colour to complement the brighter, 
-focus colours without overwhelming, #447B8C blue – colour of pans in cookware set, #71B104/ #24580C green
- – colour of some foods, herbs, vegetables
-
 ___
 
 <a name="feat"></a>

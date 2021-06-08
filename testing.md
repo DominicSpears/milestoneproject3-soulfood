@@ -49,13 +49,6 @@
   * Each delete confirmation modal does not target the correct item. The 
   first item (e.g. card) on the page, located in the top left corner, is 
   deleted instead.
-  
-### Manual Testing
-
-1. Start Game
-  *Click start game on screen
-  * Closes start modal and begins countdown timer
-  * Result: pass
 
 ### Validator Tests
 #### All html Pages
@@ -70,11 +63,63 @@
 #### app.py
   * PEP8 Python Validator - All right.
 
-### User Story Tests
+### Manual Testing
 
+1. Register
+  * New users add a username and password to the input fields
+  * Username and password(hashed) saved in the database, user lgged in to site
+  * Result: pass
+
+2. Existing user button
+  * User with existing details clicks login button at the bottom of the page
+  * User taken to login page to sign in
+  * Result: pass
+
+3. Register flash message
+  * New users adds a username and password and confirms the register
+  * Message of successful registry flashes up
+  * Result: pass
+  
+4. Login
+  * Existing users add a username and password to the input fields
+  * User logged into site, to the profile page
+  * Result: pass
+
+5. New user button
+  * New user clicks register account button at the bottom of the page
+  * User taken to register page to register
+  * Result: pass
+
+6. Login flash message
+  * User adds a username and password and confirms login
+  * Message of successful login flashes up
+  * Result: pass
+
+7. Navbar
+  * Click on each button in the bar
+  * Takes the user to the appropriate page
+  * Result: pass
+
+7. Restricted navbar access (logged out)
+  * When logged out, the user cannot access all pages/buttons
+  * Only home, cookare, recipes, login and register available
+  * Result: pass
+
+7. Restricted navbar access (user logged in)
+  * When logged in, the user cannot access all pages/buttons
+  * Only home, cookare, recipes, add recipe, profile ad log out available
+  * Result: pass
+
+7. Unrestricted navbar access (Admin logged in)
+  * When logged in, the administrator can access all pages/buttons
+  * All pages/buttons available e.g. manage
+  * Result: pass
+
+
+
+### User Story Tests
 #### Experienced with console gaming:
 Experienced with PC Gaming
 1. As an experianced gamer, I want in-depth instructions to explain game mechanics.
   * To address this I added extra sections to the instruction modal with difficulty and reset explained.
   * ![User Story 1](assets/userstory/us1.png)
-

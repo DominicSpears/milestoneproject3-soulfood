@@ -106,71 +106,71 @@
   * Takes the user to the appropriate page
   * Result: pass
 
-7. Restricted navbar access (logged out)
+8. Restricted navbar access (logged out)
   * When logged out, the user cannot access all pages/buttons
   * Only home, cookare, recipes, login and register available
   * Result: pass
 
-7. Restricted navbar access (user logged in)
+9. Restricted navbar access (user logged in)
   * When logged in, the user cannot access all pages/buttons
   * Only home, cookare, recipes, add recipe, profile ad log out available
   * Result: pass
 
-7. Unrestricted navbar access (Admin logged in)
+10. Unrestricted navbar access (Admin logged in)
   * When logged in, the administrator can access all pages/buttons
   * All pages/buttons available e.g. manage
   * Result: pass
 
-7. Footer
+11. Footer
   * Click social media buttons
   * Each button creates a new tab with the appropriate website
   * Result: pass
 
-7. Homepage
+12. Homepage
   * Click any of the website feature links
   * The corresponding page appears
   * Result: pass
 
-7. Homepage profile button
+13. Homepage profile button
   * When logged in, the button will take you to you profile page
   * When logged out, the button will take you to the login page
   * Result: pass
 
-7. Cookware
+14. Cookware
   * Display all cookware items present in the database
   * Result: pass
 
-7. Add cookware
+15. Add cookware
   * Click button (available to admin) to bring up the add cookware page
   * Input all required fields and confirm to add an item to the database
   * Click cancel to stop and return to cookware page
   * Result: pass
 
-7. Recipes
+16. Recipes
   * Display all recipes present in the database
   * Result: pass
 
-7. Recipe search
+17. Recipe search
   * Enter enquiry into the search bar and click search button
   * Shows recipes based on recipe name or cuisine name
   * Result: pass
 
-7. Recipe search reset
+18. Recipe search reset
   * Click on the reset button in the search bar
   * Shows all recipes in the database
   * Result: pass
 
-7. View recipe 
+19. View recipe 
   * Click full recipe button  
   * Reveals dedicated recipe page
   * Result: pass
 
-7. Recipe Page
+20. Recipe Page
   * Shows information about the selected recipe
   * Vegetarian/vegan/spicy indicators differ depending on the status of that feature
   * Result: pass
 
-7. Add recipe 
+21. Add recipe 
   * Input fields are all required
   * Cuisine dropdown active, contains all cuisines in the database 
   * Can add or remove items to the ingregients/method sections
@@ -178,7 +178,7 @@
   * Click cancel to return to recipe page
   * Result: pass
 
-7. Profile page 
+22. Profile page 
   * Shows all recipes created by the user
   * If user is admin, all recipes are shown 
   * Full recipe button links to dedicated page
@@ -186,43 +186,43 @@
   * Delete button removes recipe from database
   * Result: pass
 
-7. Edit recipe 
+23. Edit recipe 
   * Input fields fill with current information about the recipe
   * Click edit recipe button confirms changes
   * Click cancel button to return to profile page
   * Result: pass
 
-7. Cuisines
+24. Cuisines
   * Display all cuisines present in the database
   * Click edit reveals edit cuisine page
   * Click delete to remove cuisine from database
   * Result: pass
 
-7. Add cuisine
+25. Add cuisine
   * Click button to bring up the add cuisine page
   * Input all required fields and confirm to add an item to the database
   * Click cancel to stop and return to cuisine page
   * Result: pass
 
-7. Edit cuisine 
+26. Edit cuisine 
   * Input field fills with current information about the cuisine
   * Click edit cuisine button confirms changes
   * Click cancel button to return to cuisine page
   * Result: pass
 
-7. Users
+27. Users
   * Display all users present in the database
   * Click edit reveals edit user page
   * Click delete to remove user from database
   * Result: pass
 
-7. Edit user 
+28. Edit user 
   * Input fields fill with current information about the user
   * Click edit user button confirms changes
   * Click cancel button to return to user page
   * Result: pass
 
-7. Log out 
+29. Log out 
   * Click log out button
   * Return user to log in page
   * Removes user from session cookie

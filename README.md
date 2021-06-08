@@ -205,6 +205,7 @@ ___
 
 ##### Images
 * Recipe images were taken from the BBC food website.
+* Cookware images were taken from the Greenpan website, mayflower collection.
 * All other images were located via bing images, searched under "free to share and use" licences.
 
 ##### Content
@@ -220,4 +221,6 @@ General reference, inspiration.
 
 * Inspired by [Code Institute Backend Mini Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/054c3813e82e4195b5a4d8cd8a99ebaa/)
 General reference, inspiration.
+
+* Guido Cecilio (mentor) for offering guidance and support.
 ___

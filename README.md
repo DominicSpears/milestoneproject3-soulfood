@@ -34,18 +34,51 @@ ___
 
 Technologies used to create the site:
 
+#### Languages
 * HTML 
   * The project uses **HTML 5** to create the basic layout and site structure.
 * CSS
   * The project uses **CSS 3** to style the html to be aesthetically pleasing and responsive.
 * JavaScript
   * The project uses **JavaScript** to provide an interactive experience and functionality.. 
+* Python
+  * The project uses **Python3** to link the main site and the database. 
+
+#### Database
+* [Mongo DB](https://www.mongodb.com/)
+  * the project uses **mongo db** as a database provider to store various forms of information.
+
+#### Libraries
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+  * the project uses **flask** as an application framework to aid the creation of complex applications.
+* [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+  * the project uses **jinja v3.0.1** as a templating engine to allow writing code similar to python syntax.
+* [PyMongo](https://pypi.org/project/pymongo/)
+  * the project uses **pymongo v3.11.4** to connect python code to the mongo database.
+* [Materialize](https://flask.palletsprojects.com/en/2.0.x/)
+  * the project uses **materialize** as a responsive front-end framework based on material design.
 * [Font Awesome](https://fontawesome.com/) 
   * The project uses **Font Awesome Version 5.15.1** to add icons that aid aesthetics or provide social media links.
 * [Google Fonts](https://fonts.google.com/)
   * the project uses **google fonts** as a source for its extra fonts.
+
+#### Tools
+* [Git](https://git-scm.com/)
+  * The project uses **git** as version control.
+* [Github](https://github.com/)
+  * The project uses **Github** to provide hosting for the development process.
+* [Gitpod](https://www.gitpod.io/)
+  * The project uses **Gitpod** as a development environment in the browser.
 * [Color Dropper](https://chrome.google.com/webstore/detail/color-dropper/cbagleaaaocejmdeichhdkmjebpljckh)
-  * The prject uses the **color dropper** (a Chrome add on) to help select colors.
+  * The project uses the **color dropper** (a Chrome add on) to help select colors.
+* [Balsamiq](https://flask.palletsprojects.com/en/2.0.x/)
+  * the project uses **balsamiq** as a wireframing tool to plan the layout of the site.
+* [Am I responsive]()
+  * the project uses **am i responsive** to create the readme hero image.
+
+#### Hosting 
+* [Heroku](https://www.heroku.com/home)
+  * the project uses **heroku** as to deploy, manage, and scale the site.
 ___
 
 <a name="ux"></a>

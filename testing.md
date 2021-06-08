@@ -26,6 +26,12 @@
   * To solve this I added the initialsation jquery code inside the document.ready 
   function.
 
+5. Search recipes
+  * After seaching through the recipes, the page would reset at the top, meaning 
+  that the user needed to scroll dow to see their search results.
+  * To solve this I created a dedicated recipe page with the searchbar at the top
+  of the page.
+
 #### Remaining Bugs
 
 1. Edit recipe ingredients/ method
@@ -115,7 +121,112 @@
   * All pages/buttons available e.g. manage
   * Result: pass
 
+7. Footer
+  * Click social media buttons
+  * Each button creates a new tab with the appropriate website
+  * Result: pass
 
+7. Homepage
+  * Click any of the website feature links
+  * The corresponding page appears
+  * Result: pass
+
+7. Homepage profile button
+  * When logged in, the button will take you to you profile page
+  * When logged out, the button will take you to the login page
+  * Result: pass
+
+7. Cookware
+  * Display all cookware items present in the database
+  * Result: pass
+
+7. Add cookware
+  * Click button (available to admin) to bring up the add cookware page
+  * Input all required fields and confirm to add an item to the database
+  * Click cancel to stop and return to cookware page
+  * Result: pass
+
+7. Recipes
+  * Display all recipes present in the database
+  * Result: pass
+
+7. Recipe search
+  * Enter enquiry into the search bar and click search button
+  * Shows recipes based on recipe name or cuisine name
+  * Result: pass
+
+7. Recipe search reset
+  * Click on the reset button in the search bar
+  * Shows all recipes in the database
+  * Result: pass
+
+7. View recipe 
+  * Click full recipe button  
+  * Reveals dedicated recipe page
+  * Result: pass
+
+7. Recipe Page
+  * Shows information about the selected recipe
+  * Vegetarian/vegan/spicy indicators differ depending on the status of that feature
+  * Result: pass
+
+7. Add recipe 
+  * Input fields are all required
+  * Cuisine dropdown active, contains all cuisines in the database 
+  * Can add or remove items to the ingregients/method sections
+  * Click add recipe to confirm
+  * Click cancel to return to recipe page
+  * Result: pass
+
+7. Profile page 
+  * Shows all recipes created by the user
+  * If user is admin, all recipes are shown 
+  * Full recipe button links to dedicated page
+  * Edit button links to edit recipe page
+  * Delete button removes recipe from database
+  * Result: pass
+
+7. Edit recipe 
+  * Input fields fill with current information about the recipe
+  * Click edit recipe button confirms changes
+  * Click cancel button to return to profile page
+  * Result: pass
+
+7. Cuisines
+  * Display all cuisines present in the database
+  * Click edit reveals edit cuisine page
+  * Click delete to remove cuisine from database
+  * Result: pass
+
+7. Add cuisine
+  * Click button to bring up the add cuisine page
+  * Input all required fields and confirm to add an item to the database
+  * Click cancel to stop and return to cuisine page
+  * Result: pass
+
+7. Edit cuisine 
+  * Input field fills with current information about the cuisine
+  * Click edit cuisine button confirms changes
+  * Click cancel button to return to cuisine page
+  * Result: pass
+
+7. Users
+  * Display all users present in the database
+  * Click edit reveals edit user page
+  * Click delete to remove user from database
+  * Result: pass
+
+7. Edit user 
+  * Input fields fill with current information about the user
+  * Click edit user button confirms changes
+  * Click cancel button to return to user page
+  * Result: pass
+
+7. Log out 
+  * Click log out button
+  * Return user to log in page
+  * Removes user from session cookie
+  * Result: pass
 
 ### User Story Tests
 #### Experienced with console gaming:

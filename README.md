@@ -157,39 +157,130 @@ ___
 
 #### Register Page
 ##### Active
-* 
+* Username and password input
+* Register button, adds new user details to the database
+* Link to login page
 
 #### Login Page
 ##### Active
-* 
+* Username and password input
+* Login button, logs existing user into the site, to their profile page
+* Link to register page
+
+#### Navbar
+##### Active
+* Brand logo links to homepage
+* Navbar buttons link to individual pages
+* Certain nav links only appear when a user or an admin is logged in
+
+#### Footer
+##### Active
+* Links to social media sites, bring up a new tab
 
 #### Home Page
 ##### Active
-* 
+* Link to cookware and recipe page
+* If a user/admin is logged in, link to profile page
+* If no user/admin is logged in, link to login page
 
 #### Cookware Page
 ##### Active
-* 
+* Add cookware button links to add cookware page (admin only)
+* For loop reveals all cookware items in the database
+* Website button linked to online store for idividual item
+* Edit button links to edit cookware page (admin only)
+* Delete button removes item from database (admin only)
+* Delete modal to confirm removal of an item
+
+#### Add Cookware Page
+##### Active
+* Inputs for item name, price, image and website link
+* Confirmation button add item to the database
+* Cancel button returns user to cookware page
+* Add modal to confirm addition of an item
+
+#### Edit Cookware Page
+##### Active
+* Input fields show existing data
+* Confirmation button linked to confirmation modal
+* Cancel button returns user to cookware page
+* Edit modal to confirm update of an item
 
 #### Recipe Page
 ##### Active
-* 
+* For loop reveals all recipes in the database
+* Search reveals recipes based on the recipe name or cuisines
+* Reset button returns all recipes to the page
+* Full recipe button linked to view recipe page
 
-#### Add Recipe Page
+#### View Recipe Page
 ##### Active
-* 
+* Displays all recipe information from the database
+* Dietary requirements (vegetarian, vegan, spicy) displayed with 
+color coded icons, grey for no, colored for yes
+
+#### Add Recipe Page (User only)
+##### Active
+* Input fields for all recipe information
+* Cuisine dropdown gets options from the database
+* Dietary requirement switches
+* Ingredients/method input will recieve a custom number of items
+* Plus button adds an input, minus removes an input
+* Confirmation button adds a recipe to the database
+* Cancel button returns user to recipe page
 
 #### Profile Page
 ##### Active
-* 
+* For loop shows all recipes matching the username(user)
+* For loop shows all recipes(admin)
+* Full recipe button linked to view recipe page
+* Edit button linked to edit recipe page
+* Delete button linked to confirmation modal
+* Delete modal removes recipe from database
 
-#### User Page
+#### Edit Recipe Page
 ##### Active
-* 
+* Input fields show existing data
+* Confirmation button linked to confirmation modal 
+* Cancel button returns user to profile page
+* Edit modal updates recipe in the database
 
-#### Cuisine Page
+#### User Page (admin only)
 ##### Active
-* 
+* For loop shows all user in the database
+* Edit button linked to edit user page
+* Delete buttom linked to confirmation modal
+* Delete modal removed user from database
+
+#### Edit user Page
+##### Active
+* Input fields show existing data
+* Switch allows users to be made administrators
+* Confirmation button linked to confirmation modal
+* Cancel button returns user to cookware page
+* Edit modal to confirm update of a user
+
+#### Cuisine Page (admin only)
+##### Active
+* Add cuisine button links to add cuisine page
+* For loop reveals all cuisines in the database
+* Edit button links to edit cuisine page
+* Delete button removes cuisine from database
+* Delete modal to confirm removal of an item
+
+#### Add Cuisine Page (admin only)
+##### Active
+* Input for cuisine name
+* Confirmation button linked to modal
+* Cancel button returns user to cuisine page
+* Modal adds new cuisine to database
+
+#### Edit Cuisine Page (admin only)
+##### Active
+* Input field shows existing data
+* Confirmation button linked to confirmation modal
+* Cancel button returns user to cuisine page
+* Modal to confirm update of a cuisine
 ___
 
 <a name="test"></a>

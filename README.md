@@ -86,7 +86,11 @@ Not cooking, looking for cookware range
 ### Skeleton Plane
 #### Wireframes
 
-[Main Page Wireframe](static/images/wireframes/MP3-mobile-wireframe.jpg)
+[Mobile Wireframes](static/images/wireframes/mobile-med.jpg)
+
+[Tablet Wireframes](static/images/wireframes/tablet-med.jpg)
+
+[Desktop Wireframes](static/images/wireframes/desktop-med.jpg)
 
 ### Surface Plane
 

@@ -155,10 +155,41 @@ ___
 <a name="feat"></a>
 ### Features
 
-#### Start Modal
+#### Register Page
 ##### Active
-* Click the start button to begin the game and start the timer.
-* Click outside of the modal content box to produce the same result. 
+* 
+
+#### Login Page
+##### Active
+* 
+
+#### Home Page
+##### Active
+* 
+
+#### Cookware Page
+##### Active
+* 
+
+#### Recipe Page
+##### Active
+* 
+
+#### Add Recipe Page
+##### Active
+* 
+
+#### Profile Page
+##### Active
+* 
+
+#### User Page
+##### Active
+* 
+
+#### Cuisine Page
+##### Active
+* 
 ___
 
 <a name="test"></a>

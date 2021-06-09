@@ -96,22 +96,25 @@ def login():
 
 
 # -------------------- profile function
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # -------------------- grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
-
-    if session["user"]:
-        return render_template("profile.html",
-                               username=username, recipes=recipes)
-
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    if is_authenticated():
+        # get the session user's name from the database
+        username = mongo.db.users.find_one_or_404(
+            {"username": session["user"]})["username"]
+        recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
+        return render_template("profile.html", username=username, recipes=recipes)
+    
+    flash('You are currently not logged in')
     return redirect(url_for("login"))
 
 
 @app.route("/logout")
 def logout():
+    if not is_authenticated():
+        flash("You are currently not logged in")
+        return redirect(url_for('get_home'))
+
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
@@ -318,6 +321,12 @@ def delete_cookware(cookware_id):
 def page_not_found(error):
 
     return render_template("error_messages/404.html")
+
+
+def is_authenticated():
+    """ Ensure that user is authenticated
+    """
+    return 'user' in session
 
 
 # debug should = false when finalising project

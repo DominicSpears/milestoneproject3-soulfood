@@ -316,12 +316,16 @@ def delete_cookware(cookware_id):
     return redirect(url_for("get_cookware"))
 
 
-# ---------------------------------------Error message
+# ---------------------------------------Error messages
 @app.errorhandler(404)
 def page_not_found(error):
 
     return render_template("error_messages/404.html")
 
+# 500 Error Server Error
+@app.errorhandler(500)
+def internal_server(error):
+    return render_template('500.html'), 500
 
 def is_authenticated():
     """ Ensure that user is authenticated

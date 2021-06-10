@@ -131,6 +131,8 @@ Technologies used to create the site:
 #### Database
 * [Mongo DB](https://www.mongodb.com/)
   * the project uses **mongo db** as a database provider to store various forms of information.
+  * ![Database Schema](static/images/database/DatabaseSchema.png)
+
 
 #### Libraries
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/)

@@ -3,44 +3,44 @@
 
 <h3 class="add-cuisine-title center-align">Add Cuisine</h3>
 
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('add_cuisine') }}">
-            <!-- cuisine name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-globe-americas prefix"></i>
-                    <input id="cuisine_name" name="cuisine_name" minlength="3" maxlength="25"
-                        type="text" class="validate" required>
-                    <label for="cuisine_name">Cuisine Name</label>
-                </div>
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('add_cuisine') }}">
+        <!-- cuisine name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-globe-americas prefix"></i>
+                <input id="cuisine_name" name="cuisine_name" minlength="3" maxlength="25" type="text" class="validate"
+                    required>
+                <label for="cuisine_name">Cuisine Name</label>
             </div>
-            <!-- submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <a href="{{ url_for('get_cuisines') }}" class="edit-cookware-btn btn-large text-shaddow">
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('get_cuisines') }}" class="edit-cookware-btn btn-large text-shaddow">
                     Cancel <i class="fas fa-times-circle right"></i>
                 </a>
-                    <a class="modal-trigger add-cuisine-btn btn-large waves-effect waves-light" href="#modal1">
-                        Confirm <i class="fas fa-check-circle right"></i></a>
-                </div>
+                <a class="modal-trigger add-cuisine-btn btn-large waves-effect waves-light" href="#modal1">
+                    Confirm <i class="fas fa-check-circle right"></i></a>
             </div>
-            <!-----------------------------Modal body-->
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <div class="row center-align">
-                        <div class="col s12">
-                            <p class>
-                                <strong> Are you sure you want to add this cuisine?</strong>
-                            </p>
-                        </div>
-                        <!-- Submit button -->
-                        <button class="modal-close add-recipe-btn btn waves-effect waves-light" type="submit">Yes</button>
-                        <!-- No button -->
-                        <a class="modal-close btn waves-effect waves-light">No</a>
+        </div>
+        <!-----------------------------Modal body-->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div class="row center-align">
+                    <div class="col s12">
+                        <p class>
+                            <strong> Are you sure you want to add this cuisine?</strong>
+                        </p>
                     </div>
+                    <!-- Submit button -->
+                    <button class="modal-close add-recipe-btn btn waves-effect waves-light" type="submit">Yes</button>
+                    <!-- No button -->
+                    <a class="modal-close btn waves-effect waves-light">No</a>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

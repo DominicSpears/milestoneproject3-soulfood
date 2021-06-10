@@ -1,70 +1,71 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="cookware-title center-align">Mayflower Cookware</h3>
+<h3 class="cookware-title center-align">Mayflower Cookware</h3>
 
-    <p class="cookware-message">We are proud to promote the latest line 
-        in the Green Pan cookware range. Discover their beautiful Mayflower 
-        collection. Each item is expertly designed with scandinavian blue metalwork 
-        and heat resistant, wooden handles. This collection is perfect to add some 
-        colour to your kitchen and help you bring some amazing recepes to life! 
-    </p>
+<p class="cookware-message">We are proud to promote the latest line
+    in the Green Pan cookware range. Discover their beautiful Mayflower
+    collection. Each item is expertly designed with scandinavian blue metalwork
+    and heat resistant, wooden handles. This collection is perfect to add some
+    colour to your kitchen and help you bring some amazing recepes to life!
+</p>
 
-    <div class="row cookware-benefits">
-            <div class="col s12 m6 l4 benefit">
-                <h4 class="benefit-title">Healthy non-stick coating</h4>
-                <p>The Thermolon ceramic non-stick coating is fully 
-                PFAS-free and doesn’t contain harmful chemical substances.</p>
-            </div>
-            <div class="col s12 m6 l4 benefit">
-                <h4 class="benefit-title">Unique modern design</h4>
-                <p>The special colour and wooden stay-cool handles give 
-                the collection a Scandinavian look & feel.</p>
-            </div>
-            <div class="col s12 m6 l4 benefit">
-                <h4 class="benefit-title">High quality materials</h4>
-                <p>Make the most of your cooking skills thanks to the 
-                high-quality aluminium which heats up quickly and evenly.</p>
-            </div>
+<div class="row cookware-benefits">
+    <div class="col s12 m6 l4 benefit">
+        <h4 class="benefit-title">Healthy non-stick coating</h4>
+        <p>The Thermolon ceramic non-stick coating is fully
+            PFAS-free and doesn’t contain harmful chemical substances.</p>
     </div>
+    <div class="col s12 m6 l4 benefit">
+        <h4 class="benefit-title">Unique modern design</h4>
+        <p>The special colour and wooden stay-cool handles give
+            the collection a Scandinavian look & feel.</p>
+    </div>
+    <div class="col s12 m6 l4 benefit">
+        <h4 class="benefit-title">High quality materials</h4>
+        <p>Make the most of your cooking skills thanks to the
+            high-quality aluminium which heats up quickly and evenly.</p>
+    </div>
+</div>
 
-    {% if session.user|lower == "admin"|lower %}
-        <div class="row">
-            <div class="col s12 center-align">
-                <a href="{{ url_for('add_cookware') }}" class="add-cookware-btn btn-large text-shadow">
-                    Add Cookware Item <i class="fas fa-plus-square right"></i>
+{% if session.user|lower == "admin"|lower %}
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_cookware') }}" class="add-cookware-btn btn-large text-shadow">
+            Add Cookware Item <i class="fas fa-plus-square right"></i>
+        </a>
+    </div>
+</div>
+{% endif %}
+
+<div class="row">
+    {% for item in cookware %}
+    <div class="col s12 m6 l4">
+        <div class="cookware-card card center-align">
+            <div class="card-image">
+                <img src="{{ item.cookware_image }}" class="inner-cookware-image">
+            </div>
+            <div>
+                <span class="card-title">{{ item.cookware_name }}</span>
+            </div>
+            <div class="card-content">
+                <span class="card-title">{{ item.cookware_price }}</span>
+            </div>
+            <div>
+                <a href="{{ item.cookware_link }}" class="cookware-btn btn-large text-shadow" target="_blank">
+                    Website <i class="fas fa-link right"></i>
                 </a>
             </div>
-        </div>
-    {% endif %}
-
-    <div class="row">
-        {% for item in cookware %}
-            <div class="col s12 m6 l4">
-                <div class="cookware-card card center-align">
-                    <div class="card-image">
-                            <img src="{{ item.cookware_image }}" class="inner-cookware-image">
-                        </div>
-                    <div>
-                        <span class="card-title">{{ item.cookware_name }}</span>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title">{{ item.cookware_price }}</span>
-                    </div>
-                    <div>
-                        <a href="{{ item.cookware_link }}" class="cookware-btn btn-large text-shadow" target="_blank">
-                            Website <i class="fas fa-link right"></i>
-                        </a>
-                    </div>
-                    {% if session.user|lower == "admin"|lower %}
-                    <div class="card-action">
-                        <a href="{{ url_for('edit_cookware', cookware_id=item._id) }}" class="cookware-btn btn">Edit</a>
-                        <a href="{{ url_for('delete_cookware', cookware_id=item._id) }}" class="modal-trigger cookware-btn btn waves-effect waves-light remove-btn">Delete</a>
-                    </div>
-                    {% endif %}
-                </div>
+            {% if session.user|lower == "admin"|lower %}
+            <div class="card-action">
+                <a href="{{ url_for('edit_cookware', cookware_id=item._id) }}" class="cookware-btn btn">Edit</a>
+                <a href="{{ url_for('delete_cookware', cookware_id=item._id) }}"
+                    class="modal-trigger cookware-btn btn waves-effect waves-light remove-btn">Delete</a>
             </div>
-        {% endfor %}
+            {% endif %}
+        </div>
     </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

@@ -12,7 +12,6 @@ $(document).ready(function () {
     setupModal();
 });
 
-
 //-----------------------------------Add_recipe.html
 function ingredientFieldSetup() {
     var ingredientField = $(".ingredient").length;
@@ -27,7 +26,7 @@ function ingredientFieldSetup() {
             /* only remove the :last item */
             $(this).siblings(".new-ingredient:last").remove();
             /* ensure original ingredient line never gets deleted */
-            ingredientField-= 1;
+            ingredientField -= 1;
         }
     });
 }
@@ -45,11 +44,10 @@ function methodFieldSetup() {
             /* only remove the :last item */
             $(this).siblings(".new-method:last").remove();
             /* ensure original method line never gets deleted */
-            methodField-= 1;
+            methodField -= 1;
         }
     });
 }
-
 
 function setupModal() {
     const modalOkBtn = document.getElementById('modalOkBtn');
@@ -57,7 +55,9 @@ function setupModal() {
     /** All remove button that require the modal dialogs should have the class remove-btn added */
     $('.remove-btn').click((event) => {
         const modal = document.getElementById('confirmationDialog');
-        const instance = M.Modal.init(modal, { dismissible:false });
+        const instance = M.Modal.init(modal, {
+            dismissible: false
+        });
         instance.open();
 
         modalOkBtn.href = event.currentTarget.href;

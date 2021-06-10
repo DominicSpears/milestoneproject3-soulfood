@@ -3,61 +3,61 @@
 
 <h3 class="edit-user-title center-align">Edit User</h3>
 
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('edit_user', user_id=user._id) }}">
-            <!-- user name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-globe-americas prefix"></i>
-                    <input id="username" name="username" minlength="3" maxlength="25"
-                        type="text" value ="{{ user.username }}" class="validate" required>
-                    <label for="username">Username</label>
-                </div>
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('edit_user', user_id=user._id) }}">
+        <!-- user name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-globe-americas prefix"></i>
+                <input id="username" name="username" minlength="3" maxlength="25" type="text"
+                    value="{{ user.username }}" class="validate" required>
+                <label for="username">Username</label>
             </div>
-            <!-- is_admin -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <div class="switch">
-                        <i class="fas fa-user-cog prefix"></i>
-                        <label for="is_admin">
+        </div>
+        <!-- is_admin -->
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="switch">
+                    <i class="fas fa-user-cog prefix"></i>
+                    <label for="is_admin">
                         {% if user.is_admin == "on" %}
-                            <input type="checkbox" id="is_admin" name="is_admin" checked>
-                        {% else %}    
-                            <input type="checkbox" id="is_admin" name="is_admin">
-                        {% endif %}         
-                            <span class="lever"></span>
-                            Admin
-                        </label>
+                        <input type="checkbox" id="is_admin" name="is_admin" checked>
+                        {% else %}
+                        <input type="checkbox" id="is_admin" name="is_admin">
+                        {% endif %}
+                        <span class="lever"></span>
+                        Admin
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('get_users') }}" class="edit-user-btn btn-large text-shaddow">
+                    Cancel <i class="fas fa-times-circle right"></i>
+                </a>
+                <a class="modal-trigger edit-user-btn btn-large waves-effect waves-light" href="#modal1">
+                    Confirm Changes <i class="fas fa-check-circle right"></i></a>
+            </div>
+        </div>
+        <!-----------------------------Modal body-->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div class="row center-align">
+                    <div class="col s12">
+                        <p class>
+                            <strong> Are you sure you want to update the user details?</strong>
+                        </p>
                     </div>
+
+                    <button class="modal-close add-recipe-btn btn waves-effect waves-light" type="submit">Yes</button>
+
+                    <a class="modal-close btn waves-effect waves-light">No</a>
                 </div>
             </div>
-            <!-- submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <a href="{{ url_for('get_users') }}" class="edit-user-btn btn-large text-shaddow">
-                        Cancel <i class="fas fa-times-circle right"></i>
-                    </a>
-                    <a class="modal-trigger edit-user-btn btn-large waves-effect waves-light" href="#modal1">
-                        Confirm Changes <i class="fas fa-check-circle right"></i></a>
-                </div>
-            </div>
-            <!-----------------------------Modal body-->
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <div class="row center-align">
-                        <div class="col s12">
-                            <p class>
-                                <strong> Are you sure you want to update the user details?</strong>
-                            </p>
-                        </div>
-                       
-                        <button class="modal-close add-recipe-btn btn waves-effect waves-light" type="submit">Yes</button>
-                       
-                        <a class="modal-close btn waves-effect waves-light">No</a>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

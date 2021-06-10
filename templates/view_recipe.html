@@ -1,73 +1,77 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row">
-        <div class="col s12">
-            <div class="col s12 m6 l8 view-recipe-info">
-                <div>
-                    <h2 class="recipe-name text-shadow"><strong>{{ recipe.recipe_name }}</strong></h2>
-                </div>
-                <div>
-                    <p>{{ recipe.cuisine_name }}</p>                
-                </div>
-                <div>
-                    <p class="recipe-creator"><em>by: {{ recipe.created_by }}</em></p>
-                </div>
-                <hr>
-                <div>
-                    <p>{{ recipe.recipe_description }}</p>
-                </div>            
+<div class="row">
+    <div class="col s12">
+        <div class="col s12 m6 l8 view-recipe-info">
+            <div>
+                <h2 class="recipe-name text-shadow"><strong>{{ recipe.recipe_name }}</strong></h2>
             </div>
-            <div class="col s12 m6 l4 view-recipe-image-container">
-                <img src="{{ recipe.recipe_image }}" class="view-recipe-image">
+            <div>
+                <p>{{ recipe.cuisine_name }}</p>
+            </div>
+            <div>
+                <p class="recipe-creator"><em>by: {{ recipe.created_by }}</em></p>
+            </div>
+            <hr>
+            <div>
+                <p>{{ recipe.recipe_description }}</p>
             </div>
         </div>
+        <div class="col s12 m6 l4 view-recipe-image-container">
+            <img src="{{ recipe.recipe_image }}" class="view-recipe-image">
+        </div>
     </div>
+</div>
 
-    <div class="row cooking-info-container">
-        <div class="col s12 cooking-info">
-            <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-user-clock prefix"></i> Prep time: {{ recipe.prep_time }} mins</div>
-            <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-users prefix"></i> Serving suggestion: {{ recipe.serves }} people</div>
-            <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-user-clock prefix"></i> Cook time: {{ recipe.cook_time }} mins</div>
-            <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-calculator prefix"></i> Calories per serving: {{ recipe.calories }} kcal</div>
-        </div>
+<div class="row cooking-info-container">
+    <div class="col s12 cooking-info">
+        <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-user-clock prefix"></i> Prep time:
+            {{ recipe.prep_time }} mins</div>
+        <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-users prefix"></i> Serving suggestion:
+            {{ recipe.serves }} people</div>
+        <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-user-clock prefix"></i> Cook time:
+            {{ recipe.cook_time }} mins</div>
+        <div class="col s12 m6 cooking-info-text center-align"><i class="fas fa-calculator prefix"></i> Calories per
+            serving: {{ recipe.calories }} kcal</div>
     </div>
-    
-    <div class="row dietary-requirements-container">
-        <div class="col s12 dietary-requirements">
-            <div class="col s12 l4 requirement center-align">
-                {% if recipe.vegetarian == "on" %}
-                    Vegetarian<i class="green-prefix fas fa-carrot prefix"></i>
-                {% else %}    
-                    Not Vegetarian<i class="grey-prefix fas fa-carrot prefix"></i>
-                {% endif %}   
-            </div>
-            <div class="col s12 l4 requirement center-align">
-                {% if recipe.vegan == "on" %}
-                    Vegan<i class="green-prefix fas fa-leaf prefix"></i>
-                {% else %}    
-                    Not Vegan<i class="grey-prefix fas fa-leaf prefix"></i>
-                {% endif %}   
-            </div>
-            <div class="col s12 l4 requirement center-align">
-                {% if recipe.spicy == "on" %}
-                    Spicy<i class="red-prefix fas fa-pepper-hot prefix"></i>
-                {% else %}    
-                    Not Spicy<i class="grey-prefix fas fa-pepper-hot prefix"></i>
-                {% endif %}   
-            </div>
-        </div>
-    </div>
+</div>
 
-    <div class="row instructions-container">
-        <div class="col s12 instructions">
+<div class="row dietary-requirements-container">
+    <div class="col s12 dietary-requirements">
+        <div class="col s12 l4 requirement center-align">
+            {% if recipe.vegetarian == "on" %}
+            Vegetarian<i class="green-prefix fas fa-carrot prefix"></i>
+            {% else %}
+            Not Vegetarian<i class="grey-prefix fas fa-carrot prefix"></i>
+            {% endif %}
+        </div>
+        <div class="col s12 l4 requirement center-align">
+            {% if recipe.vegan == "on" %}
+            Vegan<i class="green-prefix fas fa-leaf prefix"></i>
+            {% else %}
+            Not Vegan<i class="grey-prefix fas fa-leaf prefix"></i>
+            {% endif %}
+        </div>
+        <div class="col s12 l4 requirement center-align">
+            {% if recipe.spicy == "on" %}
+            Spicy<i class="red-prefix fas fa-pepper-hot prefix"></i>
+            {% else %}
+            Not Spicy<i class="grey-prefix fas fa-pepper-hot prefix"></i>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="row instructions-container">
+    <div class="col s12 instructions">
         <div class="col s12 m4">
             <h5>Ingredients List</h5>
             <ul>
                 {% for ingredient in recipe.ingredients %}
-                    <li><i class="fas fa-square fa-sm square" aria-hidden="true"></i>
-                        {{ ingredient }}
-                    </li>
+                <li><i class="fas fa-square fa-sm square" aria-hidden="true"></i>
+                    {{ ingredient }}
+                </li>
                 {% endfor %}
             </ul>
         </div>
@@ -75,13 +79,13 @@
             <h5>Method</h5>
             <ol id="preparation-list">
                 {% for step in recipe.method %}
-                    <li>
-                        {{ step }}
-                    </li>
+                <li>
+                    {{ step }}
+                </li>
                 {% endfor %}
             </ol>
         </div>
-        </div>
     </div>
+</div>
 
 {% endblock %}

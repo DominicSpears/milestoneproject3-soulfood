@@ -22,28 +22,29 @@
 </div>
 
 {% if recipes|length > 0 %}
-    <div class="row recipe-card-container">
-        {% for recipe in recipes %}
-            <div class="col s12 m6 l4">
-                <div class="card center-align recipe-card">
-                    <div class="card-image">
-                        <img src="{{ recipe.recipe_image }}" class="inner-image">
-                    </div>
-                    <div class="recipe-card-content card-content">
-                        <h5 class="text-shadow"><strong>{{ recipe.recipe_name }}</strong></h5>
-                        <h5>{{ recipe.cuisine_name }}</h5>
-                        <hr>
-                        <p><em>by: {{ recipe.created_by }}</em></p>
-                    </div>
-                    <div class="recipe-link">
-                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="btn-large view-recipe-link">Full recipe</a>
-                    </div>
-                </div>
+<div class="row recipe-card-container">
+    {% for recipe in recipes %}
+    <div class="col s12 m6 l4">
+        <div class="card center-align recipe-card">
+            <div class="card-image">
+                <img src="{{ recipe.recipe_image }}" class="inner-image">
             </div>
-        {% endfor %}
+            <div class="recipe-card-content card-content">
+                <h5 class="text-shadow"><strong>{{ recipe.recipe_name }}</strong></h5>
+                <h5>{{ recipe.cuisine_name }}</h5>
+                <hr>
+                <p><em>by: {{ recipe.created_by }}</em></p>
+            </div>
+            <div class="recipe-link">
+                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="btn-large view-recipe-link">Full
+                    recipe</a>
+            </div>
+        </div>
     </div>
-    {% else %}
-        <h3 class="red-text text-darken-4 center-align">No Recipies Added yet</h3>
-    {% endif %}
+    {% endfor %}
+</div>
+{% else %}
+<h3 class="red-text text-darken-4 center-align">No Recipies Added yet</h3>
+{% endif %}
 
 {% endblock %}

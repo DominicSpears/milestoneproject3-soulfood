@@ -9,8 +9,8 @@
         <div class="row">
             <div class="input-field col s12 m6">
                 <i class="fas fa-pizza-slice prefix"></i>
-                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
-                    value="{{ recipe.recipe_name }}" type="text" class="validate" required>
+                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" value="{{ recipe.recipe_name }}"
+                    type="text" class="validate" required>
                 <label for="recipe_name">Recipe Name</label>
             </div>
             <div class="input-field col s12 m6">
@@ -18,11 +18,11 @@
                 <select id="cuisine_name" name="cuisine_name" class="validate" required>
                     <option value="" disabled selected>Select cuisine</option>
                     {% for cuisine in cuisines %}
-                        {% if cuisine.cuisine_name == recipe.cuisine_name %}
-                            <option value="{{ cuisine.cuisine_name }}" selected>{{ cuisine.cuisine_name }}</option>
-                        {% else %}
-                            <option value="{{ cuisine.cuisine_name }}">{{ cuisine.cuisine_name }}</option>
-                        {% endif %}
+                    {% if cuisine.cuisine_name == recipe.cuisine_name %}
+                    <option value="{{ cuisine.cuisine_name }}" selected>{{ cuisine.cuisine_name }}</option>
+                    {% else %}
+                    <option value="{{ cuisine.cuisine_name }}">{{ cuisine.cuisine_name }}</option>
+                    {% endif %}
                     {% endfor %}
                 </select>
                 <label for="cuisine_name">Cuisine</label>
@@ -32,7 +32,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image prefix"></i>
-                <input id="recipe_image" name="recipe_image" type="url" value="{{ recipe.recipe_image }}" class="validate" required>
+                <input id="recipe_image" name="recipe_image" type="url" value="{{ recipe.recipe_image }}"
+                    class="validate" required>
                 <label for="recipe_image">Enter the image url</label>
             </div>
         </div>
@@ -71,7 +72,8 @@
             </div>
             <div class="input-field col s12 m6">
                 <i class="fas fa-calculator prefix"></i>
-                <input id="calories" name="calories" type="text" value="{{ recipe.calories }}" class="validate" required>
+                <input id="calories" name="calories" type="text" value="{{ recipe.calories }}" class="validate"
+                    required>
                 <label for="calories">Calories per serving</label>
             </div>
         </div>
@@ -81,11 +83,11 @@
                 <div class="switch">
                     <i class="fas fa-carrot prefix"></i>
                     <label for="vegetarian">
-                    {% if recipe.vegetarian == "on" %}
+                        {% if recipe.vegetarian == "on" %}
                         <input type="checkbox" id="vegetarian" name="vegetarian" checked>
-                    {% else %}    
+                        {% else %}
                         <input type="checkbox" id="vegetarian" name="vegetarian">
-                    {% endif %}         
+                        {% endif %}
                         <span class="lever"></span>
                         Vegetarian
                     </label>
@@ -95,11 +97,11 @@
                 <div class="switch">
                     <i class="fas fa-leaf prefix"></i>
                     <label for="vegan">
-                    {% if recipe.vegan == "on" %}
+                        {% if recipe.vegan == "on" %}
                         <input type="checkbox" id="vegan" name="vegan" checked>
-                    {% else %}
+                        {% else %}
                         <input type="checkbox" id="vegan" name="vegan">
-                    {% endif %}
+                        {% endif %}
                         <span class="lever"></span>
                         Vegan
                     </label>
@@ -109,11 +111,11 @@
                 <div class="switch">
                     <i class="fas fa-pepper-hot prefix"></i>
                     <label for="spicy">
-                    {% if recipe.vegan == "on" %}
+                        {% if recipe.vegan == "on" %}
                         <input type="checkbox" id="spicy" name="spicy" checked>
-                    {% else %}   
+                        {% else %}
                         <input type="checkbox" id="spicy" name="spicy">
-                    {% endif %}    
+                        {% endif %}
                         <span class="lever"></span>
                         Spicy
                     </label>
@@ -135,78 +137,85 @@
         </div> -->
         <!-----------------------------Ingredients list-->
         <div class="row">
-                <div class="col s12">
-                    <div class="card background">
-                        <div class="card-content">
-                            <span class="edit-title card-title center"><strong>Ingredients</strong></span>
+            <div class="col s12">
+                <div class="card background">
+                    <div class="card-content">
+                        <span class="edit-title card-title center"><strong>Ingredients</strong></span>
 
-                            <div class="addIngredient new-ingredient ingredient">
-                                <div class="input-field whites-4">
-                                    {% for ingredient in recipe.ingredients %}
-                                    <textarea id="ingredients" placeholder="500g chicken, diced" name="ingredients[]" class="materialize-textarea ingredients validate" minlength="3" maxlength="200" required>{{ ingredient }}</textarea>
-                                    {% endfor %}
-                                </div>
+                        <div class="addIngredient new-ingredient ingredient">
+                            <div class="input-field whites-4">
+                                {% for ingredient in recipe.ingredients %}
+                                <textarea id="ingredients" placeholder="500g chicken, diced" name="ingredients[]"
+                                    class="materialize-textarea ingredients validate" minlength="3" maxlength="200"
+                                    required>{{ ingredient }}</textarea>
+                                {% endfor %}
                             </div>
-
-                            <!-- add button -->
-                            <a id="add_ingredient" class="edit-btn btn waves-effect waves-light"><i class="fas fa-plus"></i></a>
-                            <!-- Remove button -->
-                            <a id="remove_ingredient" class="edit-btn btn waves-effect waves-light"><i class="fas fa-minus"></i></a>
                         </div>
+
+                        <!-- add button -->
+                        <a id="add_ingredient" class="edit-btn btn waves-effect waves-light"><i
+                                class="fas fa-plus"></i></a>
+                        <!-- Remove button -->
+                        <a id="remove_ingredient" class="edit-btn btn waves-effect waves-light"><i
+                                class="fas fa-minus"></i></a>
                     </div>
                 </div>
             </div>
+        </div>
         <!-----------------------------Method-->
         <div class="row">
-                <div class="col s12">
-                    <div class="card background">
-                        <div class="card-content">
-                            <span class="edit-title card-title center"><strong>Method</strong></span>
-                            <div class="addmethod method new-method">
-                                <div class="input-field whites-4">
-                                    {% for method in recipe.method %}
-                                    <textarea id="method" name="method[]" placeholder="Preheat oven to ..." class="method validate materialize-textarea" minlength="5" maxlength="500" required>{{ method }}</textarea>
-                                    {% endfor %}
-                                </div>
+            <div class="col s12">
+                <div class="card background">
+                    <div class="card-content">
+                        <span class="edit-title card-title center"><strong>Method</strong></span>
+                        <div class="addmethod method new-method">
+                            <div class="input-field whites-4">
+                                {% for method in recipe.method %}
+                                <textarea id="method" name="method[]" placeholder="Preheat oven to ..."
+                                    class="method validate materialize-textarea" minlength="5" maxlength="500"
+                                    required>{{ method }}</textarea>
+                                {% endfor %}
                             </div>
-                                    <!-- add button -->
-                                <a id="add_method" class="add-btn btn waves-effect waves-light"><i
-                                        class="material-icons fas fa-plus"></i></a>
-                                <!-- Remove button -->
-                                <a id="remove_method" class="add-btn btn waves-effect waves-light"><i
-                                        class="fas fa-minus"></i></a>
                         </div>
+                        <!-- add button -->
+                        <a id="add_method" class="add-btn btn waves-effect waves-light"><i
+                                class="material-icons fas fa-plus"></i></a>
+                        <!-- Remove button -->
+                        <a id="remove_method" class="add-btn btn waves-effect waves-light"><i
+                                class="fas fa-minus"></i></a>
                     </div>
                 </div>
             </div>
-        
+        </div>
+
         <!-----------------------------Submit button-->
         <div class="row">
             <div class="col s12 center-align">
                 <!-----------------------------Cancel button-->
-                <a href="{{ url_for('profile', username=session['user']) }}" class="edit-recipe-btn btn-large text-shaddow">
+                <a href="{{ url_for('profile', username=session['user']) }}"
+                    class="edit-recipe-btn btn-large text-shaddow">
                     Cancel <i class="fas fa-times-circle right"></i>
                 </a>
                 <a class="modal-trigger edit-recipe-btn btn-large waves-effect waves-light" href="#modal1">
-                    Confirm Changes <i class="fas fa-check-circle right"></i></a> 
+                    Confirm Changes <i class="fas fa-check-circle right"></i></a>
             </div>
         </div>
-            <!-----------------------------Modal body-->
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <div class="row center-align">
-                        <div class="col s12">
-                            <p class>
-                                <strong> Are you sure you want to update this recipe?</strong>
-                            </p>
-                        </div>
-                        <!-- Submit button -->
-                        <button class="modal-close add-recipe-btn btn waves-effect waves-light" type="submit">Yes</button>
-                        <!-- No button -->
-                        <a class="modal-close btn waves-effect waves-light">No</a>
+        <!-----------------------------Modal body-->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div class="row center-align">
+                    <div class="col s12">
+                        <p class>
+                            <strong> Are you sure you want to update this recipe?</strong>
+                        </p>
                     </div>
+                    <!-- Submit button -->
+                    <button class="modal-close add-recipe-btn btn waves-effect waves-light" type="submit">Yes</button>
+                    <!-- No button -->
+                    <a class="modal-close btn waves-effect waves-light">No</a>
                 </div>
             </div>
+        </div>
     </form>
 </div>
 

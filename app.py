@@ -112,7 +112,7 @@ def profile():
             {"username": session["user"]})["username"]
         recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
         return render_template("profile.html", username=username, recipes=recipes)
-    
+
     flash('You are currently not logged in')
     return redirect(url_for("login"))
 
@@ -160,10 +160,11 @@ def add_recipe():
         cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
         allergens = mongo.db.allergens.find().sort("allergens", 1)
         return render_template("add_recipe.html", cuisines=cuisines,
-                            allergens=allergens)
+                               allergens=allergens)
 
     flash("You are currently not logged in")
     return redirect(url_for('get_home'))
+
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
@@ -196,11 +197,11 @@ def edit_recipe(recipe_id):
         cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
         allergens = mongo.db.allergens.find().sort("allergens", 1)
         return render_template("edit_recipe.html", recipe=recipe,
-                            cuisines=cuisines, allergens=allergens)
+                               cuisines=cuisines, allergens=allergens)
 
     flash("You are currently not logged in")
     return redirect(url_for('get_home'))
-    
+
 
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
@@ -363,6 +364,7 @@ def delete_cookware(cookware_id):
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('error_message/404.html'), 404
+
 
 @app.errorhandler(500)
 def internal_server(error):

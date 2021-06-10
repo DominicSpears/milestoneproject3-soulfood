@@ -1,22 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Manage Users</h3>
+<h3 class="center-align">Manage Users</h3>
 
-    <div class="row">
-        {% for user in users %}
-            <div class="col s12 m4 l3">
-                <div class="user-card card center-align">
-                    <div class="user-card-content card-content white-text">
-                        <h5 class="user-card-title card-title"><strong>{{ user.username }}</strong></h5>
-                        <h6>{{ user.status }}</h6>
-                    </div>
-                    <div class="card-action">
-                        <a href="{{ url_for('edit_user', user_id=user._id) }}" class="user-btn btn">Edit</a>
-                        <a class="modal-trigger cuisine-btn btn waves-effect waves-light remove-btn" href="{{ url_for('delete_user', user_id=user._id) }}">Delete</a>
-                    </div>
-                </div>
+<div class="row">
+    {% for user in users %}
+    <div class="col s12 m4 l3">
+        <div class="user-card card center-align">
+            <div class="user-card-content card-content white-text">
+                <h5 class="user-card-title card-title"><strong>{{ user.username }}</strong></h5>
+                <h6>{{ user.status }}</h6>
             </div>
-        {% endfor %}
+            <div class="card-action">
+                <a href="{{ url_for('edit_user', user_id=user._id) }}" class="user-btn btn">Edit</a>
+                <a class="modal-trigger cuisine-btn btn waves-effect waves-light remove-btn"
+                    href="{{ url_for('delete_user', user_id=user._id) }}">Delete</a>
+            </div>
+        </div>
     </div>
+    {% endfor %}
+</div>
 {% endblock %}

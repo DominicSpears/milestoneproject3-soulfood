@@ -43,6 +43,12 @@
   * I added a funtion to javascript that could be called whenever I needed a delete 
   modal. 
 
+8. Dietary requirement edit
+  * When editing a recipe, the "spicy" dietary requirement would not appear, even if 
+  the field was turned on in the database. It would then update incorrectly.
+  * I discovered one fo the variables in the edit_recipe.html code was set to vegan
+  and changed it to spicy. 
+
 #### Remaining Bugs
 
 1. Edit recipe ingredients/ method

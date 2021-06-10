@@ -294,40 +294,49 @@ ___
 <a name="deploy"></a>
 ### Deployment
 
-#### To deploy to gihub pages:
-
-1. Login to github
-2. Select DominicSpears/milestoneproject2-memorygame
-3. Select the settings tab
-4. Scroll down to gihub pages section
-5. Under source, select Master branch
-6. The website is now deployed
-7. Scroll back to github pages section to find deployed website link
+#### To deploy to heroku:
+1. Create an app in heroku
+2. In the config vars, add IP, Port, db uri and sectret key
+3. Create and fill a requirements.txt file using python -m pip freeze
+4. Change settings to debug = false in app.py
+5. Ensure env.py is included in gitignore file
+6. Remove import env from the app.py
+7. Code is pushed to github
+8. In heroku, set to the github deployment method for automatic updates 
+9. To deploy click enable automatic deploys.  
 
 #### To run this project locally:
 You will need a github account and to use the chrome browser
-
 1. Install the Github browser extensions for chrome, restart after installation
 2. Login to gihub
 3. Navigate to the project repository
 4. Click on the "Gitpod" button, located in the top right of the page menu
 5. This creates a new workspace for local workspace
+6. In gitppd, create env.py file with the following contents:
+  * os.environ.setdefault("IP", "0.0.0.0")
+  * os.environ.setdefault("PORT", "5000")
+  * os.environ.setdefault("SECRET_KEY", <>)
+  * os.environ.setdefault("MONGO_URI", "mongodb+srv://domSpears:<>@myfirstcluster.7ycsu.mongodb.net/recipe_book?retryWrites=true&w=majority")
+  * os.environ.setdefault("MONGO_DBNAME", "recipe_book")
 
 #### To clone this project (work within a local IDE)
-
-1. Go to the project github repository
+1. Select the repository from githib
 2. On the project page, click on the "code" dropdown menu icon
 3. Copy the clone url by clicking the clipboard icon on the right side
-4. Open a new terminal of your local IDE
+4. Open git bash
+5. Change wroking direcory to location where you want directory to be clones
 5. Type git clone then paste the copied url
 6. Press enter, the local clone is created
+
+
+
 ___
 
 <a name="credit"></a>
 ### Credits
 
 #### Code
-* Force edit and elete buttons of recipes to the bottom of the div. [w3schools](https://www.w3schools.com/cssref/pr_pos_bottom.asp)
+* Force edit and delete buttons of recipes to the bottom of the div. [w3schools](https://www.w3schools.com/cssref/pr_pos_bottom.asp)
 
 * Writing an if statment used for page authentication. [w3schools](https://www.w3schools.com/python/python_conditions.asp)
 

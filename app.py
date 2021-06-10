@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template,
+    Flask, flash, render_template, abort,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -46,23 +46,25 @@ def register():
         return redirect(url_for("get_home"))
 
     if request.method == "POST":
+
         # -------------------- check if username exists
+        username = request.form.get("username").lower()
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": username})
 
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
 
         register = {
-            "username": request.form.get("username").lower(),
+            "username": username,
             "is_admin": "off",
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
 
         # -------------------- new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
+        session["user"] = username
         flash("Congratulations - you are registered!")
         return redirect(url_for("profile", username=session["user"]))
 
@@ -78,16 +80,16 @@ def login():
 
     if request.method == "POST":
         # -------------------- check if username exists in db
+        username = request.form.get("username").lower()
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": username})
 
         if existing_user:
             # -------------------- ensure hashed password matches user input
             if check_password_hash(existing_user["password"],
                                    request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(
-                    request.form.get("username")))
+                session["user"] = username
+                flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for(
                     "profile", username=session["user"]))
             else:
@@ -111,7 +113,8 @@ def profile():
         username = mongo.db.users.find_one_or_404(
             {"username": session["user"]})["username"]
         recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
-        return render_template("profile.html", username=username, recipes=recipes)
+        return render_template("profile.html", username=username,
+                               recipes=recipes)
 
     flash('You are currently not logged in')
     return redirect(url_for("login"))
@@ -169,7 +172,14 @@ def add_recipe():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if is_authenticated():
+        if not is_object_id_valid(recipe_id):
+            abort(404)
+
+        recipe_id = ObjectId(recipe_id)
         if request.method == "POST":
+            # validate first if recipet exists
+            mongo.db.recipes.find_one_or_404({"_id": recipe_id})
+
             vegetarian = "on" if request.form.get("vegetarian") else "off"
             vegan = "on" if request.form.get("vegan") else "off"
             spicy = "on" if request.form.get("spicy") else "off"
@@ -190,10 +200,10 @@ def edit_recipe(recipe_id):
                 "method": request.form.getlist("method[]"),
                 "created_by": session["user"]
             }
-            mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+            mongo.db.recipes.update({"_id": recipe_id}, submit)
             flash("Recipe Successfully Updated")
 
-        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        recipe = mongo.db.recipes.find_one_or_404({"_id": recipe_id})
         cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
         allergens = mongo.db.allergens.find().sort("allergens", 1)
         return render_template("edit_recipe.html", recipe=recipe,
@@ -205,14 +215,24 @@ def edit_recipe(recipe_id):
 
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    if not is_object_id_valid(recipe_id):
+        abort(404)
+    recipe = mongo.db.recipes.find_one_or_404({"_id": ObjectId(recipe_id)})
     return render_template("view_recipe.html", recipe=recipe)
 
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Recipe Successfully Deleted")
+    if is_authenticated():
+        if not is_object_id_valid(recipe_id):
+            abort(404)
+        recipe_id = ObjectId(recipe_id)
+        mongo.db.recipes.find_one_or_404({"_id": recipe_id})
+        mongo.db.recipes.remove({"_id": recipe_id})
+        flash("Recipe Successfully Deleted")
+    else:
+        flash("Unauthorized")
+
     return redirect(url_for("get_recipes"))
 
 
@@ -246,15 +266,21 @@ def add_cuisine():
 @app.route("/edit_cuisine/<cuisine_id>", methods=["GET", "POST"])
 def edit_cuisine(cuisine_id):
     if is_authenticated():
+        if not is_object_id_valid(cuisine_id):
+            abort(404)
+
+        cuisine_id = ObjectId(cuisine_id)
+        cuisine = mongo.db.cuisines.find_one_or_404(
+            {"_id": cuisine_id})
+
         if request.method == "POST":
             submit = {
                 "cuisine_name": request.form.get("cuisine_name")
             }
-            mongo.db.cuisines.update({"_id": ObjectId(cuisine_id)}, submit)
+            mongo.db.cuisines.update({"_id": cuisine_id}, submit)
             flash("Cuisine Successfully Updated")
             return redirect(url_for("get_cuisines"))
 
-        cuisine = mongo.db.cuisines.find_one({"_id": ObjectId(cuisine_id)})
         return render_template("edit_cuisine.html", cuisine=cuisine)
 
     flash("You are currently not logged in")
@@ -263,8 +289,17 @@ def edit_cuisine(cuisine_id):
 
 @app.route("/delete_cuisine/<cuisine_id>")
 def delete_cuisine(cuisine_id):
-    mongo.db.cuisines.remove({"_id": ObjectId(cuisine_id)})
-    flash("Cuisine Successfully Deleted")
+    # At the moment any authenticated user can delete cuisine
+    if is_authenticated():
+        if not is_object_id_valid(cuisine_id):
+            abort(404)
+        cuisine_id = ObjectId(cuisine_id)
+        mongo.db.cuisines.find_one_or_404({"_id": cuisine_id})
+        mongo.db.cuisines.remove({"_id": cuisine_id})
+        flash("Cuisine Successfully Deleted")
+    else:
+        flash("Unauthorized action")
+    
     return redirect(url_for("get_cuisines"))
 
 
@@ -281,18 +316,24 @@ def get_users():
 @app.route("/edit_user/<user_id>", methods=["GET", "POST"])
 def edit_user(user_id):
     if is_authenticated():
+        if not is_object_id_valid(user_id):
+            abort(404)
+
+        user_id = ObjectId(user_id)
+        user = mongo.db.users.find_one_or_404({"_id": user_id})
+
         if request.method == "POST":
             is_admin = "on" if request.form.get("is_admin") else "off"
             add = {
                 "username": request.form.get("username"),
                 "is_admin": is_admin,
-                "password": generate_password_hash(request.form.get("password"))
+                "password": generate_password_hash(
+                    request.form.get("password"))
             }
-            mongo.db.users.update({"_id": ObjectId(user_id)}, add)
+            mongo.db.users.update({"_id": user_id}, add)
             flash("User Successfully Updated")
             return redirect(url_for("get_users"))
 
-        user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
         return render_template("edit_user.html", user=user)
 
     flash("You are currently not logged in")
@@ -301,8 +342,17 @@ def edit_user(user_id):
 
 @app.route("/delete_user/<user_id>")
 def delete_user(user_id):
-    mongo.db.users.remove({"_id": ObjectId(user_id)})
-    flash("User Successfully Deleted")
+    if is_authenticated():
+        if not is_object_id_valid(user_id):
+            abort(404)
+
+        user_id = ObjectId(user_id)
+        mongo.db.users.find_one_or_404({"_id": user_id})
+        mongo.db.users.remove({"_id": user_id})
+        flash("User Successfully Deleted")
+    else:
+        flash("Unauthorized")
+
     return redirect(url_for("get_users"))
 
 
@@ -335,6 +385,13 @@ def add_cookware():
 @app.route("/edit_cookware/<cookware_id>", methods=["GET", "POST"])
 def edit_cookware(cookware_id):
     if is_authenticated():
+        if not is_object_id_valid(cookware_id):
+            abort(404)
+
+        cookware_id = ObjectId(cookware_id)
+        cookware = mongo.db.cookware.find_one_or_404(
+            {"_id": cookware_id})
+
         if request.method == "POST":
             enter = {
                 "cookware_name": request.form.get("cookware_name"),
@@ -342,11 +399,10 @@ def edit_cookware(cookware_id):
                 "cookware_link": request.form.get("cookware_link"),
                 "cookware_price": request.form.get("cookware_price")
             }
-            mongo.db.cookware.update({"_id": ObjectId(cookware_id)}, enter)
+            mongo.db.cookware.update({"_id": cookware_id}, enter)
             flash("Cookware Item Successfully Updated")
             return redirect(url_for("get_cookware"))
 
-        cookware = mongo.db.cookware.find_one({"_id": ObjectId(cookware_id)})
         return render_template("edit_cookware.html", cookware=cookware)
 
     flash("You are currently not logged in")
@@ -355,8 +411,17 @@ def edit_cookware(cookware_id):
 
 @app.route("/delete_cookware/<cookware_id>")
 def delete_cookware(cookware_id):
-    mongo.db.cookware.remove({"_id": ObjectId(cookware_id)})
-    flash("Cookware Item Successfully Deleted")
+    if is_authenticated():
+        if not is_object_id_valid(cookware_id):
+            abort(404)
+
+        cookware_id = ObjectId(cookware_id)
+        mongo.db.cookware.find_one_or_404({"_id": cookware_id})
+        mongo.db.cookware.remove({"_id": cookware_id})
+        flash("Cookware Item Successfully Deleted")
+    else:
+        flash("Unauthorized")
+
     return redirect(url_for("get_cookware"))
 
 
@@ -375,6 +440,12 @@ def is_authenticated():
     """ Ensure that user is authenticated
     """
     return 'user' in session
+
+
+def is_object_id_valid(id_value):
+    """ Validate is the id_value is a valid ObjectId
+    """
+    return id_value != "" and ObjectId.is_valid(id_value)
 
 
 # debug should = false when finalising project

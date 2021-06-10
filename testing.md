@@ -229,8 +229,70 @@
   * Result: pass
 
 ### User Story Tests
-#### Experienced with console gaming:
-Experienced with PC Gaming
-1. As an experianced gamer, I want in-depth instructions to explain game mechanics.
-  * To address this I added extra sections to the instruction modal with difficulty and reset explained.
-  * ![User Story 1](assets/userstory/us1.png)
+#### Experienced with cooking:
+1.	As someone with cooking experience, I am looking for a wide range of recipes from a number of varying cuisines. 
+  * To address this I have created some users and under their name added around 30 recipes. 
+  * ![User Story 1](static/images/user-stories/userstory1.png)
+
+2.	As someone with cooking experience, I want a search bar or filter to narrow down the available results and make it easier to find specific recipes.
+  * To address this I added a searchbar to the recip page that can search the name or cuisine of each recipe.
+  * ![User Story 2](static/images/user-stories/userstory2.png)
+
+3.	As someone with cooking experience, I want to know if a meal is suitable for vegetarians, vegans or has any other notable traits.
+  * To address this, on the view recipe page, I added dietary requirement indicators that say whether a meal is vegetarian, vegan or spicy.
+  * ![User Story 3](static/images/user-stories/userstory3.png)
+
+4.	As someone with cooking experience, I am very conscious about what I eat and want to know how many calories are contained in each serving. 
+  * To address this, on the view recipe page, I have added recipe information including a calorie count per serving.
+  * ![User Story 4](static/images/user-stories/userstory4.png)
+
+#### Inexperienced with cooking:
+1.	As someone new to cooking, I want an ingredients list that clearly states each ingredient paired with the amount required.
+  * To address this, on the view recipe page, I added a unordered list of all ingredients for each inividual recipe.
+  * ![User Story 5](static/images/user-stories/userstory5.png)
+
+2.	As someone new to cooking, I want a method that is easy to read and concise, with each step being easy to follow along with. 
+  * To address this, on the view recipe page, I added an ordered list of all seps in the method for each inividual recipe.
+  * ![User Story 6](static/images/user-stories/userstory5.png)
+
+3.	As someone new to cooking, I want a picture of each dish to be included with its recipe, so that I can see the completed dish before cooking.
+  * To address this I have added an image of each recipe to the recipe card and on the view recpe page.
+  * ![User Story 7](static/images/user-stories/userstory6.png)
+
+4.	As someone new to cooking, I want to know vital information about each recipe such as prep time, cook time and serving suggestions.
+  * To address this I have added a table of vital information to the view recipe page, including prep time, cook time and serving suggestions.
+  * ![User Story 8](static/images/user-stories/userstory6.png)
+
+#### Not cooking, looking for cookware range:
+1.	As someone researching cookware specifically, I want a page dedicated to only cookware, without any recipes present.
+  * To address this included a page for cookware only, with all items in the cookware range displayed in cards.
+  * ![User Story 9](static/images/user-stories/userstory7.png)
+
+2.	As someone researching cookware specifically, I want clear images of each piece of cookware.
+  * To address this I added an image of the cookware item to the top of each card.
+  * ![User Story 10](static/images/user-stories/userstory8.png)
+
+3.	As someone researching cookware specifically, I want there to be links to a store at which I can purchase the desired cookware.
+  * To address this I added a link to the specific site for the cookware item, where they can be ordered if needed. 
+  * ![User Story 11](static/images/user-stories/userstory9.png)
+
+4.	As someone researching cookware specifically, want to know the benefits to the cookware range as a whole e.g. health benefits, materials used.
+  * To address this I added some general benefit information to the top of the page, under the cookware line introduction. 
+  * ![User Story 12](static/images/user-stories/userstory10.png)
+
+#### Site administrator
+1. As a site administrator, I want the ability to edit and delete all recipes, even if I didn't write them myself.
+  * To address this I added code that shows all recipes on the profile admin page, rather than just the recipes created by that user.
+  * ![User Story 13](static/images/user-stories/userstory11.png)
+
+2. As a site administrator, I want the ability to add, edit and delete cuisines that users can choose to describe their recipes. 
+  * To address this I created a dedicated cuisines page connected to the database, where admins can add, edit and delete cuisines.
+  * ![User Story 14](static/images/user-stories/userstory12.png)
+
+3. As a site administrator, I want the ability to edit and delete users and complete general site maintenance. 
+  * To address this I created a dedicated users page connected to the database, where admins can edit and delete users.
+  * ![User Story 15](static/images/user-stories/userstory13.png)
+
+4. As a site administrator, I want to promote the cookware that our site is partnered with.   
+  * To address this created a dedicated cookware page and a cookware card to the homepage, linked to said cookware page. 
+  * ![User Story 16](static/images/user-stories/userstory14.png)

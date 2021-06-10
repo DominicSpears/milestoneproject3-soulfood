@@ -36,10 +36,11 @@ ___
 ### Strategy Plane
 #### Potential Users
 
-Users
+Visitors
 * Experienced with cooking 
 * New to cooking
 * Not cooking, looking for cookware range
+* Site administrator
 
 ### Scope Plane
 #### Features specific for users
@@ -62,6 +63,12 @@ Not cooking, looking for cookware range
 * links to store/purchase option
 * benefits list of specific cookware range
 
+Site administrator
+* Able to edit and delete all recipes
+* Add, edit and delete cuisines
+* Edit and delete users
+* Promote the cookware line
+
 ### Structure Plane
 #### User stories
 
@@ -77,12 +84,17 @@ New to cooking
 3.	As someone new to cooking, I want a picture of each dish to be included with its recipe, so that I can see the completed dish before cooking.
 4.	As someone new to cooking, I want to know vital information about each recipe such as prep time, cook time and serving suggestions.
 
-
 Not cooking, looking for cookware range
 1.	As someone researching cookware specifically, I want a page dedicated to only cookware, without any recipes present.
 2.	As someone researching cookware specifically, I want clear images of each piece of cookware.
 3.	As someone researching cookware specifically, I want there to be links to a store at which I can purchase the desired cookware.
 4.	As someone researching cookware specifically, want to know the benefits to the cookware range as a whole e.g. health benefits, materials used.
+
+Site administrator
+1. As a site administrator, I want the ability to edit and delete all recipes, even if I didn't write them myself.
+2. As a site administrator, I want the ability to add, edit and delete cuisines that users can choose to describe their recipes. 
+3. As a site administrator, I want the ability to edit and delete users and complete general site maintenance. 
+4. As a site administrator, I want to promote the cookware tha our site is partnered with.   
 
 ### Skeleton Plane
 #### Wireframes
@@ -327,9 +339,6 @@ You will need a github account and to use the chrome browser
 5. Change wroking direcory to location where you want directory to be clones
 5. Type git clone then paste the copied url
 6. Press enter, the local clone is created
-
-
-
 ___
 
 <a name="credit"></a>

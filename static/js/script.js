@@ -32,21 +32,6 @@ function ingredientFieldSetup() {
     });
 }
 
-function setupModal() {
-    const modalOkBtn = document.getElementById('modalOkBtn');
-
-    /** All remove button that require the modal dialogs should have the class remove-btn added */
-    $('.remove-btn').click((event) => {
-        const modal = document.getElementById('confirmationDialog');
-        const instance = M.Modal.init(modal, { dismissible:false });
-        instance.open();
-
-        modalOkBtn.href = event.currentTarget.href;
-
-        return false;
-    });
-}
-
 function methodFieldSetup() {
     var methodField = $(".method").length;
     $("#add_method").on("click", function () {
@@ -62,5 +47,21 @@ function methodFieldSetup() {
             /* ensure original method line never gets deleted */
             methodField-= 1;
         }
+    });
+}
+
+
+function setupModal() {
+    const modalOkBtn = document.getElementById('modalOkBtn');
+
+    /** All remove button that require the modal dialogs should have the class remove-btn added */
+    $('.remove-btn').click((event) => {
+        const modal = document.getElementById('confirmationDialog');
+        const instance = M.Modal.init(modal, { dismissible:false });
+        instance.open();
+
+        modalOkBtn.href = event.currentTarget.href;
+
+        return false;
     });
 }

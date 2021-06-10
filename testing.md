@@ -32,6 +32,17 @@
   * To solve this I created a dedicated recipe page with the searchbar at the top
   of the page.
 
+6. Recipe layout
+  * When multipe recipes were pulled from the database, they would stack vertically
+   rather than horizintally as intended. 
+  * To solve this I repositioned the for loop to inside the row. 
+
+7. Delete confirmation modals
+  * Each delete confirmation modal does not target the correct item. The first item
+   (e.g. card) on the page, located in the top left corner, is deleted instead.
+  * I added a funtion to javascript that could be called whenever I needed a delete 
+  modal. 
+
 #### Remaining Bugs
 
 1. Edit recipe ingredients/ method
@@ -40,21 +51,10 @@
     fields must be filled or all removed. The same occurance happens for 
     the method input.
 
-2. is_admin status
-  *  I cuurently have one admin user whose access is based on the 
-    username "admin". I have tried to add an extra field to each user 
-    (is_admin) which can be either on or off. this would be how access 
-    to parts of the site would be based. However, the field will not work.
-
-3. Edit user password
+2. Edit user password
   * When editing user details I would like to leave the password unchanged. 
   But when te update has been confirmed, the password comes back as either 
   null or blank. 
-
-4. Delete confirmation modals
-  * Each delete confirmation modal does not target the correct item. The 
-  first item (e.g. card) on the page, located in the top left corner, is 
-  deleted instead.
 
 ### Validator Tests
 #### All html Pages

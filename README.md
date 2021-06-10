@@ -26,7 +26,8 @@ This website is designed to utilise a backend database. By doing so users can re
 a list of recipes as well as create, edit and delete their own. Each recipe has its own page
 to clearly display the information provided, including an ingredients list, method and various
 dietary requirements. Also each user has access to their own profile page, a convenient place 
-to find all of the recipes that they have created.
+to find all of the recipes that they have created. Alongside this, the site creator is able 
+to display and promote a line of cookware, in a way that is organic to the user needs. 
 ___
 
 <a name="ux"></a>
@@ -326,7 +327,25 @@ ___
 ### Credits
 
 #### Code
-* Set timeout for function that delays access to game grid at start of game. [w3schools](https://www.w3schools.com/jsref/met_win_settimeout.asp) 
+* Force edit and elete buttons of recipes to the bottom of the div. [w3schools](https://www.w3schools.com/cssref/pr_pos_bottom.asp)
+
+* Writing an if statment used for page authentication. [w3schools](https://www.w3schools.com/python/python_conditions.asp)
+
+* How to make an input field accept a url (for recipe/cookware images). [w3schools](https://www.w3schools.com/tags/att_input_type_url.asp)
+
+* Understanding how to add a customer number of ingredients/method steps. Mentor guidance.
+
+* Create a new page to prevent the page position changing after a search. Mentor guidance.
+
+* Understand the css grid and how to make divs responsive. [materialize](https://materializecss.com/grid.html)
+
+* Learn how to capitalise the username on the profile page. [w3schools](https://www.w3schools.com/cssref/pr_text_text-transform.asp)
+
+* Allow website links to be created in a new tab. [css-tricks](https://css-tricks.com/snippets/html/open-link-in-a-new-window/)
+
+* Helped me understand jinja loops and statments [Codeburst](https://codeburst.io/jinja-2-explained-in-5-minutes-88548486834e) 
+
+* Build a for loop of recipe cards. [Home assistant](https://community.home-assistant.io/t/build-cards-with-for-loop/212311)
 
 #### Media
 
@@ -337,10 +356,14 @@ ___
 
 ##### Content
 * Recipe content (ingredients, method, e.t.c.) was taken from the BBC food website.
+* Cookware content (prices, names e.t.c.) was taken from the the Greenpan cookware website.
 
 #### Acknowledgements
 
 * Inspired by [W3Schools.com](https://www.w3schools.com/html/html_intro.asp)
+General reference / tutorial assistance.
+
+* Inspired by [Materialize.com](https://materializecss.com/)
 General reference / tutorial assistance.
 
 * Inspired by [BBC Food](https://www.bbc.co.uk/food)

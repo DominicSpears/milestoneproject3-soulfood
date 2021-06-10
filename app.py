@@ -41,6 +41,10 @@ def search():
 # -------------------- register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if is_authenticated():
+        flash("Please Logout First to execute this operation")
+        return redirect(url_for("get_home"))
+
     if request.method == "POST":
         # -------------------- check if username exists
         existing_user = mongo.db.users.find_one(
@@ -68,6 +72,10 @@ def register():
 # -------------------- login function
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    if is_authenticated():
+        flash("Please Logout First to execute this operation")
+        return redirect(url_for("get_home"))
+
     if request.method == "POST":
         # -------------------- check if username exists in db
         existing_user = mongo.db.users.find_one(

@@ -172,6 +172,7 @@ ___
 * Brand logo links to homepage
 * Navbar buttons link to individual pages
 * Certain nav links only appear when a user or an admin is logged in
+* Log out button ends session
 
 #### Footer
 ##### Active

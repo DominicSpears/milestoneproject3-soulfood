@@ -2,7 +2,7 @@
 {% block content %}
 
 <h3 class="center-align">Manage Cuisines</h3>
-
+<!--Add button-->
 <div class="row">
     <div class="col s12 center-align">
         <a href="{{ url_for('add_cuisine') }}" class="cuisine-btn btn-large text-shadow">
@@ -10,7 +10,7 @@
         </a>
     </div>
 </div>
-
+<!--Cuisine for loop-->
 <div class="row">
     {% for cuisine in cuisines %}
     <div class="col s12 m4 l3">

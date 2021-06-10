@@ -5,7 +5,7 @@
 
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
-        <!-----------------------------Recipe name input/ cuisine dropdown menu-->
+        <!--Recipe name input/ cuisine dropdown menu-->
         <div class="row">
             <div class="input-field col s12 m6">
                 <i class="fas fa-pizza-slice prefix"></i>
@@ -25,7 +25,7 @@
                 <label for="cuisine_name">Cuisine</label>
             </div>
         </div>
-        <!-----------------------------Recipe image url input-->
+        <!--Recipe image url input-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image prefix"></i>
@@ -33,7 +33,7 @@
                 <label for="recipe_image">Enter the image url</label>
             </div>
         </div>
-        <!-----------------------------Description text area-->
+        <!--Description text area-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix"></i>
@@ -42,7 +42,7 @@
                 <label for="recipe_description">Recipe Description</label>
             </div>
         </div>
-        <!-----------------------------Prep time/ cook time input-->
+        <!--Prep time/ cook time input-->
         <div class="row">
             <div class="input-field col s12 m6">
                 <i class="fas fa-user-clock prefix"></i>
@@ -55,7 +55,7 @@
                 <label for="cook_time">Cook time (minutes)</label>
             </div>
         </div>
-        <!-----------------------------Serving/ calorie input-->
+        <!--Serving/ calorie input-->
         <div class="row">
             <div class="input-field col s12 m6">
                 <i class="fas fa-users prefix"></i>
@@ -68,7 +68,7 @@
                 <label for="calories">Calories per serving</label>
             </div>
         </div>
-        <!-----------------------------Vegetarian/ vegan/ spicy switches-->
+        <!--Vegetarian/ vegan/ spicy switches-->
         <div class="row">
             <div class="input-field col s12 m6 l4">
                 <div class="switch">
@@ -101,20 +101,7 @@
                 </div>
             </div>
         </div>
-        <!-----------------------------Allergen dropdown multiselect-->
-        <!-- <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-notes-medical prefix"></i>
-                <select id="allergen" name="allergen" class="validate" multiple>
-                    <option value="" disabled selected>Select any allergens</option>
-                    {% for allergen in allergens %}
-                    <option value="{{ allergen.allergen }}">{{ allergen.allergen }}</option>
-                    {% endfor %}
-                </select>
-                <label for="allergen">Allergens</label>
-            </div>
-        </div> -->
-        <!-----------------------------Ingredients list-->
+        <!--Ingredients list-->
         <div class="row">
             <div class="col s12">
                 <div class="card background">
@@ -137,8 +124,7 @@
                 </div>
             </div>
         </div>
-
-        <!-----------------------------Method-->
+        <!--Method-->
         <div class="row">
             <div class="col s12">
                 <div class="card background">
@@ -161,7 +147,7 @@
             </div>
         </div>
 
-        <!-----------------------------Submit button and confirmation modal-->
+        <!--Submit button-->
         <div class="row">
             <div class="col s12 center-align">
                 <a href="{{ url_for('get_recipes') }}" class="edit-cookware-btn btn-large text-shaddow">
@@ -171,8 +157,7 @@
                     Confirm <i class="fas fa-check-circle right"></i></a>
             </div>
         </div>
-        <!-----------------------------Modal body-->
-
+        <!--Modal body-->
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <div class="row center-align">
@@ -181,9 +166,7 @@
                             <strong> Are you sure you want to add this recipe?</strong>
                         </p>
                     </div>
-                    <!-- Submit button -->
                     <button class="modal-close add-recipe-btn btn waves-effect waves-light" type="submit">Yes</button>
-                    <!-- No button -->
                     <a class="modal-close btn waves-effect waves-light">No</a>
                 </div>
             </div>

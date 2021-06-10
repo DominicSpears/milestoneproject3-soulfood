@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!--username title-->
 <div class="row">
     <div class="col s12">
         <div class="card-panel">
@@ -14,7 +14,7 @@
 <div class="your-recipes">
     <h5><strong>Your Recipes...</strong></h5>
 </div>
-
+<!--recipe for loop-->
 {% if recipes|length > 0 %}
 <div class="row profile-recipe-card">
     {% for recipe in recipes %}

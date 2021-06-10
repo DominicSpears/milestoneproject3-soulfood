@@ -5,7 +5,7 @@
 
 <div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="{{ url_for('edit_cookware', cookware_id=cookware._id) }}">
-        <!-----------------------------cookware name input-->
+        <!--cookware name input-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pizza-slice prefix"></i>
@@ -14,7 +14,7 @@
                 <label for="cookware_name">Cookware Item</label>
             </div>
         </div>
-        <!-----------------------------cookware price-->
+        <!--cookware price-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pound-sign prefix"></i>
@@ -23,7 +23,7 @@
                 <label for="cookware_price">Cookware Price</label>
             </div>
         </div>
-        <!-----------------------------Cookware image url input-->
+        <!--Cookware image url input-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image prefix"></i>
@@ -32,7 +32,7 @@
                 <label for="cookware_image">Enter the image url</label>
             </div>
         </div>
-        <!-----------------------------Cookware link url input-->
+        <!--Cookware link url input-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-link prefix"></i>
@@ -41,7 +41,7 @@
                 <label for="cookware_link">Enter the website link</label>
             </div>
         </div>
-        <!-----------------------------Submit button-->
+        <!--Submit button-->
         <div class="row">
             <div class="col s12 center-align">
                 <a href="{{ url_for('get_cookware') }}" class="edit-cookware-btn btn-large text-shaddow">
@@ -51,7 +51,7 @@
                     Confirm Changes <i class="fas fa-check-circle right"></i></a>
             </div>
         </div>
-        <!-----------------------------Modal body-->
+        <!--Modal body-->
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <div class="row center-align">
@@ -60,9 +60,7 @@
                             <strong> Are you sure you want to update this cookware item?</strong>
                         </p>
                     </div>
-                    <!-- Submit button -->
                     <button class="modal-close add-recipe-btn btn waves-effect waves-light" type="submit">Yes</button>
-                    <!-- No button -->
                     <a class="modal-close btn waves-effect waves-light">No</a>
                 </div>
             </div>

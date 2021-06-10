@@ -18,6 +18,7 @@
 
 <body>
     <header>
+        <!--Manage butttons-->
         <ul id="dropdown1" class="dropdown-content">
             <li class="dropdown-item"><a class="green-text text-darken-4 no-text-shadow"
                     href="{{ url_for('get_cuisines') }}">Cuisines</a></li>
@@ -25,7 +26,7 @@
             <li class="dropdown-item"><a class="green-text text-darken-4 no-text-shadow"
                     href="{{ url_for('get_users') }}">Users</a></li>
         </ul>
-        <!-----------------------------Top navbar-->
+        <!--Top navbar-->
         <nav class="nav-extended text-shadow">
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_home') }}" class="brand-logo">Soul Food <i
@@ -50,7 +51,7 @@
             </div>
         </nav>
 
-        <!-----------------------------mobile sidebar-->
+        <!--mobile sidebar-->
         <ul class="sidenav" id="mobile-demo">
             <li>
                 <h4 class="center-align">Soul Food</h4>
@@ -74,7 +75,7 @@
     </header>
 
     <section>
-        <!-----------------------------flash messages displayed -->
+        <!--flash messages displayed -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
@@ -90,7 +91,7 @@
         {% block content %}
         {% endblock %}
     </main>
-
+    <!--Footer-->
     <footer class="page-footer">
         <div class="container">
             <div class="row">
@@ -115,7 +116,7 @@
             </div>
         </div>
     </footer>
-
+    <!--Delete Modal Body-->
     <div id="confirmationDialog" class="delete-modal">
         <div class="delete-modal-content">
             <h4 id="modalTitle">Delete Item</h4>

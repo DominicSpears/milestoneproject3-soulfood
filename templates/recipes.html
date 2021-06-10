@@ -2,7 +2,7 @@
 {% block content %}
 
 <h3 class="recipe-title center-align">Recipes</h3>
-
+<!--Search bar-->
 <div class="row recipe-search">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="search-item valign-wrapper center-align">
@@ -20,7 +20,7 @@
         </div>
     </form>
 </div>
-
+<!--Recipe card for loop-->
 {% if recipes|length > 0 %}
 <div class="row recipe-card-container">
     {% for recipe in recipes %}

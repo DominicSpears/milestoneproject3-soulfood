@@ -2,14 +2,14 @@
 {% block content %}
 
 <h3 class="cookware-title center-align">Mayflower Cookware</h3>
-
+<!--Message-->
 <p class="cookware-message">We are proud to promote the latest line
     in the Green Pan cookware range. Discover their beautiful Mayflower
     collection. Each item is expertly designed with scandinavian blue metalwork
     and heat resistant, wooden handles. This collection is perfect to add some
     colour to your kitchen and help you bring some amazing recepes to life!
 </p>
-
+<!--Benefits-->
 <div class="row cookware-benefits">
     <div class="col s12 m6 l4 benefit">
         <h4 class="benefit-title">Healthy non-stick coating</h4>
@@ -27,7 +27,7 @@
             high-quality aluminium which heats up quickly and evenly.</p>
     </div>
 </div>
-
+<!--Add button-->
 {% if session.user|lower == "admin"|lower %}
 <div class="row">
     <div class="col s12 center-align">
@@ -37,7 +37,7 @@
     </div>
 </div>
 {% endif %}
-
+<!--Cookware for loop-->
 <div class="row">
     {% for item in cookware %}
     <div class="col s12 m6 l4">

@@ -16,7 +16,7 @@
                 <img src="static/images/cookware-home.webp" class="inner-home-image" alt="mayflower cookware">
             </div>
             <div class="home-card-content">We've partnered with Greenpan to bring you their latest range, the mayflower
-                collection.</div>
+                set. See the entire collection here and add some scandinavian style to your kitchen.</div>
             <div class="home-btn-container">
                 <a href="{{ url_for('get_cookware') }}" class="home-btn btn-large">
                     View the collection
@@ -52,11 +52,11 @@
                 <img src="static/images/user-home.webp" class="inner-home-image">
             </div class="home-card-title">
             {% if session.user %}
-            <div class="home-card-content">Access your own unique profile page. From here you can easily view, edit or
-                delete your own recipes. </div>
+            <div class="home-card-content">Click the link bellow to access your own unique profile page. From here you
+                can easily view, edit or delete your own recipes. </div>
             {% else %}
-            <div class="home-card-content">Oh no, you're not logged in! Login here to access your unique profile page
-                and some exclusive features.</div>
+            <div class="home-card-content">Oh no, you're not logged in! But don't worry, you can login here to access
+                your unique profile page and some exclusive features.</div>
             {% endif %}
             <div class="home-btn-container">
                 {% if session.user %}

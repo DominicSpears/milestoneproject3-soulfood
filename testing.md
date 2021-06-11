@@ -7,10 +7,6 @@
   * [Manual tests](#manual)
   * [User story tests](#user-story)
 
-
-
-
-
 <a name="bugs"></a>
 
 ### Bugs Discovered

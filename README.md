@@ -43,6 +43,7 @@ Follow the link to [Soul Food](https://flask-recipe-book.herokuapp.com/)
 ___
 
 <a name="intro"></a>
+
 ### Introduction
 
 This website is designed to utilise a backend database. By doing so users can read through 
@@ -54,9 +55,11 @@ to display and promote a line of cookware, in a way that is organic to the user 
 ___
 
 <a name="ux"></a>
+
 ### UX
 
 <a name="strategy"></a>
+
 ### Strategy Plane
 #### Potential Users
 
@@ -67,6 +70,7 @@ Visitors
 * Site administrator
 
 <a name="scope"></a>
+
 ### Scope Plane
 #### Features specific for users
 
@@ -95,6 +99,7 @@ Site administrator
 * Promote the cookware line
 
 <a name="structure"></a>
+
 ### Structure Plane
 #### User stories
 
@@ -123,6 +128,7 @@ Site administrator
 4. As a site administrator, I want to promote the cookware tha our site is partnered with.   
 
 <a name="skeleton"></a>
+
 ### Skeleton Plane
 #### Wireframes
 
@@ -133,6 +139,7 @@ Site administrator
 [Desktop Wireframes](static/images/wireframes/desktop-med.jpg)
 
 <a name="surface"></a>
+
 ### Surface Plane
 
 * Background - White/off white e.g. #FFF/#F7F6FA
@@ -142,6 +149,7 @@ focus colours without overwhelming, #447B8C blue – colour of pans in cookware 
 ___
 
 <a name="tech"></a>
+
 ### Technologies
 
 Technologies used to create the site:
@@ -343,6 +351,7 @@ For all testing, please follow the link to a dedicated page. [Testing Page](test
 ___
 
 <a name="deploy"></a>
+
 ### Deployment
 
 <a name="deploy"></a>

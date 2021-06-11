@@ -1,3 +1,18 @@
+### Contents
+
+* Testing
+  * [Solved bugs](#bugs)
+  * [Remaining bugs](#remaining)
+  * [Validator tests](#validator)
+  * [Manual tests](#manual)
+  * [User story tests](#user-story)
+
+
+
+
+
+<a name="bugs"></a>
+
 ### Bugs Discovered
 #### Solved Bugs
 
@@ -49,12 +64,16 @@
   * I discovered one fo the variables in the edit_recipe.html code was set to vegan
   and changed it to spicy. 
 
+<a name="remaining"></a>
+
 #### Remaining Bugs
 
 1. Edit user password
   * When editing user details I would like to leave the password unchanged. 
   But when te update has been confirmed, the password comes back as either 
   null or blank. 
+
+<a name="validator"></a>
 
 ### Validator Tests
 #### All html Pages
@@ -68,6 +87,8 @@
 
 #### app.py
   * PEP8 Python Validator - All right.
+
+<a name="manual"></a>
 
 ### Manual Testing
 
@@ -227,6 +248,8 @@
   * Return user to log in page
   * Removes user from session cookie
   * Result: pass
+
+<a name="user-story"></a>
 
 ### User Story Tests
 #### Experienced with cooking:

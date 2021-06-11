@@ -155,7 +155,6 @@ def add_recipe():
                 "vegetarian": vegetarian,
                 "vegan": vegan,
                 "spicy": spicy,
-                "allergens": request.form.getlist("allergens[]"),
                 "ingredients": request.form.getlist("ingredients[]"),
                 "method": request.form.getlist("method[]"),
                 "created_by": session["user"]
@@ -165,9 +164,7 @@ def add_recipe():
             return redirect(url_for("get_recipes"))
 
         cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
-        allergens = mongo.db.allergens.find().sort("allergens", 1)
-        return render_template("add_recipe.html", cuisines=cuisines,
-                               allergens=allergens)
+        return render_template("add_recipe.html", cuisines=cuisines)
 
     flash("You are currently not logged in")
     return redirect(url_for('get_home'))
@@ -200,7 +197,6 @@ def edit_recipe(recipe_id):
                 "vegetarian": vegetarian,
                 "vegan": vegan,
                 "spicy": spicy,
-                "allergens": request.form.getlist("allergens[]"),
                 "ingredients": request.form.getlist("ingredients[]"),
                 "method": request.form.getlist("method[]"),
                 "created_by": session["user"]
@@ -210,9 +206,8 @@ def edit_recipe(recipe_id):
 
         recipe = mongo.db.recipes.find_one_or_404({"_id": recipe_id})
         cuisines = mongo.db.cuisines.find().sort("cuisine_name", 1)
-        allergens = mongo.db.allergens.find().sort("allergens", 1)
         return render_template("edit_recipe.html", recipe=recipe,
-                               cuisines=cuisines, allergens=allergens)
+                               cuisines=cuisines)
 
     flash("You are currently not logged in")
     return redirect(url_for('get_home'))

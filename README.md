@@ -10,18 +10,34 @@ Follow the link to [Soul Food](https://flask-recipe-book.herokuapp.com/)
 ### Contents
 
 1. [Introduction](#intro) 
+
 2. [UX](#ux)
 * [Strategy Plane](#strategy)
 * [Scope Plane](#scope)
 * [Structure Plane](#structure)
 * [Skeleton Plane](#skeleton)
 * [Surface Plane](#surface)
-3. [Technologies](#tech) 
-4. [Features](#feat)
-5. [Testing](#test)
-6. [Deployment](#deploy)
-7. [Credits](#credit)
 
+3. [Technologies](#tech) 
+* [Languages](#languages)
+* [Database](#database)
+* [Libraries](#libraries)
+* [Tools](#tools)
+* [Hosting](#hosting)
+
+4. [Features](#feat)
+
+5. [Testing](#test)
+
+6. [Deployment](#deploy)
+* [Deploy project](#deploy)
+* [Run project](#run)
+* [Clone project](#clone)
+
+7. [Credits](#credit)
+* [Code credits](#code)
+* [Media credits](#media)
+* [Acknowledgements](#acknowledgements)
 ___
 
 <a name="intro"></a>
@@ -128,6 +144,8 @@ ___
 
 Technologies used to create the site:
 
+<a name="languages"></a>
+
 #### Languages
 * HTML 
   * The project uses **HTML 5** to create the basic layout and site structure.
@@ -138,11 +156,14 @@ Technologies used to create the site:
 * Python
   * The project uses **Python3** to link the main site and the database. 
 
+<a name="database"></a>
+
 #### Database
 * [Mongo DB](https://www.mongodb.com/)
   * the project uses **mongo db** as a database provider to store various forms of information.
   * ![Database Schema](static/images/database/DatabaseSchema.png)
 
+<a name="libraries"></a>
 
 #### Libraries
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/)
@@ -158,6 +179,8 @@ Technologies used to create the site:
 * [Google Fonts](https://fonts.google.com/)
   * the project uses **google fonts** as a source for its extra fonts.
 
+<a name="tools"></a>
+
 #### Tools
 * [Git](https://git-scm.com/)
   * The project uses **git** as version control.
@@ -171,6 +194,8 @@ Technologies used to create the site:
   * the project uses **balsamiq** as a wireframing tool to plan the layout of the site.
 * [Am I responsive]()
   * the project uses **am i responsive** to create the readme hero image.
+
+<a name="hosting"></a>
 
 #### Hosting 
 * [Heroku](https://www.heroku.com/home)
@@ -318,6 +343,8 @@ ___
 <a name="deploy"></a>
 ### Deployment
 
+<a name="deploy"></a>
+
 #### To deploy to heroku:
 1. Create an app in heroku
 2. In the config vars, add IP, Port, db uri and sectret key
@@ -328,6 +355,8 @@ ___
 7. Code is pushed to github
 8. In heroku, set to the github deployment method for automatic updates 
 9. To deploy click enable automatic deploys.  
+
+<a name="run"></a>
 
 #### To run this project locally:
 You will need a github account and to use the chrome browser
@@ -343,6 +372,8 @@ You will need a github account and to use the chrome browser
   * os.environ.setdefault("MONGO_URI", "mongodb+srv://domSpears:<>@myfirstcluster.7ycsu.mongodb.net/recipe_book?retryWrites=true&w=majority")
   * os.environ.setdefault("MONGO_DBNAME", "recipe_book")
 
+<a name="clone"></a>
+
 #### To clone this project (work within a local IDE)
 1. Select the repository from githib
 2. On the project page, click on the "code" dropdown menu icon
@@ -354,7 +385,10 @@ You will need a github account and to use the chrome browser
 ___
 
 <a name="credit"></a>
+
 ### Credits
+
+<a name="code"></a>
 
 #### Code
 * Force edit and delete buttons of recipes to the bottom of the div. [w3schools](https://www.w3schools.com/cssref/pr_pos_bottom.asp)
@@ -377,6 +411,8 @@ ___
 
 * Build a for loop of recipe cards. [Home assistant](https://community.home-assistant.io/t/build-cards-with-for-loop/212311)
 
+<a name="media"></a>
+
 #### Media
 
 ##### Images
@@ -387,6 +423,8 @@ ___
 ##### Content
 * Recipe content (ingredients, method, e.t.c.) was taken from the BBC food website.
 * Cookware content (prices, names e.t.c.) was taken from the the Greenpan cookware website.
+
+<a name="acknowledgements"></a>
 
 #### Acknowledgements
 

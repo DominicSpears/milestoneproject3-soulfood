@@ -25,7 +25,9 @@ Follow the link to [Soul Food](https://flask-recipe-book.herokuapp.com/)
 * [Tools](#tools)
 * [Hosting](#hosting)
 
-4. [Features](#feat)
+* [Features](#feat)
+  * [Active features](#active)
+  * [Future features](#future)
 
 5. [Testing](#test)
 
@@ -203,39 +205,36 @@ Technologies used to create the site:
 ___
 
 <a name="feat"></a>
+
 ### Features
 
+<a name="active"></a>
+
 #### Register Page
-##### Active
 * Username and password input
 * Register button, adds new user details to the database
 * Link to login page
 
 #### Login Page
-##### Active
 * Username and password input
 * Login button, logs existing user into the site, to their profile page
 * Link to register page
 
 #### Navbar
-##### Active
 * Brand logo links to homepage
 * Navbar buttons link to individual pages
 * Certain nav links only appear when a user or an admin is logged in
 * Log out button ends session
 
 #### Footer
-##### Active
 * Links to social media sites, bring up a new tab
 
 #### Home Page
-##### Active
 * Link to cookware and recipe page
 * If a user/admin is logged in, link to profile page
 * If no user/admin is logged in, link to login page
 
 #### Cookware Page
-##### Active
 * Add cookware button links to add cookware page (admin only)
 * For loop reveals all cookware items in the database
 * Website button linked to online store for idividual item
@@ -244,34 +243,29 @@ ___
 * Delete modal to confirm removal of an item
 
 #### Add Cookware Page
-##### Active
 * Inputs for item name, price, image and website link
 * Confirmation button add item to the database
 * Cancel button returns user to cookware page
 * Add modal to confirm addition of an item
 
 #### Edit Cookware Page
-##### Active
 * Input fields show existing data
 * Confirmation button linked to confirmation modal
 * Cancel button returns user to cookware page
 * Edit modal to confirm update of an item
 
 #### Recipe Page
-##### Active
 * For loop reveals all recipes in the database
 * Search reveals recipes based on the recipe name or cuisines
 * Reset button returns all recipes to the page
 * Full recipe button linked to view recipe page
 
 #### View Recipe Page
-##### Active
 * Displays all recipe information from the database
 * Dietary requirements (vegetarian, vegan, spicy) displayed with 
 color coded icons, grey for no, colored for yes
 
 #### Add Recipe Page (User only)
-##### Active
 * Input fields for all recipe information
 * Cuisine dropdown gets options from the database
 * Dietary requirement switches
@@ -281,7 +275,6 @@ color coded icons, grey for no, colored for yes
 * Cancel button returns user to recipe page
 
 #### Profile Page
-##### Active
 * For loop shows all recipes matching the username(user)
 * For loop shows all recipes(admin)
 * Full recipe button linked to view recipe page
@@ -290,21 +283,18 @@ color coded icons, grey for no, colored for yes
 * Delete modal removes recipe from database
 
 #### Edit Recipe Page
-##### Active
 * Input fields show existing data
 * Confirmation button linked to confirmation modal 
 * Cancel button returns user to profile page
 * Edit modal updates recipe in the database
 
 #### User Page (admin only)
-##### Active
 * For loop shows all user in the database
 * Edit button linked to edit user page
 * Delete buttom linked to confirmation modal
 * Delete modal removed user from database
 
 #### Edit user Page
-##### Active
 * Input fields show existing data
 * Switch allows users to be made administrators
 * Confirmation button linked to confirmation modal
@@ -312,7 +302,6 @@ color coded icons, grey for no, colored for yes
 * Edit modal to confirm update of a user
 
 #### Cuisine Page (admin only)
-##### Active
 * Add cuisine button links to add cuisine page
 * For loop reveals all cuisines in the database
 * Edit button links to edit cuisine page
@@ -320,21 +309,34 @@ color coded icons, grey for no, colored for yes
 * Delete modal to confirm removal of an item
 
 #### Add Cuisine Page (admin only)
-##### Active
 * Input for cuisine name
 * Confirmation button linked to modal
 * Cancel button returns user to cuisine page
 * Modal adds new cuisine to database
 
 #### Edit Cuisine Page (admin only)
-##### Active
 * Input field shows existing data
 * Confirmation button linked to confirmation modal
 * Cancel button returns user to cuisine page
 * Modal to confirm update of a cuisine
+
+<a name="future"></a>
+
+#### Future Features
+
+* I currently only have one administrator and any restricted areas are accessed via username matching.
+I would like to introduce multiple administrators via a dedicated is_admin field. I currently have added an 
+is_admin field to the user database but due to time constraints have not written the code to use it as the 
+key to access restricted pages. 
+
+* I would like to add a filter system to select recipes based on other features. For example dietary 
+requirements or cook times.
+
+* I would like to add a review system so that users can review other peoples recipes and rate them.
 ___
 
 <a name="test"></a>
+
 ### Testing
 
 For all testing, please follow the link to a dedicated page. [Testing Page](testing.md) 

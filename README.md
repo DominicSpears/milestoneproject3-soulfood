@@ -3,9 +3,9 @@
 Welcome to Soul Food, a website for users all over the world to read, 
 create and share recipes. Made for my Code Institute Milestone Project 3.
 
-Follow the link to [Soul Food](link needed)
+Follow the link to [Soul Food](https://flask-recipe-book.herokuapp.com/)
 
-![Image](website multi sizes)
+![Responsive Example](static/images/database/responsive.png)
 
 ### Contents
 

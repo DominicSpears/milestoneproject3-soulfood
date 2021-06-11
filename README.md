@@ -26,6 +26,7 @@ Follow the link to [Soul Food](https://flask-recipe-book.herokuapp.com/)
   * [Hosting](#hosting)
 
 * [Features](#feat)
+  * [Current logins](#current)
   * [Active features](#active)
   * [Future features](#future)
 
@@ -216,6 +217,19 @@ ___
 
 ### Features
 
+<a name="current"></a>
+
+#### Current logins
+I have created an administrator and a selection and users for you to test the features
+available to the differernt roles. 
+
+|Username       |Password       |Role           |
+|---------------|---------------|---------------|
+|admin          |manage12345    |Administrator  |
+|domSpears      |user12345      |User           |
+|annexample     |example12345   |User           |
+|johnsmith      |example12345   |User           |
+
 <a name="active"></a>
 
 #### Register Page
@@ -360,7 +374,7 @@ ___
 1. Create an app in heroku
 2. In the config vars, add IP, Port, db uri and sectret key
 3. Create and fill a requirements.txt file using python -m pip freeze
-4. Change settings to debug = false in app.py
+4. Change settings to debug = False in app.py
 5. Ensure env.py is included in gitignore file
 6. Remove import env from the app.py
 7. Code is pushed to github

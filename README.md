@@ -5,7 +5,7 @@ create and share recipes. Made for my Code Institute Milestone Project 3.
 
 Follow the link to [Soul Food](https://flask-recipe-book.herokuapp.com/)
 
-![Responsive Example](static/images/database/responsive.png)
+![Responsive Example](static/images/readme/responsive.png)
 
 ### Contents
 

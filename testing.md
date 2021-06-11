@@ -51,13 +51,7 @@
 
 #### Remaining Bugs
 
-1. Edit recipe ingredients/ method
-  *  While editing a recipe, the instructions list add button will 
-    add as many input fields as are already pressent. All of these input 
-    fields must be filled or all removed. The same occurance happens for 
-    the method input.
-
-2. Edit user password
+1. Edit user password
   * When editing user details I would like to leave the password unchanged. 
   But when te update has been confirmed, the password comes back as either 
   null or blank. 

@@ -333,9 +333,7 @@ def edit_user(user_id):
             is_admin = "on" if request.form.get("is_admin") else "off"
             add = {
                 "username": request.form.get("username"),
-                "is_admin": is_admin,
-                "password": generate_password_hash(
-                    request.form.get("password"))
+                "is_admin": is_admin
             }
             mongo.db.users.update({"_id": user_id}, add)
             flash("User Successfully Updated")

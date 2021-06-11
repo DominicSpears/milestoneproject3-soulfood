@@ -17,13 +17,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+# home function
 @app.route("/")
 @app.route("/get_home")
 def get_home():
     return render_template("home.html")
 
 
+# recipes function
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
@@ -31,6 +32,7 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes, users=users)
 
 
+# search function
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -38,7 +40,7 @@ def search():
     return render_template("recipes.html", recipes=recipes)
 
 
-# -------------------- register function
+# register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if is_authenticated():
@@ -47,7 +49,7 @@ def register():
 
     if request.method == "POST":
 
-        # -------------------- check if username exists
+        # check if username exists
         username = request.form.get("username").lower()
         existing_user = mongo.db.users.find_one(
             {"username": username})
@@ -63,7 +65,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        # -------------------- new user into 'session' cookie
+        # add new user into 'session' cookie
         session["user"] = username
         flash("Congratulations - you are registered!")
         return redirect(url_for("profile", username=session["user"]))
@@ -71,7 +73,7 @@ def register():
     return render_template("register.html")
 
 
-# -------------------- login function
+# login function
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if is_authenticated():
@@ -79,13 +81,13 @@ def login():
         return redirect(url_for("get_home"))
 
     if request.method == "POST":
-        # -------------------- check if username exists in db
+        # check if username exists in db
         username = request.form.get("username").lower()
         existing_user = mongo.db.users.find_one(
             {"username": username})
 
         if existing_user:
-            # -------------------- ensure hashed password matches user input
+            # ensure hashed password matches user input
             if check_password_hash(existing_user["password"],
                                    request.form.get("password")):
                 session["user"] = username
@@ -93,19 +95,19 @@ def login():
                 return redirect(url_for(
                     "profile", username=session["user"]))
             else:
-                # -------------------- invalid password match
+                # password invalid
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # -------------------- username doesn't exist
+            # if username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("login.html")
 
 
-# -------------------- profile function
+# profile function
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
     if is_authenticated():
@@ -120,6 +122,7 @@ def profile():
     return redirect(url_for("login"))
 
 
+# logout function
 @app.route("/logout")
 def logout():
     if not is_authenticated():
@@ -132,6 +135,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# add recipe function
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if is_authenticated():
@@ -169,6 +173,7 @@ def add_recipe():
     return redirect(url_for('get_home'))
 
 
+# edit recipe function
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if is_authenticated():
@@ -213,6 +218,7 @@ def edit_recipe(recipe_id):
     return redirect(url_for('get_home'))
 
 
+# view recipe function
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
     if not is_object_id_valid(recipe_id):
@@ -221,6 +227,7 @@ def view_recipe(recipe_id):
     return render_template("view_recipe.html", recipe=recipe)
 
 
+# delete recipe function
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     if is_authenticated():
@@ -236,6 +243,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
+# cuisines function
 @app.route("/get_cuisines")
 def get_cuisines():
     if is_authenticated():
@@ -246,6 +254,7 @@ def get_cuisines():
     return redirect(url_for('get_home'))
 
 
+# add cuisine function
 @app.route("/add_cuisine", methods=["GET", "POST"])
 def add_cuisine():
     if is_authenticated():
@@ -263,6 +272,7 @@ def add_cuisine():
     return redirect(url_for('get_home'))
 
 
+# edit cuisine function
 @app.route("/edit_cuisine/<cuisine_id>", methods=["GET", "POST"])
 def edit_cuisine(cuisine_id):
     if is_authenticated():
@@ -287,9 +297,9 @@ def edit_cuisine(cuisine_id):
     return redirect(url_for('get_home'))
 
 
+# delete cuisine function
 @app.route("/delete_cuisine/<cuisine_id>")
 def delete_cuisine(cuisine_id):
-    # At the moment any authenticated user can delete cuisine
     if is_authenticated():
         if not is_object_id_valid(cuisine_id):
             abort(404)
@@ -299,10 +309,11 @@ def delete_cuisine(cuisine_id):
         flash("Cuisine Successfully Deleted")
     else:
         flash("Unauthorized action")
-    
+
     return redirect(url_for("get_cuisines"))
 
 
+# users function
 @app.route("/get_users")
 def get_users():
     if is_authenticated():
@@ -313,6 +324,7 @@ def get_users():
     return redirect(url_for('get_home'))
 
 
+# edit user function
 @app.route("/edit_user/<user_id>", methods=["GET", "POST"])
 def edit_user(user_id):
     if is_authenticated():
@@ -340,6 +352,7 @@ def edit_user(user_id):
     return redirect(url_for('get_home'))
 
 
+# delete user function
 @app.route("/delete_user/<user_id>")
 def delete_user(user_id):
     if is_authenticated():
@@ -356,12 +369,14 @@ def delete_user(user_id):
     return redirect(url_for("get_users"))
 
 
+# cookware function
 @app.route("/get_cookware")
 def get_cookware():
     cookware = list(mongo.db.cookware.find().sort("cookware_name", 1))
     return render_template("cookware.html", cookware=cookware)
 
 
+# add cookware function
 @app.route("/add_cookware", methods=["GET", "POST"])
 def add_cookware():
     if is_authenticated():
@@ -382,6 +397,7 @@ def add_cookware():
     return redirect(url_for('get_home'))
 
 
+# edit cookware function
 @app.route("/edit_cookware/<cookware_id>", methods=["GET", "POST"])
 def edit_cookware(cookware_id):
     if is_authenticated():
@@ -409,6 +425,7 @@ def edit_cookware(cookware_id):
     return redirect(url_for('get_home'))
 
 
+# delete cookware function
 @app.route("/delete_cookware/<cookware_id>")
 def delete_cookware(cookware_id):
     if is_authenticated():
@@ -425,7 +442,7 @@ def delete_cookware(cookware_id):
     return redirect(url_for("get_cookware"))
 
 
-# ---------------------------------------Error messages
+# Error messages
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('error_message/404.html'), 404

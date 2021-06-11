@@ -9,37 +9,37 @@ Follow the link to [Soul Food](https://flask-recipe-book.herokuapp.com/)
 
 ### Contents
 
-1. [Introduction](#intro) 
+* [Introduction](#intro) 
 
-2. [UX](#ux)
-* [Strategy Plane](#strategy)
-* [Scope Plane](#scope)
-* [Structure Plane](#structure)
-* [Skeleton Plane](#skeleton)
-* [Surface Plane](#surface)
+* [UX](#ux)
+  * [Strategy Plane](#strategy)
+  * [Scope Plane](#scope)
+  * [Structure Plane](#structure)
+  * [Skeleton Plane](#skeleton)
+  * [Surface Plane](#surface)
 
-3. [Technologies](#tech) 
-* [Languages](#languages)
-* [Database](#database)
-* [Libraries](#libraries)
-* [Tools](#tools)
-* [Hosting](#hosting)
+* [Technologies](#tech) 
+  * [Languages](#languages)
+  * [Database](#database)
+  * [Libraries](#libraries)
+  * [Tools](#tools)
+  * [Hosting](#hosting)
 
 * [Features](#feat)
   * [Active features](#active)
   * [Future features](#future)
 
-5. [Testing](#test)
+* [Testing](#test)
 
-6. [Deployment](#deploy)
-* [Deploy project](#deploy)
-* [Run project](#run)
-* [Clone project](#clone)
+* [Deployment](#deploy)
+  * [Deploy project](#deploy)
+  * [Run project](#run)
+  * [Clone project](#clone)
 
-7. [Credits](#credit)
-* [Code credits](#code)
-* [Media credits](#media)
-* [Acknowledgements](#acknowledgements)
+* [Credits](#credit)
+  * [Code credits](#code)
+  * [Media credits](#media)
+  * [Acknowledgements](#acknowledgements)
 ___
 
 <a name="intro"></a>

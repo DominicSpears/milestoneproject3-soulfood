@@ -11,6 +11,7 @@ Follow the link to [Soul Food](https://flask-recipe-book.herokuapp.com/)
 
 1. [Introduction](#intro) 
 2. [UX](#ux)
+  * [Strategy Plane](#strategy)
 3. [Technologies](#tech) 
 4. [Features](#feat)
 5. [Testing](#test)
@@ -33,6 +34,7 @@ ___
 <a name="ux"></a>
 ### UX
 
+<a name="strategy"></a>
 ### Strategy Plane
 #### Potential Users
 

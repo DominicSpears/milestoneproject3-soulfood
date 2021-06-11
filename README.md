@@ -11,7 +11,11 @@ Follow the link to [Soul Food](https://flask-recipe-book.herokuapp.com/)
 
 1. [Introduction](#intro) 
 2. [UX](#ux)
-  * [Strategy Plane](#strategy)
+* [Strategy Plane](#strategy)
+* [Scope Plane](#scope)
+* [Structure Plane](#structure)
+* [Skeleton Plane](#skeleton)
+* [Surface Plane](#surface)
 3. [Technologies](#tech) 
 4. [Features](#feat)
 5. [Testing](#test)
@@ -44,6 +48,7 @@ Visitors
 * Not cooking, looking for cookware range
 * Site administrator
 
+<a name="scope"></a>
 ### Scope Plane
 #### Features specific for users
 
@@ -71,6 +76,7 @@ Site administrator
 * Edit and delete users
 * Promote the cookware line
 
+<a name="structure"></a>
 ### Structure Plane
 #### User stories
 
@@ -98,6 +104,7 @@ Site administrator
 3. As a site administrator, I want the ability to edit and delete users and complete general site maintenance. 
 4. As a site administrator, I want to promote the cookware tha our site is partnered with.   
 
+<a name="skeleton"></a>
 ### Skeleton Plane
 #### Wireframes
 
@@ -107,6 +114,7 @@ Site administrator
 
 [Desktop Wireframes](static/images/wireframes/desktop-med.jpg)
 
+<a name="surface"></a>
 ### Surface Plane
 
 * Background - White/off white e.g. #FFF/#F7F6FA
